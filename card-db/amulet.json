@@ -1,0 +1,18 @@
+{
+  "cards": [
+    {
+      "name": "Amulet of Myrdell",
+      "rarity": "Uncommon",
+      "type_line": "Wondrous item \u2014 Amulet (requires attunement)",
+      "rules_text": ["Wearing this amulet protects you against Fey and Fiend creatures. This protection offers several benefits. For example, the wearer cannot be possessed by them or gain the Charmed or Frightened conditions. If the wearer is already possessed, charmed or frightened by such a creature, they have advantage on any new saving throw against the relevant effect."],
+      "flavor_text": "As long as it stays warm on your chest, the forest listens in and watches over you.",
+      "set_code": "MYR",
+      "collector": "901/999 U",
+      "author": "wschu",
+      "copyright": "\u00a9 Myrdell Homebrew 2025",
+      "art_path": "art/amulet-of-myrdell.png",
+      "price": "200 GP",
+      "weight": "1/10 lb"
+    }
+  ]
+}

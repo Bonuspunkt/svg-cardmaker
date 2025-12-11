@@ -1,0 +1,22 @@
+{
+  "cards": [
+  {
+    "name": "Bulwark of Enduring Mercy",
+    "rarity": "Rare",
+    "type_line": "Shield — Two-Handed (requires attunement)",
+    "rules_text": [
+      "A heavy dwarven shield that must be wielded with two hands. You gain an additional +3 bonus to AC, but cannot use another shield or any weapon requiring a free hand.",
+      "Sanctuary of Suffering (1/Long Rest): Reaction → grant Resistance to a creature within 10 ft when it takes damage.",
+      "Martyr’s Endurance (1/Long Rest): Drop to 1 HP instead of 0."
+    ],
+    "flavor_text": "Forged in prayer and patience, it was made for one whose arms may fail — but whose compassion must never falter.",
+    "set_code": "MYR",
+    "collector": "902/999 R",
+    "author": "wschu",
+    "copyright": "© Myrdell Homebrew 2025",
+    "art_path": "art/bulwark-of-enduring-mercy.png",
+    "price": "2500 GP",
+    "weight": "22 lb"
+  }
+  ]
+}
