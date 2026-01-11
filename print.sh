@@ -42,7 +42,8 @@ python collect_and_print.py \
   --add "Crossbow_Hand=1" \
   --add "Crossbow_Heavy=1" \
   --add "Longbow=1" \
-  --add "Net=1" \
   --add "Amulet_of_Myrdell=5" \
+  --add "Communication_Stone=2" \
+  --add "Bulwark_of_Enduring_Mercy=1" \
   --add "Giant_Slayer_Warhammer=1" \
   --crop 

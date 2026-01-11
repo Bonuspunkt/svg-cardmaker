@@ -1,0 +1,23 @@
+{
+  "cards": [
+    {
+      "name": "Communication Stone",
+      "rarity": "Uncommon",
+      "type_line": "Wondrous item — Stone (requires attunement)",
+      "rules_text": [
+        "This stone has 5 charges.",
+        "While attuned to and carrying the stone, you can expend 1 charge to cast the Sending spell through it.",
+        "The stone regains 1d4 expended charges daily at dawn.",
+        "Whenever a charge is expended, roll a d100. On a roll of 100, the Communication Stone is destroyed."
+      ],
+      "flavor_text": "It delivers messages flawlessly — until it doesn't.",
+      "set_code": "MYR",
+      "collector": "902/999 U",
+      "author": "wschu",
+      "copyright": "© Myrdell Homebrew 2025",
+      "art_path": "art/communication-stone.png",
+      "price": "500 GP",
+      "weight": "10 lb"
+    }
+  ]
+}
