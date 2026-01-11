@@ -113,6 +113,18 @@ def build_type_str(theme, type) -> str:
     type_str += f'<text x="{x}" y="{y}" font-family="{theme["font_sans"]}" font-size="{fs}" font-weight="600" fill="{theme["type_fg"]}">{type}</text>'
     return type_str
 
+def build_spell_type_str(theme, casting_time, range, components, durations, school, attack_save, damage_effect) -> str:
+    (x, y, w, h) = theme["type_rec"]
+    type_str =  f'<rect x="{x}" y="{y}" width="{w}" height="{h}" rx="6" ry="6" fill="{theme["type_bg"]}" stroke="{theme["frame_border"]}" stroke-width="2"/>'
+
+    (x, y, fs) = theme["type_txt_rec"]
+    for s in [casting_time, range, components, durations, school, attack_save, damage_effect]:
+        type_str += f'<text x="{x}" y="{y}" font-family="{theme["font_serif"]}" font-size="{fs}" fill="{theme["type_fg"]}">{s}</text>'
+        y+= fs
+    return type_str
+
+
+
 def build_rules_str(theme, rules, flavor) -> str:
     (x, y, w, h) = theme["rules_rec"]
     rules_str =  f'<rect x="{x}" y="{y}" width="{w}" height="{h}" rx="10" ry="10" fill="{theme["rules_bg"]}" stroke="{theme["frame_border"]}" stroke-width="2"/>'
@@ -149,7 +161,7 @@ def build_footer_str(theme, set_code, collector, author, copyright_str) -> str:
     footer_str += f'<text x="{x}" y="{y}" font-family="{theme["font_sans"]}" font-size="{fs}" text-anchor="end" fill="{theme["footer_fg"]}">{copyright_str}</text></g>'
     return footer_str
 
-def get_theme( name, rarity) -> dict:
+def get_theme( name, rarity, type_str) -> dict:
     card_width = 744
     card_height = 1039
     outer_padding = 12
@@ -158,16 +170,23 @@ def get_theme( name, rarity) -> dict:
     title_h = 52
     
     art_y = inner_padding + title_h + 6
-    art_h = 430
+    art_h = 430 
 
     type_y = art_y + art_h + 6
     type_h = 52
+        
 
     rules_y = type_y + type_h + 6
     rules_h = 360
 
     opt_y = rules_y + rules_h + 6
     opt_h = 52
+
+    if type_str == "spell":
+        type_y = inner_padding + title_h + 6
+        type_h = 188
+        rules_y = type_y + type_h + 6
+        rules_h = 726
 
     theme = {
         "frame_bg": "#1b1b1b",
@@ -206,6 +225,9 @@ def get_theme( name, rarity) -> dict:
 
     theme.update(name)
 
+    if type_str == "spell":
+        theme["type_txt_rec"] = (inner_padding + 18,           type_y + 6 + 24, 24)
+
     rarity_colors = {
     "Common":     "#B0B0B0",
     "Uncommon":   "#81AD82",
@@ -219,8 +241,63 @@ def get_theme( name, rarity) -> dict:
     return theme
 
 def build_svg(card: dict, out_dir: Path) -> Path:
-    theme = get_theme(card.get("theme", {}), card.get("rarity","Common"))
+    if "card_type" in card:
+        if card["card_type"] == "spell":
+            return build_spell_card(card, out_dir)
 
+    return build_item_card(card, out_dir)
+
+def build_spell_card(card: dict, out_dir: Path) -> Path:
+    theme = get_theme(card.get("theme", {}), card.get("rarity","Common"), "spell")
+
+    spell = card.get("spell",{})
+    level        = spell.get("level", "Cantrip")
+    school       = "School: " + spell.get("school", "")
+    casting_time = "Casting time: " + spell.get("casting_time", "")
+    range_area   = "Range/Area: " + spell.get("range_area", "")
+    components_list = spell.get("components", [])
+    components   = "Components: "
+    for idx, ent in enumerate(components_list):
+        components += ent
+        if idx < len(components_list):
+            components += ", "
+
+    duration      = "Duration: " + spell.get("duration", "")
+    attack_save   = "Attack/Save: " + spell.get("attack_save", "")
+    damage_effect = "Damage/Effect: " + spell.get("damage_effect", "")
+
+    frame_str = build_frame_str(theme)
+    #(clipping_art, art_img) = build_art_str(theme, card.get("art_path"))
+    title_str = build_title_str(theme, card.get("name","Unnamed Item"), level)
+
+    type_str = build_spell_type_str(theme, school, casting_time, range_area, components, duration, attack_save, damage_effect)
+    
+    rules_str = build_rules_str(theme, card.get("rules_text","—"), "")
+    
+    opt_str = build_optional_str(theme, card.get("pt", None), card.get("price", None), card.get("weight", None))
+    footer_str = build_footer_str(theme, card.get("set_code","DND"), card.get("collector","001/001"), card.get("author",""), card.get("copyright","© 2025"))
+
+    (w,h) = theme["card_sz"]
+    svg = Template(SVG_TEMPLATE).substitute(
+        frame_str=frame_str,
+        title_str=title_str,
+        clipping_art="",
+        art_img="",
+        type_str=type_str,
+        rules_str=rules_str,
+        opt_str=opt_str,
+        footer_str=footer_str,
+        card_w=w,
+        card_h=h,
+        )
+
+    safe = re.sub(r"[^a-zA-Z0-9_-]+", "_", card.get("name","card")).strip("_")
+    out = out_dir / f"{safe}.svg"
+    out.write_text(svg, encoding="utf-8")
+    return out
+
+def build_item_card(card: dict, out_dir: Path) -> Path:
+    theme = get_theme(card.get("theme", {}), card.get("rarity","Common"), "item")
 
     frame_str = build_frame_str(theme)
     title_str = build_title_str(theme, card.get("name","Unnamed Item"), card.get("rarity","Common"))
