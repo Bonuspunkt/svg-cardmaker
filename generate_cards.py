@@ -118,9 +118,13 @@ def build_spell_type_str(theme, casting_time, range, components, durations, scho
     type_str =  f'<rect x="{x}" y="{y}" width="{w}" height="{h}" rx="6" ry="6" fill="{theme["type_bg"]}" stroke="{theme["frame_border"]}" stroke-width="2"/>'
 
     (x, y, fs) = theme["type_txt_rec"]
-    for s in [casting_time, range, components, durations, school, attack_save, damage_effect]:
-        type_str += f'<text x="{x}" y="{y}" font-family="{theme["font_serif"]}" font-size="{fs}" fill="{theme["type_fg"]}">{s}</text>'
-        y+= fs
+    dx = 0
+    for idx, s in enumerate([casting_time, range, components, durations, school, attack_save, damage_effect]):
+        type_str += f'<text x="{x+dx}" y="{y}" font-family="{theme["font_sans"]}" font-size="{fs}" fill="{theme["type_fg"]}">{s}</text>'
+        dx += 300
+        if idx in [1, 2, 4, 6,]:
+            y+= fs
+            dx = 0
     return type_str
 
 
@@ -131,13 +135,13 @@ def build_rules_str(theme, rules, flavor) -> str:
 
     (x, y, fs) = theme["rules_txt_rec"]
 
-    rules_lines = wrap_svg_text(rules, width_chars=60, x=x, line_height=fs)
+    rules_lines = wrap_svg_text(rules, width_chars=58, x=x, line_height=fs)
     rules_str += f'<text x="{x}" y="{y}" font-family="{theme["font_serif"]}" font-size="{fs}" fill="{theme["rules_fg"]}">{rules_lines}</text>'
 
     (x, y, fs) = theme["flavor_txt_rec"]
     flavor_lines=""
     if flavor:
-      flavor_lines = wrap_svg_text("“" + flavor + "”", width_chars=60, x=x, line_height=fs)
+      flavor_lines = wrap_svg_text("“" + flavor + "”", width_chars=58, x=x, line_height=fs)
     rules_str += f'<text x="{x}" y="{y}" font-family="{theme["font_serif"]}" font-size="{fs}" font-style="italic" fill="{theme["flavor_fg"]}">{flavor_lines}</text>'
     return rules_str
 
@@ -184,9 +188,9 @@ def get_theme( name, rarity, type_str) -> dict:
 
     if type_str == "spell":
         type_y = inner_padding + title_h + 6
-        type_h = 188
+        type_h = 100
         rules_y = type_y + type_h + 6
-        rules_h = 726
+        rules_h = 816
 
     theme = {
         "frame_bg": "#1b1b1b",
@@ -203,30 +207,32 @@ def get_theme( name, rarity, type_str) -> dict:
         "footer_fg": "#444",
         "pt_bg": "#e9e3d9",
         "pt_fg": "#111",
-        "font_serif": "Georgia, 'Times New Roman', serif",
-        "font_sans": "Inter, Arial, sans-serif",
+        #"font_serif": "Georgia, 'Times New Roman', serif",
+        #"font_sans": "Inter, Arial, sans-serif",
+        "font_serif": "Cascadia Code",
+        "font_sans": "Cascadia Code",
 
         "card_sz": (card_width, card_height),
         "inner_rec": (outer_padding, outer_padding, card_width - 2*outer_padding, card_height - 2*outer_padding),
         "title_rec":        (inner_padding, inner_padding, inner_width, title_h),
-        "title_txt_rec":    (               inner_padding + 18, inner_padding + title_h - 16, 32),
-        "title_rarity_rec": (card_width - 2*inner_padding - 18, inner_padding + title_h - 16, 24),
+        "title_txt_rec":    (               inner_padding + 18, inner_padding + title_h - 16, 24),
+        "title_rarity_rec": (card_width - 2*inner_padding - 18, inner_padding + title_h - 16, 20),
         "art_rec": (inner_padding, art_y, inner_width, art_h),
         "type_rec": (inner_padding, type_y, inner_width, type_h),
-        "type_txt_rec": (inner_padding + 18, type_y + type_h - 18, 24),
+        "type_txt_rec": (inner_padding + 18, type_y + type_h - 18, 20),
         "rules_rec":     (inner_padding, rules_y, inner_width, rules_h),
-        "rules_txt_rec": (inner_padding + 18,           rules_y + 6 + 24, 24),
-        "flavor_txt_rec":(inner_padding + 18, rules_y + rules_h - 48, 24),
+        "rules_txt_rec": (inner_padding + 18,           rules_y + 6 + 20, 20),
+        "flavor_txt_rec":(inner_padding + 18, rules_y + rules_h - 48, 20),
         "footer_txt_rec_l":(               inner_padding + 11, card_height - inner_padding - 6, 11),
         "footer_txt_rec_r":(card_width - 2*inner_padding - 11, card_height - inner_padding - 6, 11),
         "opt_box": (inner_padding + inner_width, opt_y, 150, 54),
-        "opt_txt_rec":(inner_padding + inner_width - 75, opt_y + opt_h - 16, 24),
+        "opt_txt_rec":(inner_padding + inner_width - 75, opt_y + opt_h - 16, 20),
     }
 
     theme.update(name)
 
     if type_str == "spell":
-        theme["type_txt_rec"] = (inner_padding + 18,           type_y + 6 + 24, 24)
+        theme["type_txt_rec"] = (inner_padding + 18,           type_y + 6 + 20, 20)
 
     rarity_colors = {
     "Common":     "#B0B0B0",
@@ -259,6 +265,7 @@ def build_spell_card(card: dict, out_dir: Path) -> Path:
     components   = "Components: "
     for idx, ent in enumerate(components_list):
         components += ent
+        idx += 1
         if idx < len(components_list):
             components += ", "
 
@@ -267,14 +274,11 @@ def build_spell_card(card: dict, out_dir: Path) -> Path:
     damage_effect = "Damage/Effect: " + spell.get("damage_effect", "")
 
     frame_str = build_frame_str(theme)
-    #(clipping_art, art_img) = build_art_str(theme, card.get("art_path"))
     title_str = build_title_str(theme, card.get("name","Unnamed Item"), level)
 
     type_str = build_spell_type_str(theme, school, casting_time, range_area, components, duration, attack_save, damage_effect)
     
     rules_str = build_rules_str(theme, card.get("rules_text","—"), "")
-    
-    opt_str = build_optional_str(theme, card.get("pt", None), card.get("price", None), card.get("weight", None))
     footer_str = build_footer_str(theme, card.get("set_code","DND"), card.get("collector","001/001"), card.get("author",""), card.get("copyright","© 2025"))
 
     (w,h) = theme["card_sz"]
@@ -285,7 +289,7 @@ def build_spell_card(card: dict, out_dir: Path) -> Path:
         art_img="",
         type_str=type_str,
         rules_str=rules_str,
-        opt_str=opt_str,
+        opt_str="",
         footer_str=footer_str,
         card_w=w,
         card_h=h,

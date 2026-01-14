@@ -1,0 +1,482 @@
+{
+  "cards": [
+    {
+      "card_type": "spell",
+      "name": "Bane",
+      "spell": {
+        "level": "1st level",
+        "casting_time": "1 Action",
+        "range_area": "30 ft.",
+        "components": [
+          "V",
+          "S",
+          "M*"
+        ],
+        "duration": "1 Minute (Concentration)",
+        "school": "Enchantment",
+        "attack_save": "CHA Save",
+        "damage_effect": "Debuff"
+      },
+      "rules_text": [
+        "Up to three creatures of your choice that you can see within range must each make a Charisma saving throw. Whenever a target that fails this save makes an attack roll or a saving throw before the spell ends, the target must subtract 1d4 from the attack roll or save.",
+        "",
+        "Using a Higher-Level Spell Slot. You can target one additional creature for each spell slot level above 1."
+      ],
+      "set_code": "MYR",
+      "collector": "S001/999 C",
+      "author": "wschu",
+      "copyright": "© Myrdell Homebrew 2025"
+    },
+    {
+      "card_type": "spell",
+      "name": "Banishing Smite",
+      "spell": {
+        "level": "5th level",
+        "casting_time": "1 Bonus Action",
+        "range_area": "Self",
+        "components": [
+          "V"
+        ],
+        "duration": "1 Minute (Concentration)",
+        "school": "Conjuration",
+        "attack_save": "CHA Save",
+        "damage_effect": "Force"
+      },
+      "rules_text": [
+        "The target hit by the attack roll takes an extra 5d10 Force damage from the attack. If the attack reduces the target to 50 Hit Points or fewer, the target must succeed on a Charisma saving throw or be transported to a harmless demiplane for the duration. While there, the target has the Incapacitated condition. When the spell ends, the target reappears in the space it left or in the nearest unoccupied space if that space is occupied."
+      ],
+      "set_code": "MYR",
+      "collector": "S001/999 C",
+      "author": "wschu",
+      "copyright": "© Myrdell Homebrew 2025"
+    },
+    {
+      "card_type": "spell",
+      "name": "Banishment",
+      "spell": {
+        "level": "4th level",
+        "casting_time": "1 Action",
+        "range_area": "30 ft.",
+        "components": [
+          "V",
+          "S",
+          "M*"
+        ],
+        "duration": "1 Minute (Concentration)",
+        "school": "Abjuration",
+        "attack_save": "CHA Save",
+        "damage_effect": "Banishment"
+      },
+      "rules_text": [
+        "One creature that you can see within range must succeed on a Charisma saving throw or be transported to a harmless demiplane for the duration. While there, the target has the Incapacitated condition. When the spell ends, the target reappears in the space it left or in the nearest unoccupied space if that space is occupied.",
+        "",
+        "If the target is an Aberration, a Celestial, an Elemental, a Fey, or a Fiend, the target doesn’t return if the spell lasts for 1 minute. The target is instead transported to a random location on a plane (DM’s choice) associated with its creature type.",
+        "",
+        "Using a Higher-Level Spell Slot. You can target one additional creature for each spell slot level above 4."
+      ],
+      "set_code": "MYR",
+      "collector": "S001/999 C",
+      "author": "wschu",
+      "copyright": "© Myrdell Homebrew 2025"
+    },
+    {
+      "card_type": "spell",
+      "name": "Barkskin",
+      "spell": {
+        "level": "2st level",
+        "casting_time": "1 Bonus Action",
+        "range_area": "Touch",
+        "components": [
+          "V",
+          "S",
+          "M*"
+        ],
+        "duration": "1 Hour",
+        "school": "Transmutation",
+        "attack_save": "None",
+        "damage_effect": "Buff"
+      },
+      "rules_text": [
+        "You touch a willing creature. Until the spell ends, the target’s skin assumes a bark-like appearance, and the target has an Armor Class of 17 if its AC is lower than that."
+      ],
+      "set_code": "MYR",
+      "collector": "S001/999 C",
+      "author": "wschu",
+      "copyright": "© Myrdell Homebrew 2025"
+    },
+    {
+      "card_type": "spell",
+      "name": "Beacon of Hope",
+      "spell": {
+        "level": "3rd level",
+        "casting_time": "1 Action",
+        "range_area": "30 ft.",
+        "components": [
+          "V",
+          "S"
+        ],
+        "duration": "1 Minute (Concentration)",
+        "school": "Abjuration",
+        "attack_save": "None",
+        "damage_effect": "Buff"
+      },
+      "rules_text": [
+        "Choose any number of creatures within range. For the duration, each target has Advantage on Wisdom saving throws and Death Saving Throws and regains the maximum number of Hit Points possible from any healing."
+      ],
+      "set_code": "MYR",
+      "collector": "S001/999 C",
+      "author": "wschu",
+      "copyright": "© Myrdell Homebrew 2025"
+    },
+    {
+      "card_type": "spell",
+      "name": "Beast Sense",
+      "spell": {
+        "level": "2nd level",
+        "casting_time": "1 Action (Ritual)",
+        "range_area": "Touch",
+        "components": [
+          "S"
+        ],
+        "duration": "1 Hour (Concentration)",
+        "school": "Divination",
+        "attack_save": "None",
+        "damage_effect": "Detection"
+      },
+      "rules_text": [
+        "You touch a willing Beast. For the duration, you can perceive through the Beast’s senses as well as your own. When perceiving through the Beast’s senses, you benefit from any special senses it has."
+      ],
+      "set_code": "MYR",
+      "collector": "S001/999 C",
+      "author": "wschu",
+      "copyright": "© Myrdell Homebrew 2025"
+    },
+    {
+      "card_type": "spell",
+      "name": "Bestow Curse",
+      "spell": {
+        "level": "3rd level",
+        "casting_time": "1 Action",
+        "range_area": "Touch",
+        "components": [
+          "V",
+          "S"
+        ],
+        "duration": "1 Minute (Concentration)",
+        "school": "Necromancy",
+        "attack_save": "WIS Save",
+        "damage_effect": "Debuff"
+      },
+      "rules_text": [
+        "You touch a creature, which must succeed on a Wisdom saving throw or become cursed for the duration. Until the curse ends, the target suffers one of the following effects of your choice:",
+        "",
+        "- Choose one ability. The target has Disadvantage on ability checks and saving throws made with that ability.",
+        "- The target has Disadvantage on attack rolls against you.",
+        "- In combat, the target must succeed on a Wisdom saving throw at the start of each of its turns or be forced to take the Dodge action on that turn.",
+        "- If you deal damage to the target with an attack roll or a spell, the target takes an extra 1d8 Necrotic damage.",
+        "",
+        "Using a Higher-Level Spell Slot. If you cast this spell using a level 4 spell slot, you can maintain Concentration on it for up to 10 minutes. If you use a level 5+ spell slot, the spell doesn’t require Concentration, and the duration becomes 8 hours (level 5–6 slot) or 24 hours (level 7–8 slot). If you use a level 9 spell slot, the spell lasts until dispelled."
+      ],
+      "set_code": "MYR",
+      "collector": "S001/999 C",
+      "author": "wschu",
+      "copyright": "© Myrdell Homebrew 2025"
+    },
+    {
+      "card_type": "spell",
+      "name": " Bigby's Hand",
+      "spell": {
+        "level": "5th level",
+        "casting_time": "1 Action",
+        "range_area": "120 ft.",
+        "components": [
+          "V",
+          "S",
+          "M*"
+        ],
+        "duration": "1 Minute (Concentration)",
+        "school": "Evocation",
+        "attack_save": "None",
+        "damage_effect": "Force"
+      },
+      "rules_text": [
+        "You create a Large hand of shimmering magical energy in an unoccupied space that you can see within range. The hand lasts for the duration, and it moves at your command, mimicking the movements of your own hand.",
+        "",
+        "The hand is an object that has AC 20 and Hit Points equal to your Hit Point maximum. If it drops to 0 Hit Points, the spell ends. The hand doesn’t occupy its space.",
+        "",
+        "When you cast the spell and as a Bonus Action on your later turns, you can move the hand up to 60 feet and then cause one of the following effects:",
+        "",
+        "Clenched Fist. The hand strikes a target within 5 feet of it. Make a melee spell attack. On a hit, the target takes 5d8 Force damage.",
+        "",
+        "Forceful Hand. The hand attempts to push a Huge or smaller creature within 5 feet of it. The target must succeed on a Strength saving throw, or the hand pushes the target up to 5 feet plus a number of feet equal to five times your spellcasting ability modifier. The hand moves with the target, remaining within 5 feet of it.",
+        "",
+        "Grasping Hand. The hand attempts to grapple a Huge or smaller creature within 5 feet of it. The target must succeed on a Dexterity saving throw, or the target has the Grappled condition, with an escape DC equal to your spell save DC. While the hand grapples the target, you can take a Bonus Action to cause the hand to crush it, dealing Bludgeoning damage to the target equal to 4d6 plus your spellcasting ability modifier.",
+        "",
+        "Interposing Hand. The hand grants you Half Cover against attacks and other effects that originate from its space or that pass through it. In addition, its space counts as Difficult Terrain for your enemies.",
+        "",
+        "Using a Higher-Level Spell Slot. The damage of the Clenched Fist increases by 2d8 and the damage of the Grasping Hand increases by 2d6 for each spell slot level above 5."
+      ],
+      "set_code": "MYR",
+      "collector": "S001/999 C",
+      "author": "wschu",
+      "copyright": "© Myrdell Homebrew 2025"
+    },
+    {
+      "card_type": "spell",
+      "name": "Blade Barrier",
+      "spell": {
+        "level": "6th level",
+        "casting_time": "1 Action",
+        "range_area": "90 ft.",
+        "components": [
+          "V",
+          "S"
+        ],
+        "duration": "10 Minutes (Concentration)",
+        "school": "Evocation",
+        "attack_save": "DEX Save",
+        "damage_effect": "Force"
+      },
+      "rules_text": [
+        "You create a wall of whirling blades made of magical energy. The wall appears within range and lasts for the duration. You make a straight wall up to 100 feet long, 20 feet high, and 5 feet thick, or a ringed wall up to 60 feet in diameter, 20 feet high, and 5 feet thick. The wall provides Three-Quarters Cover, and its space is Difficult Terrain.",
+        "",
+        "Any creature in the wall’s space makes a Dexterity saving throw, taking 6d10 Force damage on a failed save or half as much damage on a successful one. A creature also makes that save if it enters the wall’s space or ends it turn there. A creature makes that save only once per turn."
+      ],
+      "set_code": "MYR",
+      "collector": "S001/999 C",
+      "author": "wschu",
+      "copyright": "© Myrdell Homebrew 2025"
+    },
+    {
+      "card_type": "spell",
+      "name": "Blade Ward",
+      "spell": {
+        "level": "Cantrip",
+        "casting_time": "1 Action",
+        "range_area": "Self",
+        "components": [
+          "V",
+          "S"
+        ],
+        "duration": "1 Minute (Concentration)",
+        "school": "Abjuration",
+        "attack_save": "None",
+        "damage_effect": "Combat"
+      },
+      "rules_text": [
+        "Whenever a creature makes an attack roll against you before the spell ends, the attacker subtracts 1d4 from the attack roll."
+      ],
+      "set_code": "MYR",
+      "collector": "S001/999 C",
+      "author": "wschu",
+      "copyright": "© Myrdell Homebrew 2025"
+    },
+    {
+      "card_type": "spell",
+      "name": "Bless",
+      "spell": {
+        "level": "1st level",
+        "casting_time": "1 Action",
+        "range_area": "30 ft.",
+        "components": [
+          "V",
+          "S",
+          "M*"
+        ],
+        "duration": "1 Minute (Concentration)",
+        "school": "Enchantment",
+        "attack_save": "None",
+        "damage_effect": "Buff"
+      },
+      "rules_text": [
+        "You bless up to three creatures within range. Whenever a target makes an attack roll or a saving throw before the spell ends, the target adds 1d4 to the attack roll or save.",
+        "",
+        "Using a Higher-Level Spell Slot. You can target one additional creature for each spell slot level above 1."
+      ],
+      "set_code": "MYR",
+      "collector": "S001/999 C",
+      "author": "wschu",
+      "copyright": "© Myrdell Homebrew 2025"
+    },
+    {
+      "card_type": "spell",
+      "name": "Blight",
+      "spell": {
+        "level": "4th level",
+        "casting_time": "1 Action",
+        "range_area": "30 ft.",
+        "components": [
+          "V",
+          "S"
+        ],
+        "duration": "Instantaneous",
+        "school": "Necromancy",
+        "attack_save": "CON Save",
+        "damage_effect": "Necrotic"
+      },
+      "rules_text": [
+        "A creature that you can see within range makes a Constitution saving throw, taking 8d8 Necrotic damage on a failed save or half as much damage on a successful one. A Plant creature automatically fails the save.",
+        "",
+        "Alternatively, target a nonmagical plant that isn’t a creature, such as a tree or shrub. It doesn’t make a save; it simply withers and dies.",
+        "",
+        "Using a Higher-Level Spell Slot. The damage increases by 1d8 for each spell slot level above 4."
+      ],
+      "set_code": "MYR",
+      "collector": "S001/999 C",
+      "author": "wschu",
+      "copyright": "© Myrdell Homebrew 2025"
+    },
+    {
+      "card_type": "spell",
+      "name": "Blinding Smite",
+      "spell": {
+        "level": "3rd level",
+        "casting_time": "1 Bonus Action",
+        "range_area": "Self",
+        "components": [
+          "V"
+        ],
+        "duration": "1 Minute",
+        "school": "Evocation",
+        "attack_save": "CON Save",
+        "damage_effect": "Radiant"
+      },
+      "rules_text": [
+        "The target hit by the strike takes an extra 3d8 Radiant damage from the attack, and the target has the Blinded condition until the spell ends. At the end of each of its turns, the Blinded target makes a Constitution saving throw, ending the spell on itself on a success.",
+        "",
+        "Using a Higher-Level Spell Slot. The extra damage increases by 1d8 for each spell slot level above 3."
+      ],
+      "set_code": "MYR",
+      "collector": "S001/999 C",
+      "author": "wschu",
+      "copyright": "© Myrdell Homebrew 2025"
+    },
+    {
+      "card_type": "spell",
+      "name": "Blindness/Deafness",
+      "spell": {
+        "level": "2nd level",
+        "casting_time": "1 Action",
+        "range_area": "120 ft.",
+        "components": [
+          "V"
+        ],
+        "duration": "1 Minutes",
+        "school": "Transmutation",
+        "attack_save": "CON Save",
+        "damage_effect": "Blinded"
+      },
+      "rules_text": [
+        "One creature that you can see within range must succeed on a Constitution saving throw, or it has the Blinded or Deafened condition (your choice) for the duration. At the end of each of its turns, the target repeats the save, ending the spell on itself on a success.",
+        "",
+        "Using a Higher-Level Spell Slot. You can target one additional creature for each spell slot level above 2."
+      ],
+      "set_code": "MYR",
+      "collector": "S001/999 C",
+      "author": "wschu",
+      "copyright": "© Myrdell Homebrew 2025"
+    },
+    {
+      "card_type": "spell",
+      "name": "Blink",
+      "spell": {
+        "level": "3rd level",
+        "casting_time": "1 Action",
+        "range_area": "Self",
+        "components": [
+          "V",
+          "S"
+        ],
+        "duration": "1 Minute",
+        "school": "Transmutation",
+        "attack_save": "None",
+        "damage_effect": "Utility"
+      },
+      "rules_text": [
+        "Roll 1d6 at the end of each of your turns for the duration. On a roll of 4–6, you vanish from your current plane of existence and appear in the Ethereal Plane (the spell ends instantly if you are already on that plane). While on the Ethereal Plane, you can perceive the plane you left, which is cast in shades of gray, but you can’t see anything there more than 60 feet away. You can affect and be affected only by other creatures on the Ethereal Plane, and creatures on the other plane can’t perceive you unless they have a special ability that lets them perceive things on the Ethereal Plane.",
+        "",
+        "You return to the other plane at the start of your next turn and when the spell ends if you are on the Ethereal Plane. You return to an unoccupied space of your choice that you can see within 10 feet of the space you left. If no unoccupied space is available within that range, you appear in the nearest unoccupied space."
+      ],
+      "set_code": "MYR",
+      "collector": "S001/999 C",
+      "author": "wschu",
+      "copyright": "© Myrdell Homebrew 2025"
+    },
+    {
+      "card_type": "spell",
+      "name": "Blur",
+      "spell": {
+        "level": "2nd level",
+        "casting_time": "1 Action",
+        "range_area": "Self",
+        "components": [
+          "V"
+        ],
+        "duration": "1 Minute (Concentration)",
+        "school": "Illusion",
+        "attack_save": "None",
+        "damage_effect": "Warding"
+      },
+      "rules_text": [
+        "Your body becomes blurred. For the duration, any creature has Disadvantage on attack rolls against you. An attacker is immune to this effect if it perceives you with Blindsight or Truesight."
+      ],
+      "set_code": "MYR",
+      "collector": "S001/999 C",
+      "author": "wschu",
+      "copyright": "© Myrdell Homebrew 2025"
+    },
+    {
+      "card_type": "spell",
+      "name": "Branding Smite",
+      "spell": {
+        "level": "2nd level",
+        "casting_time": "1 Bonus Action",
+        "range_area": "Self",
+        "components": [
+          "V"
+        ],
+        "duration": "1 Minute (Concentration)",
+        "school": "Evocation",
+        "attack_save": "None",
+        "damage_effect": "Radiant"
+      },
+      "rules_text": [
+        "The next time you hit a creature with a weapon attack before this spell ends, the weapon gleams with astral radiance as you strike. The attack deals an extra 2d6 radiant damage to the target, which becomes visible if it is invisible, and the target sheds dim light in a 5-foot radius and can’t become invisible until the spell ends. ",
+        "",
+        "At Higher Levels. When you cast this spell using a spell slot of 3rd level or higher, the extra damage increases by 1d6 for each slot level above 2nd."
+      ],
+      "set_code": "MYR",
+      "collector": "S001/999 C",
+      "author": "wschu",
+      "copyright": "© Myrdell Homebrew 2025"
+    },
+    {
+      "card_type": "spell",
+      "name": "Burning Hands",
+      "spell": {
+        "level": "1st level",
+        "casting_time": "1 Action",
+        "range_area": "Self (15 ft. cone)",
+        "components": [
+          "V",
+          "S"
+        ],
+        "duration": "Instantaneous",
+        "school": "Evocation",
+        "attack_save": "DEX Save",
+        "damage_effect": "Fire"
+      },
+      "rules_text": [
+        "A thin sheet of flames shoots forth from you. Each creature in a 15-foot Cone makes a Dexterity saving throw, taking 3d6 Fire damage on a failed save or half as much damage on a successful one.",
+        "",
+        "Flammable objects in the Cone that aren’t being worn or carried start burning.",
+        "",
+        "Using a Higher-Level Spell Slot. The damage increases by 1d6 for each spell slot level above 1."
+      ],
+      "set_code": "MYR",
+      "collector": "S001/999 C",
+      "author": "wschu",
+      "copyright": "© Myrdell Homebrew 2025"
+    }
+  ]
+}

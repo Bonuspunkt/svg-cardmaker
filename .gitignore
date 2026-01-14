@@ -1,2 +1,4 @@
 /out_cards/**
 *.pdf
+/tmp
+
