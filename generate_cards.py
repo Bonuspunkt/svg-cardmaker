@@ -130,18 +130,20 @@ def build_spell_type_str(theme, casting_time, range, components, durations, scho
 
 
 def build_rules_str(theme, rules, flavor) -> str:
+    w_in_chars = 80
+
     (x, y, w, h) = theme["rules_rec"]
     rules_str =  f'<rect x="{x}" y="{y}" width="{w}" height="{h}" rx="10" ry="10" fill="{theme["rules_bg"]}" stroke="{theme["frame_border"]}" stroke-width="2"/>'
 
     (x, y, fs) = theme["rules_txt_rec"]
 
-    rules_lines = wrap_svg_text(rules, width_chars=58, x=x, line_height=fs)
+    rules_lines = wrap_svg_text(rules, width_chars=w_in_chars, x=x, line_height=fs)
     rules_str += f'<text x="{x}" y="{y}" font-family="{theme["font_serif"]}" font-size="{fs}" fill="{theme["rules_fg"]}">{rules_lines}</text>'
 
     (x, y, fs) = theme["flavor_txt_rec"]
     flavor_lines=""
     if flavor:
-      flavor_lines = wrap_svg_text("“" + flavor + "”", width_chars=58, x=x, line_height=fs)
+      flavor_lines = wrap_svg_text("“" + flavor + "”", width_chars=w_in_chars, x=x, line_height=fs)
     rules_str += f'<text x="{x}" y="{y}" font-family="{theme["font_serif"]}" font-size="{fs}" font-style="italic" fill="{theme["flavor_fg"]}">{flavor_lines}</text>'
     return rules_str
 
@@ -207,10 +209,10 @@ def get_theme( name, rarity, type_str) -> dict:
         "footer_fg": "#444",
         "pt_bg": "#e9e3d9",
         "pt_fg": "#111",
-        #"font_serif": "Georgia, 'Times New Roman', serif",
-        #"font_sans": "Inter, Arial, sans-serif",
-        "font_serif": "Cascadia Code",
-        "font_sans": "Cascadia Code",
+        "font_serif": "Georgia, 'Times New Roman', serif",
+        "font_sans": "Inter, Arial, sans-serif",
+        #"font_serif": "Cascadia Code",
+        #"font_sans": "Cascadia Code",
 
         "card_sz": (card_width, card_height),
         "inner_rec": (outer_padding, outer_padding, card_width - 2*outer_padding, card_height - 2*outer_padding),

@@ -18,6 +18,28 @@
       "art_path": "art/communication-stone.png",
       "price": "500 GP",
       "weight": "10 lb"
+    },
+    {
+      "name": "Personal Space",
+      "rarity": "Very Rare",
+      "type_line": "Wondrous item — (requires attunement)",
+      "rules_text": [
+        "This foldable arcane door can be unfolded and placed on a solid surface as an action. When opened, it leads to an extradimensional space bound to the door.",
+        "- The extradimensional space has a fixed size of 6 × 6 × 6 meters.",
+        "- Can only be entered or exited through this door.",
+        "- If the door gets destroyed its contents is scattered in the Astral Plane.",
+        "- Cannot be accessed by teleportation, planar travel, or similar magical effects.",
+        "- The attunement stays active as long the attuned person is alive or dismisses it.",
+        "- The attuned person grands the premission to enter the room."
+      ],
+      "flavor_text": "Some matters are best handled behind a firmly closed door.",
+      "set_code": "MYR",
+      "collector": "902/999 U",
+      "author": "wschu",
+      "copyright": "© Myrdell Homebrew 2025",
+      "art_path": "art/personal-space.png",
+      "price": "10000 GP",
+      "weight": "10 lb"
     }
   ]
 }
