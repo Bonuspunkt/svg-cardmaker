@@ -130,7 +130,7 @@ def build_spell_type_str(theme, casting_time, range, components, durations, scho
 
 
 def build_rules_str(theme, rules, flavor) -> str:
-    w_in_chars = 80
+    w_in_chars = 60
 
     (x, y, w, h) = theme["rules_rec"]
     rules_str =  f'<rect x="{x}" y="{y}" width="{w}" height="{h}" rx="10" ry="10" fill="{theme["rules_bg"]}" stroke="{theme["frame_border"]}" stroke-width="2"/>'
@@ -188,11 +188,17 @@ def get_theme( name, rarity, type_str) -> dict:
     opt_y = rules_y + rules_h + 6
     opt_h = 52
 
+    font_size_title = 32
+    font_size_rule = 24
+    font_size_footer = 11
+
     if type_str == "spell":
         type_y = inner_padding + title_h + 6
         type_h = 100
         rules_y = type_y + type_h + 6
         rules_h = 816
+
+
 
     theme = {
         "frame_bg": "#1b1b1b",
@@ -217,24 +223,24 @@ def get_theme( name, rarity, type_str) -> dict:
         "card_sz": (card_width, card_height),
         "inner_rec": (outer_padding, outer_padding, card_width - 2*outer_padding, card_height - 2*outer_padding),
         "title_rec":        (inner_padding, inner_padding, inner_width, title_h),
-        "title_txt_rec":    (               inner_padding + 18, inner_padding + title_h - 16, 24),
-        "title_rarity_rec": (card_width - 2*inner_padding - 18, inner_padding + title_h - 16, 20),
+        "title_txt_rec":    (               inner_padding + 18, inner_padding + title_h - 16, font_size_title),
+        "title_rarity_rec": (card_width - 2*inner_padding - 18, inner_padding + title_h - 16, font_size_rule),
         "art_rec": (inner_padding, art_y, inner_width, art_h),
         "type_rec": (inner_padding, type_y, inner_width, type_h),
-        "type_txt_rec": (inner_padding + 18, type_y + type_h - 18, 20),
+        "type_txt_rec": (inner_padding + 18, type_y + type_h - 18, font_size_rule),
         "rules_rec":     (inner_padding, rules_y, inner_width, rules_h),
-        "rules_txt_rec": (inner_padding + 18,           rules_y + 6 + 20, 20),
-        "flavor_txt_rec":(inner_padding + 18, rules_y + rules_h - 48, 20),
-        "footer_txt_rec_l":(               inner_padding + 11, card_height - inner_padding - 6, 11),
-        "footer_txt_rec_r":(card_width - 2*inner_padding - 11, card_height - inner_padding - 6, 11),
+        "rules_txt_rec": (inner_padding + 18,           rules_y + 6 + 20, font_size_rule),
+        "flavor_txt_rec":(inner_padding + 18, rules_y + rules_h - 48, font_size_rule),
+        "footer_txt_rec_l":(               inner_padding + 11, card_height - inner_padding - 6, font_size_footer),
+        "footer_txt_rec_r":(card_width - 2*inner_padding - 11, card_height - inner_padding - 6, font_size_footer),
         "opt_box": (inner_padding + inner_width, opt_y, 150, 54),
-        "opt_txt_rec":(inner_padding + inner_width - 75, opt_y + opt_h - 16, 20),
+        "opt_txt_rec":(inner_padding + inner_width - 75, opt_y + opt_h - 16, font_size_rule),
     }
 
     theme.update(name)
 
     if type_str == "spell":
-        theme["type_txt_rec"] = (inner_padding + 18,           type_y + 6 + 20, 20)
+        theme["type_txt_rec"] = (inner_padding + 18,           type_y + 6 + 20, 24)
 
     rarity_colors = {
     "Common":     "#B0B0B0",

@@ -28,9 +28,8 @@
         "- The extradimensional space has a fixed size of 6 × 6 × 6 meters.",
         "- Can only be entered or exited through this door.",
         "- If the door gets destroyed its contents is scattered in the Astral Plane.",
-        "- Cannot be accessed by teleportation, planar travel, or similar magical effects.",
-        "- The attunement stays active as long the attuned person is alive or dismisses it.",
-        "- The attuned person grands the premission to enter the room."
+        "- The attuned person grands the premission to enter the room.",
+        "- The attunement stays active as long the attuned person is alive or dismisses it."
       ],
       "flavor_text": "Some matters are best handled behind a firmly closed door.",
       "set_code": "MYR",
@@ -38,6 +37,25 @@
       "author": "wschu",
       "copyright": "© Myrdell Homebrew 2025",
       "art_path": "art/personal-space.png",
+      "price": "10000 GP",
+      "weight": "10 lb"
+    },
+    {
+      "name": "Harvestwarden Orb",
+      "rarity": "Very Rare",
+      "type_line": "Wondrous Item (requires attunement)",
+      "rules_text": [
+        "At dusk, you may perform a 10-minute ritual while holding this elven orb to influence the next day’s natural weather within a 6-mile radius.",
+        "Choose one: cause light to moderate rainfall, prevent rainfall, calm or moderately strengthen winds, thin or thicken cloud cover, or create or disperse natural fog.",
+        "The orb cannot create extreme or unnatural weather and only shifts existing conditions.",
+        "Once used, the orb can’t be used again until it recharges. At dawn, roll a d20. On a 19 or 20, it regains its use."
+      ],
+      "flavor_text": "The old elves did not command the sky. They asked — and the sky remembered.",
+      "set_code": "MYR",
+      "collector": "902/999 U",
+      "author": "wschu",
+      "copyright": "© Myrdell Homebrew 2025",
+      "art_path": "art/harvestwarden_orb.png",
       "price": "10000 GP",
       "weight": "10 lb"
     }
