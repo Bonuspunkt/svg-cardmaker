@@ -1,0 +1,30 @@
+{
+  "cards": [
+    {
+      "card_type": "spell",
+      "name": "Jump",
+      "spell": {
+        "level": "1st level",
+        "casting_time": "1 Bonus Action",
+        "range_area": "Touch",
+        "components": [
+          "V",
+          "S",
+          "M*"
+        ],
+        "duration": "1 Minute",
+        "school": "Transmutation",
+        "attack_save": "None",
+        "damage_effect": "Movement"
+      },
+      "rules_text": [
+        "You touch a willing creature. Once on each of its turns until the spell ends, that creature can jump up to 30 feet by spending 10 feet of movement.",
+        "Using a Higher-Level Spell Slot. You can target one additional creature for each spell slot level above 1."
+      ],
+      "set_code": "MYR",
+      "collector": "S001/999 C",
+      "author": "wschu",
+      "copyright": "© Myrdell Homebrew 2025"
+    }
+  ]
+}

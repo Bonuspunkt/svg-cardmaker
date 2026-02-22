@@ -640,6 +640,30 @@
       "collector": "S001/999 C",
       "author": "wschu",
       "copyright": "© Myrdell Homebrew 2025"
+    },
+    {
+      "card_type": "spell",
+      "name": "Absorb Elements",
+      "spell": {
+        "level": "1st level",
+        "casting_time": "1 Reaction",
+        "range_area": "Self",
+        "components": [
+          "S"
+        ],
+        "duration": "1 Round",
+        "school": "Abjuration",
+        "attack_save": "None",
+        "damage_effect": "Acid"
+      },
+      "rules_text": [
+        "The spell captures some of the incoming energy, lessening its effect on you and storing it for your next melee attack. You have resistance to the triggering damage type until the start of your next turn. Also, the first time you hit with a melee attack on your next turn, the target takes an extra 1d6 damage of the triggering type, and the spell ends.",
+        "At Higher Levels. When you cast this spell using a spell slot of 2nd level or higher, the extra damage increases by 1d6 for each slot level above 1st."
+      ],
+      "set_code": "MYR",
+      "collector": "S001/999 C",
+      "author": "wschu",
+      "copyright": "© Myrdell Homebrew 2025"
     }
   ]
 }

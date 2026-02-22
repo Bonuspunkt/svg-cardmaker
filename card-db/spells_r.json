@@ -1,0 +1,79 @@
+{
+  "cards": [
+    {
+      "card_type": "spell",
+      "name": "Ray of Frost",
+      "spell": {
+        "level": "Cantrip",
+        "casting_time": "1 Action",
+        "range_area": "60 ft.",
+        "components": [
+          "V",
+          "S"
+        ],
+        "duration": "Instantaneous",
+        "school": "Evocation",
+        "attack_save": "Ranged",
+        "damage_effect": "Cold"
+      },
+      "rules_text": [
+        "A frigid beam of blue-white light streaks toward a creature within range. Make a ranged spell attack against the target. On a hit, it takes 1d8 cold damage, and its speed is reduced by 10 feet until the start of your next turn.",
+        "The spell's damage increases by 1d8 when you reach 5th level (2d8), 11th level (3d8), and 17th level (4d8)."
+      ],
+      "set_code": "MYR",
+      "collector": "S001/999 C",
+      "author": "wschu",
+      "copyright": "© Myrdell Homebrew 2025"
+    },
+    {
+      "card_type": "spell",
+      "name": "Resistance",
+      "spell": {
+        "level": "Cantrip",
+        "casting_time": "1 Action",
+        "range_area": "Touch",
+        "components": [
+          "V",
+          "S",
+          "M*"
+        ],
+        "duration": "1 Minute",
+        "school": "Abjuration",
+        "attack_save": "None",
+        "damage_effect": "Buff"
+      },
+      "rules_text": [
+        "You touch one willing creature. Once before the spell ends, the target can roll a d4 and add the number rolled to one saving throw of its choice. It can roll the die before or after making the saving throw. The spell then ends."
+      ],
+      "set_code": "MYR",
+      "collector": "S001/999 C",
+      "author": "wschu",
+      "copyright": "© Myrdell Homebrew 2025"
+    },
+    {
+      "card_type": "spell",
+      "name": "Ray of Sickness",
+      "spell": {
+        "level": "1st level",
+        "casting_time": "1 Action",
+        "range_area": "60 ft.",
+        "components": [
+          "V",
+          "S"
+        ],
+        "duration": "Instantaneous",
+        "school": "Necromancy",
+        "attack_save": "Ranged",
+        "damage_effect": "Poison"
+      },
+      "rules_text": [
+        "You shoot a greenish ray at a creature within range. Make a ranged spell attack against the target. On a hit, the target takes 2d8 Poison damage and has the Poisoned condition until the end of your next turn.",
+        "Using a Higher-Level Spell Slot. The damage increases by 1d8 for each spell slot level above 1."
+      ],
+      "set_code": "MYR",
+      "collector": "S001/999 C",
+      "author": "wschu",
+      "copyright": "© Myrdell Homebrew 2025"
+    }
+  ]
+}

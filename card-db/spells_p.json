@@ -1,0 +1,135 @@
+{
+  "cards": [
+    {
+      "card_type": "spell",
+      "name": "Poison Spray",
+      "spell": {
+        "level": "Cantrip",
+        "casting_time": "1 Action",
+        "range_area": "10 ft.",
+        "components": [
+          "V",
+          "S"
+        ],
+        "duration": "Instantaneous",
+        "school": "Conjuration",
+        "attack_save": "CON Save",
+        "damage_effect": "Poison"
+      },
+      "rules_text": [
+        "You extend your hand toward a creature you can see within range and project a puff of noxious gas from your palm. The creature must succeed on a Constitution saving throw or take 1d12 poison damage.",
+        "This spell's damage increases by 1d12 when you reach 5th level (2d12), 11th level (3d12), and 17th level (4d12)."
+      ],
+      "set_code": "MYR",
+      "collector": "S001/999 C",
+      "author": "wschu",
+      "copyright": "© Myrdell Homebrew 2025"
+    },
+    {
+      "card_type": "spell",
+      "name": "Prestidigitation",
+      "spell": {
+        "level": "Cantrip",
+        "casting_time": "1 Action",
+        "range_area": "10 ft.",
+        "components": [
+          "V",
+          "S"
+        ],
+        "duration": "1 Hour",
+        "school": "Transmutation",
+        "attack_save": "None",
+        "damage_effect": "Utility"
+      },
+      "rules_text": [
+        "This spell is a minor magical trick that novice spellcasters use for practice. You create one of the following magical effects within range:",
+        "- You create an instantaneous, harmless sensory effect, such as a shower of sparks, a puff of wind, faint musical notes, or an odd odor.",
+        "- You instantaneously light or snuff out a candle, a torch, or a small campfire.",
+        "- You instantaneously clean or soil an object no larger than 1 cubic foot.",
+        "- You chill, warm, or flavor up to 1 cubic foot of nonliving material for 1 hour.",
+        "- You make a color, a small mark, or a symbol appear on an object or a surface for 1 hour.",
+        "- You create a nonmagical trinket or an illusory image that can fit in your hand and that lasts until the end of your next turn.",
+        "If you cast this spell multiple times, you can have up to three of its non-instantaneous effects active at a time, and you can dismiss such an effect as an action."
+      ],
+      "set_code": "MYR",
+      "collector": "S001/999 C",
+      "author": "wschu",
+      "copyright": "© Myrdell Homebrew 2025"
+    },
+    {
+      "card_type": "spell",
+      "name": "Produce Flame",
+      "spell": {
+        "level": "Cantrip",
+        "casting_time": "1 Action",
+        "range_area": "Self",
+        "components": [
+          "V",
+          "S"
+        ],
+        "duration": "10 Minutes",
+        "school": "Conjuration",
+        "attack_save": "Ranged",
+        "damage_effect": "Fire"
+      },
+      "rules_text": [
+        "A flickering flame appears in your hand. The flame remains there for the duration and harms neither you nor your equipment. The flame sheds bright light in a 10-foot radius and dim light for an additional 10 feet. The spell ends if you dismiss it as an action or if you cast it again.",
+        "You can also attack with the flame, although doing so ends the spell. When you cast this spell, or as an action on a later turn, you can hurl the flame at a creature within 30 feet of you. Make a ranged spell attack. On a hit, the target takes 1d8 fire damage.",
+        "This spell's damage increases by 1d8 when you reach 5th level (2d8), 11th level (3d8), and 17th level (4d8)."
+      ],
+      "set_code": "MYR",
+      "collector": "S001/999 C",
+      "author": "wschu",
+      "copyright": "© Myrdell Homebrew 2025"
+    },
+    {
+      "card_type": "spell",
+      "name": "Protection from Evil and Good",
+      "spell": {
+        "level": "1st",
+        "casting_time": "1 Action",
+        "range_area": "Touch",
+        "components": [
+          "V",
+          "S",
+          "M*"
+        ],
+        "duration": "10 Minutes",
+        "school": "Abjuration",
+        "attack_save": "None",
+        "damage_effect": "Buff"
+      },
+      "rules_text": [
+        "Until the spell ends, one willing creature you touch is protected against creatures that are Aberrations, Celestials, Elementals, Fey, Fiends, or Undead. The protection grants several benefits. Creatures of those types have Disadvantage on attack rolls against the target. The target also can’t be possessed by or gain the Charmed or Frightened conditions from them. If the target is already possessed, Charmed, or Frightened by such a creature, the target has Advantage on any new saving throw against the relevant effect."
+      ],
+      "set_code": "MYR",
+      "collector": "S001/999 C",
+      "author": "wschu",
+      "copyright": "© Myrdell Homebrew 2025"
+    },
+    {
+      "card_type": "spell",
+      "name": "Purify Food and Drink",
+      "spell": {
+        "level": "1st",
+        "casting_time": "1 Action (Ritual)",
+        "range_area": "10 ft. (5 ft. Sphere)",
+        "components": [
+          "V",
+          "S"
+        ],
+        "duration": "Instantaneous",
+        "school": "Transmutation",
+        "attack_save": "None",
+        "damage_effect": "Utility"
+      },
+      "rules_text": [
+        "You remove poison and rot from nonmagical food and drink in a 5-foot-radius Sphere centered on a point within range."
+      ],
+      "set_code": "MYR",
+      "collector": "S001/999 C",
+      "author": "wschu",
+      "copyright": "© Myrdell Homebrew 2025"
+    }
+  ]
+}

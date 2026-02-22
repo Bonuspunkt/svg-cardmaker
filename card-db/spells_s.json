@@ -1,0 +1,437 @@
+{
+  "cards": [
+    {
+      "card_type": "spell",
+      "name": "Sacred Flame",
+      "spell": {
+        "level": "Cantrip",
+        "casting_time": "1 Action",
+        "range_area": "60 ft.",
+        "components": [
+          "V",
+          "S"
+        ],
+        "duration": "Instantaneous",
+        "school": "Evocation",
+        "attack_save": "DEX Save",
+        "damage_effect": "Radiant"
+      },
+      "rules_text": [
+        "Flame-like radiance descends on a creature that you can see within range. The target must succeed on a Dexterity saving throw or take 1d8 radiant damage. The target gains no benefit from cover for this saving throw.",
+        "The spell's damage increases by 1d8 when you reach 5th level (2d8), 11th level (3d8), and 17th level (4d8)."
+      ],
+      "set_code": "MYR",
+      "collector": "S001/999 C",
+      "author": "wschu",
+      "copyright": "© Myrdell Homebrew 2025"
+    },
+    {
+      "card_type": "spell",
+      "name": "Shape Water",
+      "spell": {
+        "level": "Cantrip",
+        "casting_time": "1 Action",
+        "range_area": "30 ft. (5 ft. cube*)",
+        "components": [
+          "S"
+        ],
+        "duration": "Instantaneous",
+        "school": "Transmutation",
+        "attack_save": "None",
+        "damage_effect": "Control"
+      },
+      "rules_text": [
+        "You choose an area of water that you can see within range and that fits within a 5-foot cube. You manipulate it in one of the following ways:",
+        "- You instantaneously move or otherwise change the flow of the water as you direct, up to 5 feet in any direction. This movement doesn’t have enough force to cause damage.",
+        "- You cause the water to form into simple shapes and animate at your direction. This change lasts for 1 hour.",
+        "- You change the water’s color or opacity. The water must be changed in the same way throughout. This change lasts for 1 hour.",
+        "- You freeze the water, provided that there are no creatures in it. The water unfreezes in 1 hour.",
+        "If you cast this spell multiple times, you can have no more than two of its non-instantaneous effects active at a time, and you can dismiss such an effect as an action."
+      ],
+      "set_code": "MYR",
+      "collector": "S001/999 C",
+      "author": "wschu",
+      "copyright": "© Myrdell Homebrew 2025"
+    },
+    {
+      "card_type": "spell",
+      "name": "Shillelagh",
+      "spell": {
+        "level": "Cantrip",
+        "casting_time": "1 Bonus Action",
+        "range_area": "Touch",
+        "components": [
+          "V",
+          "S",
+          "M*"
+        ],
+        "duration": "1 Minute",
+        "school": "Transmutation",
+        "attack_save": "Melee",
+        "damage_effect": "Bludgeoning"
+      },
+      "rules_text": [
+        "The wood of a club or quarterstaff you are holding is imbued with nature's power. For the duration, you can use your spellcasting ability instead of Strength for the attack and damage rolls of melee attacks using that weapon, and the weapon's damage die becomes a d8. The weapon also becomes magical, if it isn't already. The spell ends if you cast it again or if you let go of the weapon."
+      ],
+      "set_code": "MYR",
+      "collector": "S001/999 C",
+      "author": "wschu",
+      "copyright": "© Myrdell Homebrew 2025"
+    },
+    {
+      "card_type": "spell",
+      "name": "Shocking Grasp",
+      "spell": {
+        "level": "Cantrip",
+        "casting_time": "1 Action",
+        "range_area": "Touch",
+        "components": [
+          "V",
+          "S"
+        ],
+        "duration": "Instantaneous",
+        "school": "Evocation",
+        "attack_save": "Melee",
+        "damage_effect": "Lightning"
+      },
+      "rules_text": [
+        "Lightning springs from your hand to deliver a shock to a creature you try to touch. Make a melee spell attack against the target. You have advantage on the attack roll if the target is wearing armor made of metal. On a hit, the target takes 1d8 lightning damage, and it can't take reactions until the start of its next turn.",
+        "The spell's damage increases by 1d8 when you reach 5th level (2d8), 11th level (3d8), and 17th level (4d8)."
+      ],
+      "set_code": "MYR",
+      "collector": "S001/999 C",
+      "author": "wschu",
+      "copyright": "© Myrdell Homebrew 2025"
+    },
+    {
+      "card_type": "spell",
+      "name": "Sorcerous Burst",
+      "spell": {
+        "level": "Cantrip",
+        "casting_time": "1 Action",
+        "range_area": "120 ft.",
+        "components": [
+          "V",
+          "S"
+        ],
+        "duration": "Instantaneous",
+        "school": "Evocation",
+        "attack_save": "Ranged",
+        "damage_effect": "Acid"
+      },
+      "rules_text": [
+        "You cast sorcerous energy at one creature or object within range. Make a ranged spell attack against the target. On a hit, the target takes 1d8 damage of a type you choose: Acid, Cold, Fire, Lightning, Poison, Psychic, or Thunder.",
+        "If you roll an 8 on a d8 for this spell, you can roll another d8, and add it to the damage. When you cast this spell, the maximum number of these d8s you can add to the spell’s damage equals your spellcasting ability modifier.",
+        "Cantrip Upgrade. The damage increases by 1d8 when you reach levels 5 (2d8), 11 (3d8), and 17 (4d8)."
+      ],
+      "set_code": "MYR",
+      "collector": "S001/999 C",
+      "author": "wschu",
+      "copyright": "© Myrdell Homebrew 2025"
+    },
+    {
+      "card_type": "spell",
+      "name": "Spare the Dying",
+      "spell": {
+        "level": "Cantrip",
+        "casting_time": "1 Action",
+        "range_area": "Touch",
+        "components": [
+          "V",
+          "S"
+        ],
+        "duration": "Instantaneous",
+        "school": "Necromancy",
+        "attack_save": "None",
+        "damage_effect": "Healing"
+      },
+      "rules_text": [
+        "You touch a living creature that has 0 hit points. The creature becomes stable. This spell has no effect on undead or constructs."
+      ],
+      "set_code": "MYR",
+      "collector": "S001/999 C",
+      "author": "wschu",
+      "copyright": "© Myrdell Homebrew 2025"
+    },
+    {
+      "card_type": "spell",
+      "name": "Starry Wisp",
+      "spell": {
+        "level": "Cantrip",
+        "casting_time": "1 Action",
+        "range_area": "60 ft.",
+        "components": [
+          "V",
+          "S"
+        ],
+        "duration": "Instantaneous",
+        "school": "Evocation",
+        "attack_save": "Ranged",
+        "damage_effect": "Radiant"
+      },
+      "rules_text": [
+        "You launch a mote of light at one creature or object within range. Make a ranged spell attack against the target. On a hit, the target takes 1d8 Radiant damage, and until the end of your next turn, it emits Dim Light in a 10-foot radius and can’t benefit from the Invisible condition.",
+        "Cantrip Upgrade. The damage increases by 1d8 when you reach levels 5 (2d8), 11 (3d8), and 17 (4d8)."
+      ],
+      "set_code": "MYR",
+      "collector": "S001/999 C",
+      "author": "wschu",
+      "copyright": "© Myrdell Homebrew 2025"
+    },
+    {
+      "card_type": "spell",
+      "name": "Sword Burst",
+      "spell": {
+        "level": "Cantrip",
+        "casting_time": "1 Action",
+        "range_area": "Self 5 ft.",
+        "components": [
+          "V"
+        ],
+        "duration": "Instantaneous",
+        "school": "Conjuration",
+        "attack_save": "DEX Save",
+        "damage_effect": "Force"
+      },
+      "rules_text": [
+        "You create a momentary circle of spectral blades that sweep around you. All other creatures within 5 feet of you must succeed on a Dexterity saving throw or take 1d6 force damage.",
+        "This spell’s damage increases by 1d6 when you reach 5th level (2d6), 11th level (3d6), and 17th level (4d6)."
+      ],
+      "set_code": "MYR",
+      "collector": "S001/999 C",
+      "author": "wschu",
+      "copyright": "© Myrdell Homebrew 2025"
+    },
+    {
+      "card_type": "spell",
+      "name": "Sanctuary",
+      "spell": {
+        "level": "1st",
+        "casting_time": "1 Bonus Action",
+        "range_area": "30 ft.",
+        "components": [
+          "V",
+          "S",
+          "M*"
+        ],
+        "duration": "1 Minute",
+        "school": "Abjuration",
+        "attack_save": "WIS Save",
+        "damage_effect": "Buff"
+      },
+      "rules_text": [
+        "You ward a creature within range. Until the spell ends, any creature who targets the warded creature with an attack roll or a damaging spell must succeed on a Wisdom saving throw or either choose a new target or lose the attack or spell. This spell doesn’t protect the warded creature from areas of effect.",
+        "The spell ends if the warded creature makes an attack roll, casts a spell, or deals damage."
+      ],
+      "set_code": "MYR",
+      "collector": "S001/999 C",
+      "author": "wschu",
+      "copyright": "© Myrdell Homebrew 2025"
+    },
+    {
+      "card_type": "spell",
+      "name": "Shield of Faith",
+      "spell": {
+        "level": "1st",
+        "casting_time": "1 Bonus Action",
+        "range_area": "60 ft.",
+        "components": [
+          "V",
+          "S",
+          "M*"
+        ],
+        "duration": "10 Minute (Concentration)",
+        "school": "Abjuration",
+        "attack_save": "None",
+        "damage_effect": "Buff"
+      },
+      "rules_text": [
+        "A shimmering field surrounds a creature of your choice within range, granting it a +2 bonus to AC for the duration."
+      ],
+      "set_code": "MYR",
+      "collector": "S001/999 C",
+      "author": "wschu",
+      "copyright": "© Myrdell Homebrew 2025"
+    },
+    {
+      "card_type": "spell",
+      "name": "Speak with Animals",
+      "spell": {
+        "level": "1st level",
+        "casting_time": "1 Action (Ritual)",
+        "range_area": "Self",
+        "components": [
+          "V",
+          "S"
+        ],
+        "duration": "10 Minutes",
+        "school": "Divination",
+        "attack_save": "None",
+        "damage_effect": "Communication"
+      },
+      "rules_text": [
+        "For the duration, you can comprehend and verbally communicate with Beasts, and you can use any of the Influence action’s skill options with them.",
+        "Most Beasts have little to say about topics that don’t pertain to survival or companionship, but at minimum, a Beast can give you information about nearby locations and monsters, including whatever it has perceived within the past day."
+      ],
+      "set_code": "MYR",
+      "collector": "S001/999 C",
+      "author": "wschu",
+      "copyright": "© Myrdell Homebrew 2025"
+    },
+    {
+      "card_type": "spell",
+      "name": "Shield",
+      "spell": {
+        "level": "1st level",
+        "casting_time": "1 Reaction",
+        "range_area": "Self",
+        "components": [
+          "V",
+          "S"
+        ],
+        "duration": "1 Round",
+        "school": "Abjuration",
+        "attack_save": "None",
+        "damage_effect": "Warding"
+      },
+      "rules_text": [
+        "An imperceptible barrier of magical force protects you. Until the start of your next turn, you have a +5 bonus to AC, including against the triggering attack, and you take no damage from Magic Missile."
+      ],
+      "set_code": "MYR",
+      "collector": "S001/999 C",
+      "author": "wschu",
+      "copyright": "© Myrdell Homebrew 2025"
+    },
+    {
+      "card_type": "spell",
+      "name": "Silent Image",
+      "spell": {
+        "level": "1st level",
+        "casting_time": "1 Action",
+        "range_area": "60 ft. (15 ft. cube)",
+        "components": [
+          "V",
+          "S",
+          "M*"
+        ],
+        "duration": "10 Minutes (Concentration)",
+        "school": "Illusion",
+        "attack_save": "None",
+        "damage_effect": "Control"
+      },
+      "rules_text": [
+        "You create the image of an object, a creature, or some other visible phenomenon that is no larger than a 15-foot Cube. The image appears at a spot within range and lasts for the duration. The image is purely visual; it isn’t accompanied by sound, smell, or other sensory effects.",
+        "As a Magic action, you can cause the image to move to any spot within range. As the image changes location, you can alter its appearance so that its movements appear natural for the image. For example, if you create an image of a creature and move it, you can alter the image so that it appears to be walking.",
+        "Physical interaction with the image reveals it to be an illusion, since things can pass through it. A creature that takes a Study action to examine the image can determine that it is an illusion with a successful Intelligence (Investigation) check against your spell save DC. If a creature discerns the illusion for what it is, the creature can see through the image."
+      ],
+      "set_code": "MYR",
+      "collector": "S001/999 C",
+      "author": "wschu",
+      "copyright": "© Myrdell Homebrew 2025"
+    },
+    {
+      "card_type": "spell",
+      "name": "Silvery Barbs",
+      "spell": {
+        "level": "1st level",
+        "casting_time": "1 Reaction",
+        "range_area": "60 ft.",
+        "components": [
+          "V"
+        ],
+        "duration": "Instantaneous",
+        "school": "Enchantment",
+        "attack_save": "None",
+        "damage_effect": "Buff"
+      },
+      "rules_text": [
+        "You magically distract the triggering creature and turn its momentary uncertainty into encouragement for another creature. The triggering creature must reroll the d20 and use the lower roll.",
+        "You can then choose a different creature you can see within range (you can choose yourself). The chosen creature has advantage on the next attack roll, ability check, or saving throw it makes within 1 minute. A creature can be empowered by only one use of this spell at a time."
+      ],
+      "set_code": "MYR",
+      "collector": "S001/999 C",
+      "author": "wschu",
+      "copyright": "© Myrdell Homebrew 2025"
+    },
+    {
+      "card_type": "spell",
+      "name": "Sleep",
+      "spell": {
+        "level": "1st level",
+        "casting_time": "1 Action",
+        "range_area": "60 ft. (5 ft. Sphere)",
+        "components": [
+          "V",
+          "S",
+          "M*"
+        ],
+        "duration": "1 Minute (Concentration)",
+        "school": "Enchantment",
+        "attack_save": "WIS Save",
+        "damage_effect": "Incapacitated"
+      },
+      "rules_text": [
+        "Each creature of your choice in a 5-foot-radius Sphere centered on a point within range must succeed on a Wisdom saving throw or have the Incapacitated condition until the end of its next turn, at which point it must repeat the save. If the target fails the second save, the target has the Unconscious condition for the duration. The spell ends on a target if it takes damage or someone within 5 feet of it takes an action to shake it out of the spell’s effect.",
+        "Creatures that don’t sleep, such as elves, or that have Immunity to the Exhaustion condition automatically succeed on saves against this spell."
+      ],
+      "set_code": "MYR",
+      "collector": "S001/999 C",
+      "author": "wschu",
+      "copyright": "© Myrdell Homebrew 2025"
+    },
+    {
+      "card_type": "spell",
+      "name": "Tasha's Hideous Laughter",
+      "spell": {
+        "level": "1st level",
+        "casting_time": "1 Action",
+        "range_area": "30 ft.",
+        "components": [
+          "V",
+          "S",
+          "M*"
+        ],
+        "duration": "1 Minute (Concentration)",
+        "school": "Enchantment",
+        "attack_save": "WIS Save",
+        "damage_effect": "Prone"
+      },
+      "rules_text": [
+        "One creature of your choice that you can see within range makes a Wisdom saving throw. On a failed save, it has the Prone and Incapacitated conditions for the duration. During that time, it laughs uncontrollably if it’s capable of laughter, and it can’t end the Prone condition on itself.",
+        "At the end of each of its turns and each time it takes damage, it makes another Wisdom saving throw. The target has Advantage on the save if the save is triggered by damage. On a successful save, the spell ends.",
+        "Using a Higher-Level Spell Slot. You can target one additional creature for each spell slot level above 1."
+      ],
+      "set_code": "MYR",
+      "collector": "S001/999 C",
+      "author": "wschu",
+      "copyright": "© Myrdell Homebrew 2025"
+    },
+    {
+      "card_type": "spell",
+      "name": "Tenser's Floating Disk",
+      "spell": {
+        "level": "1st level",
+        "casting_time": "1 Action (Ritual)",
+        "range_area": "30 ft.",
+        "components": [
+          "V",
+          "S",
+          "M*"
+        ],
+        "duration": "1 Hour",
+        "school": "Conjuration",
+        "attack_save": "None",
+        "damage_effect": "Movement"
+      },
+      "rules_text": [
+        "This spell creates a circular, horizontal plane of force, 3 feet in diameter and 1 inch thick, that floats 3 feet above the ground in an unoccupied space of your choice that you can see within range. The disk remains for the duration and can hold up to 500 pounds. If more weight is placed on it, the spell ends, and everything on the disk falls to the ground.",
+        "The disk is immobile while you are within 20 feet of it. If you move more than 20 feet away from it, the disk follows you so that it remains within 20 feet of you. It can move across uneven terrain, up or down stairs, slopes and the like, but it can’t cross an elevation change of 10 feet or more. For example, the disk can’t move across a 10-foot-deep pit, nor could it leave such a pit if it was created at the bottom.",
+        "If you move more than 100 feet from the disk (typically because it can’t move around an obstacle to follow you), the spell ends."
+      ],
+      "set_code": "MYR",
+      "collector": "S001/999 C",
+      "author": "wschu",
+      "copyright": "© Myrdell Homebrew 2025"
+    }
+  ]
+}

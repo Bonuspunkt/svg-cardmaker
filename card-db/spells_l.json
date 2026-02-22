@@ -1,0 +1,79 @@
+{
+  "cards": [
+    {
+      "card_type": "spell",
+      "name": "Light",
+      "spell": {
+        "level": "Cantrip",
+        "casting_time": "1 Action",
+        "range_area": "Touch (20ft. Sphere)",
+        "components": [
+          "V",
+          "M*"
+        ],
+        "duration": "1 Hour",
+        "school": "Evocation",
+        "attack_save": "DEX Save",
+        "damage_effect": "Creation"
+      },
+      "rules_text": [
+        "You touch one object that is no larger than 10 feet in any dimension. Until the spell ends, the object sheds bright light in a 20-foot radius and dim light for an additional 20 feet. The light can be colored as you like. Completely covering the object with something opaque blocks the light. The spell ends if you cast it again or dismiss it as an action.",
+        "If you target an object held or worn by a hostile creature, that creature must succeed on a Dexterity saving throw to avoid the spell."
+      ],
+      "set_code": "MYR",
+      "collector": "S001/999 C",
+      "author": "wschu",
+      "copyright": "© Myrdell Homebrew 2025"
+    },
+    {
+      "card_type": "spell",
+      "name": "Lightning Lure",
+      "spell": {
+        "level": "Cantrip",
+        "casting_time": "1 Action",
+        "range_area": "Self 15ft.",
+        "components": [
+          "V"
+        ],
+        "duration": "Instantaneous",
+        "school": "Evocation",
+        "attack_save": "STR Save",
+        "damage_effect": "Lightning"
+      },
+      "rules_text": [
+        "You create a lash of lightning energy that strikes at one creature of your choice that you can see within 15 feet of you. The target must succeed on a Strength saving throw or be pulled up to 10 feet in a straight line toward you and then take 1d8 lightning damage if it is within 5 feet of you.",
+        "This spell’s damage increases by 1d8 when you reach 5th level (2d8), 11th level (3d8), and 17th level (4d8)."
+      ],
+      "set_code": "MYR",
+      "collector": "S001/999 C",
+      "author": "wschu",
+      "copyright": "© Myrdell Homebrew 2025"
+    },
+    {
+      "card_type": "spell",
+      "name": "Longstrider",
+      "spell": {
+        "level": "1st level",
+        "casting_time": "1 Action",
+        "range_area": "Touch",
+        "components": [
+          "V",
+          "S",
+          "M*"
+        ],
+        "duration": "1 Hour",
+        "school": "Transmutation",
+        "attack_save": "None",
+        "damage_effect": "Buff"
+      },
+      "rules_text": [
+        "You touch a creature. The target’s Speed increases by 10 feet until the spell ends.",
+        "Using a Higher-Level Spell Slot. You can target one additional creature for each spell slot level above 1."
+      ],
+      "set_code": "MYR",
+      "collector": "S001/999 C",
+      "author": "wschu",
+      "copyright": "© Myrdell Homebrew 2025"
+    }
+  ]
+}

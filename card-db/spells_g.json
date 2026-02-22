@@ -1,0 +1,157 @@
+{
+  "cards": [
+    {
+      "card_type": "spell",
+      "name": "Green-Flame Blade",
+      "spell": {
+        "level": "Cantrip",
+        "casting_time": "1 Action",
+        "range_area": "Self (5ft. Sphere)",
+        "components": [
+          "S",
+          "M*"
+        ],
+        "duration": "Instantaneous",
+        "school": "Evocation",
+        "attack_save": "Melee",
+        "damage_effect": "Fire"
+      },
+      "rules_text": [
+        "You brandish the weapon used in the spell’s casting and make a melee attack with it against one creature within 5 feet of you. On a hit, the target suffers the weapon attack’s normal effects, and you can cause green fire to leap from the target to a different creature of your choice that you can see within 5 feet of it. The second creature takes fire damage equal to your spellcasting ability modifier.",
+        "This spell’s damage increases when you reach certain levels. At 5th level, the melee attack deals an extra 1d8 fire damage to the target on a hit, and the fire damage to the second creature increases to 1d8 + your spellcasting ability modifier. Both damage rolls increase by 1d8 at 11th level (2d8 and 2d8) and 17th level (3d8 and 3d8)."
+      ],
+      "set_code": "MYR",
+      "collector": "S001/999 C",
+      "author": "wschu",
+      "copyright": "© Myrdell Homebrew 2025"
+    },
+    {
+      "card_type": "spell",
+      "name": "Guidance",
+      "spell": {
+        "level": "Cantrip",
+        "casting_time": "1 Action",
+        "range_area": "Touch",
+        "components": [
+          "V",
+          "S"
+        ],
+        "duration": "1 Minute (Concentration)",
+        "school": "Divination",
+        "attack_save": "None",
+        "damage_effect": "Buff"
+      },
+      "rules_text": [
+        "You touch one willing creature. Once before the spell ends, the target can roll a d4 and add the number rolled to one ability check of its choice. It can roll the die before or after making the ability check. The spell then ends."
+      ],
+      "set_code": "MYR",
+      "collector": "S001/999 C",
+      "author": "wschu",
+      "copyright": "© Myrdell Homebrew 2025"
+    },
+    {
+      "card_type": "spell",
+      "name": "Gust",
+      "spell": {
+        "level": "Cantrip",
+        "casting_time": "1 Action",
+        "range_area": "30 ft.",
+        "components": [
+          "V",
+          "S"
+        ],
+        "duration": "Instantaneous",
+        "school": "Transmutation",
+        "attack_save": "STR Save",
+        "damage_effect": "Control"
+      },
+      "rules_text": [
+        "You seize the air and compel it to create one of the following effects at a point you can see within range:",
+        "- One Medium or smaller creature that you choose must succeed on a Strength saving throw or be pushed up to 5 feet away from you.",
+        "- You create a small blast of air capable of moving one object that is neither held nor carried and that weighs no more than 5 pounds. The object is pushed up to 10 feet away from you. It isn’t pushed with enough force to cause damage.",
+        "- You create a harmless sensory effect using air, such as causing leaves to rustle, wind to slam shutters shut, or your clothing to ripple in a breeze."
+      ],
+      "set_code": "MYR",
+      "collector": "S001/999 C",
+      "author": "wschu",
+      "copyright": "© Myrdell Homebrew 2025"
+    },
+    {
+      "card_type": "spell",
+      "name": "Guiding Bolt",
+      "spell": {
+        "level": "1st",
+        "casting_time": "1 Action",
+        "range_area": "120 ft.",
+        "components": [
+          "V",
+          "S"
+        ],
+        "duration": "1 Round",
+        "school": "Evocation",
+        "attack_save": "Ranged",
+        "damage_effect": "Radiant"
+      },
+      "rules_text": [
+        "You hurl a bolt of light toward a creature within range. Make a ranged spell attack against the target. On a hit, it takes 4d6 Radiant damage, and the next attack roll made against it before the end of your next turn has Advantage.",
+        "Using a Higher-Level Spell Slot. The damage increases by 1d6 for each spell slot level above 1."
+      ],
+      "set_code": "MYR",
+      "collector": "S001/999 C",
+      "author": "wschu",
+      "copyright": "© Myrdell Homebrew 2025"
+    },
+    {
+      "card_type": "spell",
+      "name": "Goodberry",
+      "spell": {
+        "level": "1st",
+        "casting_time": "1 Action",
+        "range_area": "Self",
+        "components": [
+          "V",
+          "S",
+          "M*"
+        ],
+        "duration": "24 Hour",
+        "school": "Conjuration",
+        "attack_save": "None",
+        "damage_effect": "Healing"
+      },
+      "rules_text": [
+        "Ten berries appear in your hand and are infused with magic for the duration. A creature can take a Bonus Action to eat one berry. Eating a berry restores 1 Hit Point, and the berry provides enough nourishment to sustain a creature for one day.",
+        "Uneaten berries disappear when the spell ends."
+      ],
+      "set_code": "MYR",
+      "collector": "S001/999 C",
+      "author": "wschu",
+      "copyright": "© Myrdell Homebrew 2025"
+    },
+    {
+      "card_type": "spell",
+      "name": "Grease",
+      "spell": {
+        "level": "1st level",
+        "casting_time": "1 Action",
+        "range_area": "60 ft. (10 ft. square)",
+        "components": [
+          "V",
+          "S",
+          "M*"
+        ],
+        "duration": "1 Minute",
+        "school": "Conjuration",
+        "attack_save": "DEX Save",
+        "damage_effect": "Prone"
+      },
+      "rules_text": [
+        "Nonflammable grease covers the ground in a 10-foot square centered on a point within range and turns it into Difficult Terrain for the duration.",
+        "When the grease appears, each creature standing in its area must succeed on a Dexterity saving throw or have the Prone condition. A creature that enters the area or ends its turn there must also succeed on that save or fall Prone."
+      ],
+      "set_code": "MYR",
+      "collector": "S001/999 C",
+      "author": "wschu",
+      "copyright": "© Myrdell Homebrew 2025"
+    }
+  ]
+}

@@ -1,0 +1,185 @@
+{
+  "cards": [
+    {
+      "card_type": "spell",
+      "name": "Dancing Lights",
+      "spell": {
+        "level": "Cantrip",
+        "school": "Illusion",
+        "casting_time": "1 Action",
+        "range_area": "120 ft.",
+        "components": [
+          "V",
+          "S",
+          "M*"
+        ],
+        "duration": "1 Minute (Concentration)",
+        "attack_save": "None",
+        "damage_effect": "Utility"
+      },
+      "rules_text": [
+        "You create up to four torch-sized lights within range, making them appear as torches, lanterns, or glowing orbs that hover in the air for the duration. You can also combine the four lights into one glowing vaguely humanoid form of Medium size. Whichever form you choose, each light sheds dim light in a 10-foot radius.",
+        "",
+        "As a bonus action on your turn, you can move the lights up to 60 feet to a new spot within range. A light must be within 20 feet of another light created by this spell, and a light winks out if it exceeds the spell's range."
+      ],
+      "set_code": "MYR",
+      "collector": "S001/999 C",
+      "author": "wschu",
+      "copyright": "© Myrdell Homebrew 2025"
+    },
+    {
+      "card_type": "spell",
+      "name": "Druidcraft",
+      "spell": {
+        "level": "Cantrip",
+        "school": "Transmutation",
+        "casting_time": "1 Action",
+        "range_area": "30 ft.",
+        "components": [
+          "V",
+          "S"
+        ],
+        "duration": "Instantaneous",
+        "attack_save": "None",
+        "damage_effect": "Utility"
+      },
+      "rules_text": [
+        "Whispering to the spirits of nature, you create one of the following effects within range.",
+        "- Weather Sensor. You create a Tiny, harmless sensory effect that predicts what the weather will be at your location for the next 24 hours. The effect might manifest as a golden orb for clear skies, a cloud for rain, falling snowflakes for snow, and so on. This effect persists for 1 round.",
+        "- Bloom. You instantly make a flower blossom, a seed pod open, or a leaf bud bloom.",
+        "- Sensory Effect. You create a harmless sensory effect, such as falling leaves, spectral dancing fairies, a gentle breeze, the sound of an animal, or the faint odor of skunk. The effect must fit in a 5-foot Cube.",
+        "- Fire Play. You light or snuff out a candle, a torch, or a campfire."
+      ],
+      "set_code": "MYR",
+      "collector": "S001/999 C",
+      "author": "wschu",
+      "copyright": "© Myrdell Homebrew 2025"
+    },
+    {
+      "card_type": "spell",
+      "name": "Detect Evil and Good",
+      "spell": {
+        "level": "1st",
+        "casting_time": "1 Action",
+        "range_area": "Self (30 ft. Sphere)",
+        "components": [
+          "V",
+          "S"
+        ],
+        "duration": "10 Minutes (Concentration)",
+        "school": "Divination",
+        "attack_save": "None",
+        "damage_effect": "Detection"
+      },
+      "rules_text": [
+        "For the duration, you sense the location of any Aberration, Celestial, Elemental, Fey, Fiend, or Undead within 30 feet of yourself. You also sense whether the Hallow spell is active there and, if so, where.",
+        "The spell is blocked by 1 foot of stone, dirt, or wood; 1 inch of metal; or a thin sheet of lead."
+      ],
+      "set_code": "MYR",
+      "collector": "S001/999 C",
+      "author": "wschu",
+      "copyright": "© Myrdell Homebrew 2025"
+    },
+    {
+      "card_type": "spell",
+      "name": "Detect Magic",
+      "spell": {
+        "level": "1st",
+        "casting_time": "1 Action (Ritual)",
+        "range_area": "Self (30 ft. Sphere)",
+        "components": [
+          "V",
+          "S"
+        ],
+        "duration": "10 Minutes (Concentration)",
+        "school": "Divination",
+        "attack_save": "None",
+        "damage_effect": "Detection"
+      },
+      "rules_text": [
+        "For the duration, you sense the presence of magical effects within 30 feet of yourself. If you sense such effects, you can take the Magic action to see a faint aura around any visible creature or object in the area that bears the magic, and if an effect was created by a spell, you learn the spell’s school of magic.",
+        "The spell is blocked by 1 foot of stone, dirt, or wood; 1 inch of metal; or a thin sheet of lead."
+      ],
+      "set_code": "MYR",
+      "collector": "S001/999 C",
+      "author": "wschu",
+      "copyright": "© Myrdell Homebrew 2025"
+    },
+    {
+      "card_type": "spell",
+      "name": "Detect Poison and Disease",
+      "spell": {
+        "level": "1st",
+        "casting_time": "1 Action (Ritual)",
+        "range_area": "Self (30 ft. Sphere)",
+        "components": [
+          "V",
+          "S",
+          "M*"
+        ],
+        "duration": "10 Minutes (Concentration)",
+        "school": "Divination",
+        "attack_save": "None",
+        "damage_effect": "Detection"
+      },
+      "rules_text": [
+        "For the duration, you sense the location of poisons, poisonous or venomous creatures, and magical contagions within 30 feet of yourself. You sense the kind of poison, creature, or contagion in each case.",
+        "The spell is blocked by 1 foot of stone, dirt, or wood; 1 inch of metal; or a thin sheet of lead."
+      ],
+      "set_code": "MYR",
+      "collector": "S001/999 C",
+      "author": "wschu",
+      "copyright": "© Myrdell Homebrew 2025"
+    },
+    {
+      "card_type": "spell",
+      "name": "Disguise Self",
+      "spell": {
+        "level": "1st level",
+        "casting_time": "1 Action",
+        "range_area": "Self",
+        "components": [
+          "V",
+          "S"
+        ],
+        "duration": "1 Hour",
+        "school": "Illusion",
+        "attack_save": "None",
+        "damage_effect": "Shapechanging"
+      },
+      "rules_text": [
+        "You make yourself—including your clothing, armor, weapons, and other belongings on your person—look different until the spell ends. You can seem 1 foot shorter or taller and can appear heavier or lighter. You must adopt a form that has the same basic arrangement of limbs as you have. Otherwise, the extent of the illusion is up to you.",
+        "The changes wrought by this spell fail to hold up to physical inspection. For example, if you use this spell to add a hat to your outfit, objects pass through the hat, and anyone who touches it would feel nothing.",
+        "To discern that you are disguised, a creature must take the Study action to inspect your appearance and succeed on an Intelligence (Investigation) check against your spell save DC."
+      ],
+      "set_code": "MYR",
+      "collector": "S001/999 C",
+      "author": "wschu",
+      "copyright": "© Myrdell Homebrew 2025"
+    },
+    {
+      "card_type": "spell",
+      "name": "Dissonant Whispers",
+      "spell": {
+        "level": "1st level",
+        "casting_time": "1 Action",
+        "range_area": "60 ft.",
+        "components": [
+          "V"
+        ],
+        "duration": "Instantaneous",
+        "school": "Enchantment",
+        "attack_save": "WIS Save",
+        "damage_effect": "Psychic"
+      },
+      "rules_text": [
+        "You whisper a discordant melody that only one creature of your choice within range can hear, wracking it with terrible pain. The target must make a Wisdom saving throw. On a failed save, it takes 3d6 psychic damage and must immediately use its reaction, if available, to move as far as its speed allows away from you. The creature doesn’t move into obviously dangerous ground, such as a fire or a pit. On a successful save, the target takes half as much damage and doesn’t have to move away. A deafened creature automatically succeeds on the save.",
+        "At Higher Levels. When you cast this spell using a spell slot of 2nd level or higher, the damage increases by 1d6 for each slot level above 1st."
+      ],
+      "set_code": "MYR",
+      "collector": "S001/999 C",
+      "author": "wschu",
+      "copyright": "© Myrdell Homebrew 2025"
+    }
+  ]
+}

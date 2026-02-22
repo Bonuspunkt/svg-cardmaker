@@ -194,9 +194,9 @@ def get_theme( name, rarity, type_str) -> dict:
 
     if type_str == "spell":
         type_y = inner_padding + title_h + 6
-        type_h = 100
+        type_h = 110
         rules_y = type_y + type_h + 6
-        rules_h = 816
+        rules_h = 806
 
 
 
@@ -304,7 +304,7 @@ def build_spell_card(card: dict, out_dir: Path) -> Path:
         )
 
     safe = re.sub(r"[^a-zA-Z0-9_-]+", "_", card.get("name","card")).strip("_")
-    out = out_dir / f"{safe}.svg"
+    out = out_dir / f"spell_{safe}.svg"
     out.write_text(svg, encoding="utf-8")
     return out
 

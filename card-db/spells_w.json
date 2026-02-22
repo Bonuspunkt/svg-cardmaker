@@ -1,0 +1,32 @@
+{
+  "cards": [
+    {
+      "card_type": "spell",
+      "name": "Witch Bolt",
+      "spell": {
+        "level": "Cantrip",
+        "casting_time": "1 Action",
+        "range_area": "60 ft.",
+        "components": [
+          "V",
+          "S",
+          "M*"
+        ],
+        "duration": "1 Minute (Concentration)",
+        "school": "Evocation",
+        "attack_save": "Ranged",
+        "damage_effect": "Lightning"
+      },
+      "rules_text": [
+        "A beam of crackling energy lances toward a creature within range, forming a sustained arc of lightning between you and the target. Make a ranged spell attack against it. On a hit, the target takes 2d12 Lightning damage.",
+        "On each of your subsequent turns, you can take a Bonus Action to deal 1d12 Lightning damage to the target automatically, even if the first attack missed.",
+        "The spell ends if the target is ever outside the spell’s range or if it has Total Cover from you.",
+        "Using a Higher-Level Spell Slot. The initial damage increases by 1d12 for each spell slot level above 1."
+      ],
+      "set_code": "MYR",
+      "collector": "S001/999 C",
+      "author": "wschu",
+      "copyright": "© Myrdell Homebrew 2025"
+    }
+  ]
+}

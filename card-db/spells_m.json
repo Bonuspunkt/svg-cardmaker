@@ -2,6 +2,109 @@
   "cards": [
     {
       "card_type": "spell",
+      "name": "Mage Hand",
+      "spell": {
+        "level": "Cantrip",
+        "casting_time": "1 Action",
+        "range_area": "30 ft.",
+        "components": [
+          "V",
+          "S"
+        ],
+        "duration": "1 Minute",
+        "school": "Conjuration",
+        "attack_save": "None",
+        "damage_effect": "Utility"
+      },
+      "rules_text": [
+        "A spectral, floating hand appears at a point you choose within range. The hand lasts for the duration or until you dismiss it as an action. The hand vanishes if it is ever more than 30 feet away from you or if you cast this spell again.",
+        "You can use your action to control the hand. You can use the hand to manipulate an object, open an unlocked door or container, stow or retrieve an item from an open container, or pour the contents out of a vial. You can move the hand up to 30 feet each time you use it.",
+        "The hand can't attack, activate magic items, or carry more than 10 pounds."
+      ],
+      "set_code": "MYR",
+      "collector": "S001/999 C",
+      "author": "wschu",
+      "copyright": "© Myrdell Homebrew 2025"
+    },
+    {
+      "card_type": "spell",
+      "name": "Magic Stone",
+      "spell": {
+        "level": "Cantrip",
+        "casting_time": "1 Bonus Action",
+        "range_area": "Touch",
+        "components": [
+          "V",
+          "S"
+        ],
+        "duration": "1 Minute",
+        "school": "Transmutation",
+        "attack_save": "Ranged",
+        "damage_effect": "Bludgeoning"
+      },
+      "rules_text": [
+        "You touch one to three pebbles and imbue them with magic. You or someone else can make a ranged spell attack with one of the pebbles by throwing it or hurling it with a sling. If thrown, it has a range of 60 feet. If someone else attacks with the pebble, that attacker adds your spellcasting ability modifier, not the attacker’s, to the attack roll. On a hit, the target takes bludgeoning damage equal to 1d6 + your spellcasting ability modifier. Hit or miss, the spell then ends on the stone.",
+        "If you cast this spell again, the spell ends early on any pebbles still affected by it."
+      ],
+      "set_code": "MYR",
+      "collector": "S001/999 C",
+      "author": "wschu",
+      "copyright": "© Myrdell Homebrew 2025"
+    },
+    {
+      "card_type": "spell",
+      "name": "Mending",
+      "spell": {
+        "level": "Cantrip",
+        "casting_time": "1 Minute",
+        "range_area": "Touch",
+        "components": [
+          "V",
+          "S",
+          "M*"
+        ],
+        "duration": "Instantaneous",
+        "school": "Transmutation",
+        "attack_save": "None",
+        "damage_effect": "Utility"
+      },
+      "rules_text": [
+        "This spell repairs a single break or tear in an object you touch, such as a broken chain link, two halves of a broken key, a torn cloak, or a leaking wineskin. As long as the break or tear is no larger than 1 foot in any dimension, you mend it, leaving no trace of the former damage.",
+        "This spell can physically repair a magic item or construct, but the spell can't restore magic to such an object."
+      ],
+      "set_code": "MYR",
+      "collector": "S001/999 C",
+      "author": "wschu",
+      "copyright": "© Myrdell Homebrew 2025"
+    },
+    {
+      "card_type": "spell",
+      "name": "Message",
+      "spell": {
+        "level": "Cantrip",
+        "casting_time": "1 Minute",
+        "range_area": "120 ft.",
+        "components": [
+          "V",
+          "S",
+          "M*"
+        ],
+        "duration": "1 Round",
+        "school": "Transmutation",
+        "attack_save": "None",
+        "damage_effect": "Communication"
+      },
+      "rules_text": [
+        "You point your finger toward a creature within range and whisper a message. The target (and only the target) hears the message and can reply in a whisper that only you can hear.",
+        "You can cast this spell through solid objects if you are familiar with the target and know it is beyond the barrier. Magical silence, 1 foot of stone, 1 inch of common metal, a thin sheet of lead, or 3 feet of wood blocks the spell. The spell doesn't have to follow a straight line and can travel freely around corners or through openings."
+      ],
+      "set_code": "MYR",
+      "collector": "S001/999 C",
+      "author": "wschu",
+      "copyright": "© Myrdell Homebrew 2025"
+    },
+    {
+      "card_type": "spell",
       "name": "Minor Illusion",
       "spell": {
         "level": "Cantrip",
@@ -23,6 +126,83 @@
         "- Sound: If you create a sound, its volume can range from a whisper to a scream. It can be your voice, someone else’s voice, a lion’s roar, a beating of drums, or any other sound you choose. The sound continues unabated throughout the duration, or you can make discrete sounds at different times before the spell ends.",
         "",
         "- Image: If you create an image of an object—such as a chair, muddy footprints, or a small chest—it must be no larger than a 5-foot cube. The image can’t create sound, light, smell, or any other sensory effect. Physical interaction with the image reveals it to be an illusion, since things can pass through it."
+      ],
+      "set_code": "MYR",
+      "collector": "S001/999 C",
+      "author": "wschu",
+      "copyright": "© Myrdell Homebrew 2025"
+    },
+    {
+      "card_type": "spell",
+      "name": "Mold Earth",
+      "spell": {
+        "level": "Cantrip",
+        "casting_time": "1 Action",
+        "range_area": "30 ft. (5 ft. cube*)",
+        "components": [
+          "S"
+        ],
+        "duration": "Instantaneous",
+        "school": "Transmutation",
+        "attack_save": "None",
+        "damage_effect": "Control"
+      },
+      "rules_text": [
+        "You choose a portion of dirt or stone that you can see within range and that fits within a 5-foot cube. You manipulate it in one of the following ways:",
+        "- If you target an area of loose earth, you can instantaneously excavate it, move it along the ground, and deposit it up to 5 feet away. This movement doesn’t have enough force to cause damage.",
+        "- You cause shapes, colors, or both to appear on the dirt or stone, spelling out words, creating images, or shaping patterns. The changes last for 1 hour.",
+        "- If the dirt or stone you target is on the ground, you cause it to become difficult terrain. Alternatively, you can cause the ground to become normal terrain if it is already difficult terrain. This change lasts for 1 hour.",
+        "If you cast this spell multiple times, you can have no more than two of its non-instantaneous effects active at a time, and you can dismiss such an effect as an action."
+      ],
+      "set_code": "MYR",
+      "collector": "S001/999 C",
+      "author": "wschu",
+      "copyright": "© Myrdell Homebrew 2025"
+    },
+    {
+      "card_type": "spell",
+      "name": "Mage Armor",
+      "spell": {
+        "level": "1st level",
+        "casting_time": "1 Action",
+        "range_area": "Touch",
+        "components": [
+          "V",
+          "S",
+          "M*"
+        ],
+        "duration": "8 Hours",
+        "school": "Abjuration",
+        "attack_save": "None",
+        "damage_effect": "Buff"
+      },
+      "rules_text": [
+        "You touch a willing creature who isn’t wearing armor. Until the spell ends, the target’s base AC becomes 13 plus its Dexterity modifier. The spell ends early if the target dons armor."
+      ],
+      "set_code": "MYR",
+      "collector": "S001/999 C",
+      "author": "wschu",
+      "copyright": "© Myrdell Homebrew 2025"
+    },
+    {
+      "card_type": "spell",
+      "name": "Magic Missile",
+      "spell": {
+        "level": "1st level",
+        "casting_time": "1 Action",
+        "range_area": "120 ft.",
+        "components": [
+          "V",
+          "S"
+        ],
+        "duration": "Instantaneous",
+        "school": "Evocation",
+        "attack_save": "None",
+        "damage_effect": "Force"
+      },
+      "rules_text": [
+        "You create three glowing darts of magical force. Each dart strikes a creature of your choice that you can see within range. A dart deals 1d4 + 1 Force damage to its target. The darts all strike simultaneously, and you can direct them to hit one creature or several.",
+        "Using a Higher-Level Spell Slot. The spell creates one more dart for each spell slot level above 1."
       ],
       "set_code": "MYR",
       "collector": "S001/999 C",

@@ -153,6 +153,31 @@
     },
     {
       "card_type": "spell",
+      "name": "Beast Bond",
+      "spell": {
+        "level": "1st level",
+        "casting_time": "1 Action",
+        "range_area": "Touch",
+        "components": [
+          "V",
+          "S",
+          "M*"
+        ],
+        "duration": "10 Minutes (Concentration)",
+        "school": "Divination",
+        "attack_save": "None",
+        "damage_effect": "Buff"
+      },
+      "rules_text": [
+        "You establish a telepathic link with one beast you touch that is friendly to you or charmed by you. The spell fails if the beast’s Intelligence is 4 or higher. Until the spell ends, the link is active while you and the beast are within line of sight of each other. Through the link, the beast can understand your telepathic messages to it, and it can telepathically communicate simple emotions and concepts back to you. While the link is active, the beast gains advantage on attack rolls against any creature within 5 feet of you that you can see."
+      ],
+      "set_code": "MYR",
+      "collector": "S001/999 C",
+      "author": "wschu",
+      "copyright": "© Myrdell Homebrew 2025"
+    },
+    {
+      "card_type": "spell",
       "name": "Bestow Curse",
       "spell": {
         "level": "3rd level",
@@ -419,6 +444,31 @@
       },
       "rules_text": [
         "Your body becomes blurred. For the duration, any creature has Disadvantage on attack rolls against you. An attacker is immune to this effect if it perceives you with Blindsight or Truesight."
+      ],
+      "set_code": "MYR",
+      "collector": "S001/999 C",
+      "author": "wschu",
+      "copyright": "© Myrdell Homebrew 2025"
+    },
+    {
+      "card_type": "spell",
+      "name": "Booming Blade",
+      "spell": {
+        "level": "Cantrip",
+        "casting_time": "1 Bonus Action",
+        "range_area": "Self",
+        "components": [
+          "S",
+          "M*"
+        ],
+        "duration": "1 Round",
+        "school": "Evocation",
+        "attack_save": "Melee",
+        "damage_effect": "Thunder"
+      },
+      "rules_text": [
+        "You brandish the weapon used in the spell’s casting and make a melee attack with it against one creature within 5 feet of you. On a hit, the target suffers the weapon attack’s normal effects and then becomes sheathed in booming energy until the start of your next turn. If the target willingly moves 5 feet or more before then, the target takes 1d8 thunder damage, and the spell ends.",
+        "This spell’s damage increases when you reach certain levels. At 5th level, the melee attack deals an extra 1d8 thunder damage to the target on a hit, and the damage the target takes for moving increases to 2d8. Both damage rolls increase by 1d8 at 11th level (2d8 and 3d8) and again at 17th level (3d8 and 4d8)."
       ],
       "set_code": "MYR",
       "collector": "S001/999 C",

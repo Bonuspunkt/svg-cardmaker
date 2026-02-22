@@ -1,0 +1,158 @@
+{
+  "cards": [
+    {
+      "card_type": "spell",
+      "name": "Thaumaturgy",
+      "spell": {
+        "level": "Cantrip",
+        "school": "Transmutation",
+        "casting_time": "1 Action",
+        "range_area": "30 ft.",
+        "components": [
+          "V"
+        ],
+        "duration": "1 Minute",
+        "attack_save": "None",
+        "damage_effect": "Control"
+      },
+      "rules_text": [
+        "You manifest a minor wonder within range. You create one of the effects below within range. If you cast this spell multiple times, you can have up to three of its 1-minute effects active at a time.",
+        "- Altered Eyes. You alter the appearance of your eyes for 1 minute.",
+        "- Booming Voice. Your voice booms up to three times as loud as normal for 1 minute. For the duration, you have Advantage on Charisma (Intimidation) checks.",
+        "- Fire Play. You cause flames to flicker, brighten, dim, or change color for 1 minute.",
+        "- Invisible Hand. You instantaneously cause an unlocked door or window to fly open or slam shut",
+        "- Phantom Sound. You create an instantaneous sound that originates from a point of your choice within range, such as a rumble of thunder, the cry of a raven, or ominous whispers",
+        "- Tremors. You cause harmless tremors in the ground for 1 minute."
+      ],
+      "set_code": "MYR",
+      "collector": "S001/999 C",
+      "author": "wschu",
+      "copyright": "© Myrdell Homebrew 2025"
+    },
+    {
+      "card_type": "spell",
+      "name": "Thorn Whip",
+      "spell": {
+        "level": "Cantrip",
+        "casting_time": "1 Action",
+        "range_area": "30 ft.",
+        "components": [
+          "V",
+          "S",
+          "M*"
+        ],
+        "duration": "Instantaneous",
+        "school": "Transmutation",
+        "attack_save": "Melee",
+        "damage_effect": "Piercing"
+      },
+      "rules_text": [
+        "You create a long, vine-like whip covered in thorns that lashes out at your command toward a creature in range. Make a melee spell attack against the target. If the attack hits, the creature takes 1d6 piercing damage, and if the creature is Large or smaller, you pull the creature up to 10 feet closer to you.",
+        "The spell's damage increases by 1d6 when you reach 5th level (2d6), 11th level (3d6), and 17th level (4d6)."
+      ],
+      "set_code": "MYR",
+      "collector": "S001/999 C",
+      "author": "wschu",
+      "copyright": "© Myrdell Homebrew 2025"
+    },
+    {
+      "card_type": "spell",
+      "name": "Thunderclap",
+      "spell": {
+        "level": "Cantrip",
+        "casting_time": "1 Action",
+        "range_area": "5 ft.",
+        "components": [
+          "S"
+        ],
+        "duration": "Instantaneous",
+        "school": "Evocation",
+        "attack_save": "CON Save",
+        "damage_effect": "Thunder"
+      },
+      "rules_text": [
+        "You create a burst of thunderous sound that can be heard up to 100 feet away. Each creature within range, other than you, must succeed on a Constitution saving throw or take 1d6 thunder damage.",
+        "The spell’s damage increases by 1d6 when you reach 5th level (2d6), 11th level (3d6), and 17th level (4d6)."
+      ],
+      "set_code": "MYR",
+      "collector": "S001/999 C",
+      "author": "wschu",
+      "copyright": "© Myrdell Homebrew 2025"
+    },
+    {
+      "card_type": "spell",
+      "name": "True Strike",
+      "spell": {
+        "level": "Cantrip",
+        "casting_time": "1 Action",
+        "range_area": "30 ft.",
+        "components": [
+          "S"
+        ],
+        "duration": "1 Round (Concentration)",
+        "school": "Divination",
+        "attack_save": "None",
+        "damage_effect": "Foreknowledge"
+      },
+      "rules_text": [
+        "You point a finger at a target in range. Your magic grants you a brief insight into the target's defenses. On your next turn, you gain advantage on your first attack roll against the target, provided that this spell hasn't ended."
+      ],
+      "set_code": "MYR",
+      "collector": "S001/999 C",
+      "author": "wschu",
+      "copyright": "© Myrdell Homebrew 2025"
+    },
+    {
+      "card_type": "spell",
+      "name": "Thunderwave",
+      "spell": {
+        "level": "1st level",
+        "casting_time": "1 Action",
+        "range_area": "Self (15 ft. cube)",
+        "components": [
+          "V",
+          "S"
+        ],
+        "duration": "Instantaneous",
+        "school": "Evocation",
+        "attack_save": "CON Save",
+        "damage_effect": "Thunder"
+      },
+      "rules_text": [
+        "You unleash a wave of thunderous energy. Each creature in a 15-foot Cube originating from you makes a Constitution saving throw. On a failed save, a creature takes 2d8 Thunder damage and is pushed 10 feet away from you. On a successful save, a creature takes half as much damage only.",
+        "In addition, unsecured objects that are entirely within the Cube are pushed 10 feet away from you, and a thunderous boom is audible within 300 feet.",
+        "Using a Higher-Level Spell Slot. The damage increases by 1d8 for each spell slot level above 1."
+      ],
+      "set_code": "MYR",
+      "collector": "S001/999 C",
+      "author": "wschu",
+      "copyright": "© Myrdell Homebrew 2025"
+    },
+    {
+      "card_type": "spell",
+      "name": "Tasha's Hideous Laughter",
+      "spell": {
+        "level": "1st level",
+        "casting_time": "1 Action",
+        "range_area": "30 ft.",
+        "components": [
+          "V",
+          "S",
+          "M*"
+        ],
+        "duration": "1 Minute (Concentration)",
+        "school": "Enchantment",
+        "attack_save": "WIS Save",
+        "damage_effect": "Prone"
+      },
+      "rules_text": [
+        "A creature of your choice that you can see within range perceives everything as hilariously funny and falls into fits of laughter if this spell affects it. The target must succeed on a Wisdom saving throw or fall prone, becoming incapacitated and unable to stand up for the duration. A creature with an Intelligence score of 4 or less isn’t affected.",
+        "At the end of each of its turns, and each time it takes damage, the target can make another Wisdom saving throw. The target has advantage on the saving throw if it’s triggered by damage. On a success, the spell ends."
+      ],
+      "set_code": "MYR",
+      "collector": "S001/999 C",
+      "author": "wschu",
+      "copyright": "© Myrdell Homebrew 2025"
+    }
+  ]
+}

@@ -1,0 +1,106 @@
+{
+  "cards": [
+    {
+      "card_type": "spell",
+      "name": "Inflict Wounds",
+      "spell": {
+        "level": "1st level",
+        "casting_time": "1 Action",
+        "range_area": "Touch",
+        "components": [
+          "V",
+          "S"
+        ],
+        "duration": "Instantaneous",
+        "school": "Necromancy",
+        "attack_save": "CON Save",
+        "damage_effect": "Necrotic"
+      },
+      "rules_text": [
+        "A creature you touch makes a Constitution saving throw, taking 2d10 Necrotic damage on a failed save or half as much damage on a successful one.",
+        "Using a Higher-Level Spell Slot. The damage increases by 1d10 for each spell slot level above 1."
+      ],
+      "set_code": "MYR",
+      "collector": "S001/999 C",
+      "author": "wschu",
+      "copyright": "© Myrdell Homebrew 2025"
+    },
+    {
+      "card_type": "spell",
+      "name": "Ice Knife",
+      "spell": {
+        "level": "1st level",
+        "casting_time": "1 Action",
+        "range_area": "60 ft. (5 ft. sphere)",
+        "components": [
+          "S",
+          "M*"
+        ],
+        "duration": "Instantaneous",
+        "school": "Conjuration",
+        "attack_save": "DEX Save",
+        "damage_effect": "Piercing"
+      },
+      "rules_text": [
+        "You create a shard of ice and fling it at one creature within range. Make a ranged spell attack against the target. On a hit, the target takes 1d10 piercing damage. Hit or miss, the shard then explodes. The target and each creature within 5 feet of it must succeed on a Dexterity saving throw or take 2d6 cold damage.",
+        "At Higher Levels. When you cast this spell using a spell slot of 2nd level or higher, the cold damage increases by 1d6 for each slot level above 1st."
+      ],
+      "set_code": "MYR",
+      "collector": "S001/999 C",
+      "author": "wschu",
+      "copyright": "© Myrdell Homebrew 2025"
+    },
+    {
+      "card_type": "spell",
+      "name": "Identify",
+      "spell": {
+        "level": "1st level",
+        "casting_time": "1 Minute (Ritual)",
+        "range_area": "Touch",
+        "components": [
+          "V",
+          "S",
+          "M*"
+        ],
+        "duration": "Instantaneous",
+        "school": "Divination",
+        "attack_save": "None",
+        "damage_effect": "Detection"
+      },
+      "rules_text": [
+        "You touch an object throughout the spell’s casting. If the object is a magic item or some other magical object, you learn its properties and how to use them, whether it requires Attunement, and how many charges it has, if any. You learn whether any ongoing spells are affecting the item and what they are. If the item was created by a spell, you learn that spell’s name.",
+        "If you instead touch a creature throughout the casting, you learn which ongoing spells, if any, are currently affecting it."
+      ],
+      "set_code": "MYR",
+      "collector": "S001/999 C",
+      "author": "wschu",
+      "copyright": "© Myrdell Homebrew 2025"
+    },
+    {
+      "card_type": "spell",
+      "name": "Illusory Script",
+      "spell": {
+        "level": "1st level",
+        "casting_time": "1 Minute (Ritual)",
+        "range_area": "Touch",
+        "components": [
+          "S",
+          "M*"
+        ],
+        "duration": "10 Days",
+        "school": "Illusion",
+        "attack_save": "None",
+        "damage_effect": "Communication"
+      },
+      "rules_text": [
+        "You write on parchment, paper, or another suitable material and imbue it with an illusion that lasts for the duration. To you and any creatures you designate when you cast the spell, the writing appears normal, seems to be written in your hand, and conveys whatever meaning you intended when you wrote the text. To all others, the writing appears as if it were written in an unknown or magical script that is unintelligible. Alternatively, the illusion can alter the meaning, handwriting, and language of the text, though the language must be one you know.",
+        "If the spell is dispelled, the original script and the illusion both disappear.",
+        "A creature that has Truesight can read the hidden message."
+      ],
+      "set_code": "MYR",
+      "collector": "S001/999 C",
+      "author": "wschu",
+      "copyright": "© Myrdell Homebrew 2025"
+    }
+  ]
+}
