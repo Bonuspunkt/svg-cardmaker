@@ -102,14 +102,58 @@ python generate_cards.py --input ./card-db
 #  --add "spell_Protection_from_Evil_and_Good=1" \
 #  --crop 
 
+#python collect_and_print.py \
+#  --cards "./out_cards" \
+#  --add "Cloak_of_Billowing=1" \
+#  --add "Cloak_of_Dramatic_Entrance=1" \
+#  --add "Cloak_of_Convenient_Pockets=1" \
+#  --add "Cloak_of_Minor_Applause=1" \
+#  --add "Cloak_of_Self-Cleaning=1" \
+#  --add "Cloak_of_Cat_Attraction=1" \
+#  --add "Cloak_of_Protection=1" \
+#  --add "Cloak_of_Elvenkind=1" \
+#  --add "Cloak_of_the_Manta_Ray=1" \
+#  --add "Cloak_of_Displacement=1" \
+#  --add "Cloak_of_the_Bat=1" \
+#  --add "Cloak_of_Arachnida=1" \
+#  --add "Cloak_of_the_Winter_Wolf=1" \
+#  --add "Cloak_of_Invisibility=1" \
+#  --crop 
+
+#python collect_and_print.py \
+#  --cards "./out_cards" \
+#  --add "Potion_of_Healing=9" \
+#  --crop 
+
 python collect_and_print.py \
   --cards "./out_cards" \
-  --add "spell_Minor_Illusion=1" \
-  --add "spell_Mage_Hand=1" \
-  --add "spell_Mending=1" \
-  --add "spell_Unseen_Servant=1" \
-  --add "spell_Find_Familiar=1" \
-  --add "spell_Burning_Hands=1" \
-  --add "spell_Mage_Armor=1" \
-  --add "spell_Magic_Missile=1" \
+  --add "Overripe_Goblin_Cheese=3" \
+  --add "Necklace_of_Animal_Teeth=3" \
+  --add "Pig_Talisman=3" \
+  --add "Single_Muddy_Boot=3" \
+  --add "Bent_Copper_Spoon=3" \
+  --add "Jar_of_Suspicious_Pickles=3" \
+  --add "Broken_Goblin_Arrow=3" \
+  --add "Lucky_River_Stone=3" \
+  --add "Bottle_of_Black_Sand=3" \
+  --add "Rusty_Nail_Bundle=3" \
+  --add "Mysterious_Bone_Fragment=3" \
+  --add "Tangled_Fishing_Line=3" \
+  --add "Goblin_Dice=3" \
+  --add "Bottle_of_Questionable_Perfume=3" \
+  --add "Bag_of_Beetle_Shells=3" \
+  --add "Half_Melted_Candle=3" \
+  --add "Cracked_Drinking_Horn=3" \
+  --add "Bundle_of_Old_Keys=3" \
+  --add "Jar_with_Two_Eyes=3" \
+  --add "Strange_Wooden_Idol=3" \
+  --add "Old_Map_Fragment=3" \
+  --add "Goblin_Cooking_Spoon=3" \
+  --add "Bundle_of_Feathers=3" \
+  --add "Crude_Bone_Whistle=3" \
+  --add "Small_Sack_of_Ash=3" \
+  --add "Bent_Tin_Mug=3" \
+  --add "Cracked_Glass_Lens=3" \
+  --add "Threadbare_Sock=3" \
+  --add "Tiny_Bell=3" \
   --crop 

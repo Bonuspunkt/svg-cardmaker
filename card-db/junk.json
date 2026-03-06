@@ -1,0 +1,468 @@
+{
+  "cards": [
+    {
+      "name": "Overripe Goblin Cheese",
+      "rarity": "Common",
+      "type_line": "Curiosity",
+      "rules_text": [
+        "A fist-sized lump of greenish cheese wrapped in greasy cloth. The smell is strong enough to clear a small room."
+      ],
+      "flavor_text": "A delicacy among goblins. A biological weapon to everyone else.",
+      "set_code": "MYR",
+      "collector": "600/999 C",
+      "author": "wschu",
+      "copyright": "© Myrdell Homebrew 2025",
+      "art_path": "art/overripe-goblin_cheese.png",
+      "price": "1 SP",
+      "weight": "0.5 lb"
+    },
+    {
+      "name": "Necklace of Animal Teeth",
+      "rarity": "Common",
+      "type_line": "Curiosity",
+      "rules_text": [
+        "A crude necklace made from various animal teeth tied together with leather cord."
+      ],
+      "flavor_text": "Each tooth marks a victory. Or at least a very determined scavenging session.",
+      "set_code": "MYR",
+      "collector": "601/999 C",
+      "author": "wschu",
+      "copyright": "© Myrdell Homebrew 2025",
+      "art_path": "art/neckless-of-animal-teeth.png",
+      "price": "1 SP",
+      "weight": "0.2 lb"
+    },
+    {
+      "name": "Pig Talisman",
+      "rarity": "Common",
+      "type_line": "Curiosity",
+      "rules_text": [
+        "A dried pig testicle tied to a leather string and worn as a supposed charm of luck."
+      ],
+      "flavor_text": "Farmers swear by it. The pigs strongly disagree.",
+      "set_code": "MYR",
+      "collector": "602/999 C",
+      "author": "wschu",
+      "copyright": "© Myrdell Homebrew 2025",
+      "art_path": "art/pig-talisman.png",
+      "price": "0 SP",
+      "weight": "0.1 lb"
+    },
+    {
+      "name": "Single Muddy Boot",
+      "rarity": "Common",
+      "type_line": "Curiosity",
+      "rules_text": [
+        "A worn leather boot filled with dried mud."
+      ],
+      "flavor_text": "The other boot is probably living a better life somewhere.",
+      "set_code": "MYR",
+      "collector": "603/999 C",
+      "author": "wschu",
+      "copyright": "© Myrdell Homebrew 2025",
+      "art_path": "art/single-muddy-boot.png",
+      "price": "0 SP",
+      "weight": "1 lb"
+    },
+    {
+      "name": "Bent Copper Spoon",
+      "rarity": "Common",
+      "type_line": "Curiosity",
+      "rules_text": [
+        "A badly bent spoon made of cheap copper."
+      ],
+      "flavor_text": "Either cursed or used for extremely enthusiastic soup.",
+      "set_code": "MYR",
+      "collector": "603/999 C",
+      "author": "wschu",
+      "copyright": "© Myrdell Homebrew 2025",
+      "art_path": "art/bend-copper-spoon.png",
+      "price": "0 SP",
+      "weight": "0.1 lb"
+    },
+    {
+      "name": "Jar of Suspicious Pickles",
+      "rarity": "Common",
+      "type_line": "Curiosity",
+      "rules_text": [
+        "A small glass jar containing cloudy liquid and several unidentifiable pickled objects."
+      ],
+      "flavor_text": "Nobody remembers putting them in there.",
+      "set_code": "MYR",
+      "collector": "604/999 C",
+      "author": "wschu",
+      "copyright": "© Myrdell Homebrew 2025",
+      "art_path": "art/jar-of-suspicious-pickles.png",
+      "price": "1 SP",
+      "weight": "0.5 lb"
+    },
+    {
+      "name": "Broken Goblin Arrow",
+      "rarity": "Common",
+      "type_line": "Curiosity",
+      "rules_text": [
+        "Half of a poorly crafted goblin arrow with chipped flint head."
+      ],
+      "flavor_text": "The other half probably hit something important.",
+      "set_code": "MYR",
+      "collector": "605/999 C",
+      "author": "wschu",
+      "copyright": "© Myrdell Homebrew 2025",
+      "art_path": "art/broken-goblin-arrow.png",
+      "price": "0 SP",
+      "weight": "0.1 lb"
+    },
+    {
+      "name": "Lucky River Stone",
+      "rarity": "Common",
+      "type_line": "Curiosity",
+      "rules_text": [
+        "A smooth grey stone that fits comfortably in the palm."
+      ],
+      "flavor_text": "It has brought its owner tremendous luck. Statistically speaking.",
+      "set_code": "MYR",
+      "collector": "606/999 C",
+      "author": "wschu",
+      "copyright": "© Myrdell Homebrew 2025",
+      "art_path": "art/lucky-river-stone.png",
+      "price": "1 SP",
+      "weight": "0.2 lb"
+    },
+    {
+      "name": "Bottle of Black Sand",
+      "rarity": "Common",
+      "type_line": "Curiosity",
+      "rules_text": [
+        "A small corked bottle filled with fine black sand."
+      ],
+      "flavor_text": "Nobody knows where it came from. Everyone assumes it’s haunted.",
+      "set_code": "MYR",
+      "collector": "606/999 C",
+      "author": "wschu",
+      "copyright": "© Myrdell Homebrew 2025",
+      "art_path": "art/bottle-of-black-sand.png",
+      "price": "1 SP",
+      "weight": "0.2 lb"
+    },
+    {
+      "name": "Rusty Nail Bundle",
+      "rarity": "Common",
+      "type_line": "Curiosity",
+      "rules_text": [
+        "A handful of old iron nails tied together with twine."
+      ],
+      "flavor_text": "Guaranteed to summon tetanus.",
+      "set_code": "MYR",
+      "collector": "606/999 C",
+      "author": "wschu",
+      "copyright": "© Myrdell Homebrew 2025",
+      "art_path": "art/rusty-nail-bundle.png",
+      "price": "0 SP",
+      "weight": "0.2 lb"
+    },
+    {
+      "name": "Mysterious Bone Fragment",
+      "rarity": "Common",
+      "type_line": "Curiosity",
+      "rules_text": [
+        "A polished fragment of bone from an unknown creature."
+      ],
+      "flavor_text": "Probably not cursed. Probably.",
+      "set_code": "MYR",
+      "collector": "606/999 C",
+      "author": "wschu",
+      "copyright": "© Myrdell Homebrew 2025",
+      "art_path": "art/mysterious-bone-fragment.png",
+      "price": "1 SP",
+      "weight": "0.1 lb"
+    },
+    {
+      "name": "Tangled Fishing Line",
+      "rarity": "Common",
+      "type_line": "Curiosity",
+      "rules_text": [
+        "A hopeless knot of fishing line wrapped around a wooden hook."
+      ],
+      "flavor_text": "The fish clearly won this round.",
+      "set_code": "MYR",
+      "collector": "606/999 C",
+      "author": "wschu",
+      "copyright": "© Myrdell Homebrew 2025",
+      "art_path": "art/tangled-fishing-line.png",
+      "price": "0 SP",
+      "weight": "0.1 lb"
+    },
+    {
+      "name": "Goblin Dice",
+      "rarity": "Common",
+      "type_line": "Curiosity",
+      "rules_text": [
+        "Two uneven bone dice carved by goblins."
+      ],
+      "flavor_text": "They always roll high. For goblins.",
+      "set_code": "MYR",
+      "collector": "606/999 C",
+      "author": "wschu",
+      "copyright": "© Myrdell Homebrew 2025",
+      "art_path": "art/goblin-dice.png",
+      "price": "1 SP",
+      "weight": "0.1 lb"
+    },
+    {
+      "name": "Bottle of Questionable Perfume",
+      "rarity": "Common",
+      "type_line": "Curiosity",
+      "rules_text": [
+        "A tiny vial containing strong floral perfume."
+      ],
+      "flavor_text": "One drop smells delightful. Two drops cause headaches.",
+      "set_code": "MYR",
+      "collector": "606/999 C",
+      "author": "wschu",
+      "copyright": "© Myrdell Homebrew 2025",
+      "art_path": "art/bottle-of-questionable-perfume.png",
+      "price": "1 SP",
+      "weight": "0.1 lb"
+    },
+    {
+      "name": "Bag of Beetle Shells",
+      "rarity": "Common",
+      "type_line": "Curiosity",
+      "rules_text": [
+        "A small pouch filled with shiny beetle carapaces."
+      ],
+      "flavor_text": "Fashionable somewhere, probably.",
+      "set_code": "MYR",
+      "collector": "606/999 C",
+      "author": "wschu",
+      "copyright": "© Myrdell Homebrew 2025",
+      "art_path": "art/bag-of-beetle-shells.png",
+      "price": "0 SP",
+      "weight": "0.2 lb"
+    },
+    {
+      "name": "Half Melted Candle",
+      "rarity": "Common",
+      "type_line": "Curiosity",
+      "rules_text": [
+        "A squat candle stuck to a wooden base."
+      ],
+      "flavor_text": "Burned during a very long and very boring sermon.",
+      "set_code": "MYR",
+      "collector": "606/999 C",
+      "author": "wschu",
+      "copyright": "© Myrdell Homebrew 2025",
+      "art_path": "art/half-melted-candle.png",
+      "price": "0 SP",
+      "weight": "0.2 lb"
+    },
+    {
+      "name": "Cracked Drinking Horn",
+      "rarity": "Common",
+      "type_line": "Curiosity",
+      "rules_text": [
+        "A drinking horn with a visible crack along the side."
+      ],
+      "flavor_text": "Drinks leak faster than stories.",
+      "set_code": "MYR",
+      "collector": "606/999 C",
+      "author": "wschu",
+      "copyright": "© Myrdell Homebrew 2025",
+      "art_path": "art/cracked-drinking-horn.png",
+      "price": "1 SP",
+      "weight": "0.4 lb"
+    },
+    {
+      "name": "Bundle of Old Keys",
+      "rarity": "Common",
+      "type_line": "Curiosity",
+      "rules_text": [
+        "Several mismatched iron keys tied to a ring."
+      ],
+      "flavor_text": "None of them open anything you own.",
+      "set_code": "MYR",
+      "collector": "606/999 C",
+      "author": "wschu",
+      "copyright": "© Myrdell Homebrew 2025",
+      "art_path": "art/bundle-of-old-keys.png",
+      "price": "1 SP",
+      "weight": "0.3 lb"
+    },
+    {
+      "name": "Jar with Two Eyes",
+      "rarity": "Common",
+      "type_line": "Curiosity",
+      "rules_text": [
+        "A sealed jar containing two cloudy eyeballs floating in liquid."
+      ],
+      "flavor_text": "They are definitely not looking at you.",
+      "set_code": "MYR",
+      "collector": "606/999 C",
+      "author": "wschu",
+      "copyright": "© Myrdell Homebrew 2025",
+      "art_path": "art/jar-with-two-eyes.png",
+      "price": "1 SP",
+      "weight": "0.5 lb"
+    },
+    {
+      "name": "Strange Wooden Idol",
+      "rarity": "Common",
+      "type_line": "Curiosity",
+      "rules_text": [
+        "A rough wooden carving depicting an unknown deity."
+      ],
+      "flavor_text": "The god worshipped here has not returned the call.",
+      "set_code": "MYR",
+      "collector": "606/999 C",
+      "author": "wschu",
+      "copyright": "© Myrdell Homebrew 2025",
+      "art_path": "art/strange-wooden-idol.png",
+      "price": "1 SP",
+      "weight": "0.2 lb"
+    },
+    {
+      "name": "Old Map Fragment",
+      "rarity": "Common",
+      "type_line": "Curiosity",
+      "rules_text": [
+        "A torn piece of parchment showing an unrecognizable map."
+      ],
+      "flavor_text": "Treasure may have been here once.",
+      "set_code": "MYR",
+      "collector": "606/999 C",
+      "author": "wschu",
+      "copyright": "© Myrdell Homebrew 2025",
+      "art_path": "art/old-map-fragment.png",
+      "price": "1 SP",
+      "weight": "0.1 lb"
+    },
+    {
+      "name": "Goblin Cooking Spoon",
+      "rarity": "Common",
+      "type_line": "Curiosity",
+      "rules_text": [
+        "A large wooden spoon stained with questionable ingredients."
+      ],
+      "flavor_text": "Do not ask what was cooked.",
+      "set_code": "MYR",
+      "collector": "606/999 C",
+      "author": "wschu",
+      "copyright": "© Myrdell Homebrew 2025",
+      "art_path": "art/goblin-cooking-spoon.png",
+      "price": "0 SP",
+      "weight": "0.2 lb"
+    },
+    {
+      "name": "Bundle of Feathers",
+      "rarity": "Common",
+      "type_line": "Curiosity",
+      "rules_text": [
+        "Several colorful feathers tied with string."
+      ],
+      "flavor_text": "The bird community is still filing complaints.",
+      "set_code": "MYR",
+      "collector": "606/999 C",
+      "author": "wschu",
+      "copyright": "© Myrdell Homebrew 2025",
+      "art_path": "art/bundle-of-feathers.png",
+      "price": "1 SP",
+      "weight": "0.1 lb"
+    },
+    {
+      "name": "Crude Bone Whistle",
+      "rarity": "Common",
+      "type_line": "Curiosity",
+      "rules_text": [
+        "A small whistle carved from bone."
+      ],
+      "flavor_text": "Produces a sound unpleasant to both ears and souls.",
+      "set_code": "MYR",
+      "collector": "606/999 C",
+      "author": "wschu",
+      "copyright": "© Myrdell Homebrew 2025",
+      "art_path": "art/crude-bone-whistle.png",
+      "price": "1 SP",
+      "weight": "0.1 lb"
+    },
+    {
+      "name": "Small Sack of Ash",
+      "rarity": "Common",
+      "type_line": "Curiosity",
+      "rules_text": [
+        "A cloth sack containing cold grey ash."
+      ],
+      "flavor_text": "Once something important. Probably.",
+      "set_code": "MYR",
+      "collector": "606/999 C",
+      "author": "wschu",
+      "copyright": "© Myrdell Homebrew 2025",
+      "art_path": "art/small-sack-of-ash.png",
+      "price": "0 SP",
+      "weight": "0.2 lb"
+    },
+    {
+      "name": "Bent Tin Mug",
+      "rarity": "Common",
+      "type_line": "Curiosity",
+      "rules_text": [
+        "A dented mug with a loose handle."
+      ],
+      "flavor_text": "Still perfectly capable of holding disappointment.",
+      "set_code": "MYR",
+      "collector": "606/999 C",
+      "author": "wschu",
+      "copyright": "© Myrdell Homebrew 2025",
+      "art_path": "art/bent-tin-mug.png",
+      "price": "0 SP",
+      "weight": "0.3 lb"
+    },
+    {
+      "name": "Cracked Glass Lens",
+      "rarity": "Common",
+      "type_line": "Curiosity",
+      "rules_text": [
+        "A magnifying lens with a large crack across it."
+      ],
+      "flavor_text": "Everything looks suspicious through it.",
+      "set_code": "MYR",
+      "collector": "606/999 C",
+      "author": "wschu",
+      "copyright": "© Myrdell Homebrew 2025",
+      "art_path": "art/cracked-glass-lens.png",
+      "price": "1 SP",
+      "weight": "0.1 lb"
+    },
+    {
+      "name": "Threadbare Sock",
+      "rarity": "Common",
+      "type_line": "Curiosity",
+      "rules_text": [
+        "A single wool sock full of holes."
+      ],
+      "flavor_text": "Its partner vanished years ago.",
+      "set_code": "MYR",
+      "collector": "606/999 C",
+      "author": "wschu",
+      "copyright": "© Myrdell Homebrew 2025",
+      "art_path": "art/threadbare-sock.png",
+      "price": "0 SP",
+      "weight": "0.1 lb"
+    },
+    {
+      "name": "Tiny Bell",
+      "rarity": "Common",
+      "type_line": "Curiosity",
+      "rules_text": [
+        "A small brass bell attached to a leather cord."
+      ],
+      "flavor_text": "Rings loudly at the worst possible time.",
+      "set_code": "MYR",
+      "collector": "606/999 C",
+      "author": "wschu",
+      "copyright": "© Myrdell Homebrew 2025",
+      "art_path": "art/tiny-bell.png",
+      "price": "1 SP",
+      "weight": "0.1 lb"
+    }
+  ]
+}

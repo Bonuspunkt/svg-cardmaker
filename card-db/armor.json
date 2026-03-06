@@ -1,0 +1,236 @@
+{
+  "cards": [
+    {
+      "name": "Cloak of Protection",
+      "rarity": "Uncommon",
+      "type_line": "Wondrous item (requires attunement)",
+      "rules_text": [
+        "You gain a +1 bonus to Armor Class and saving throws while you wear this cloak."
+      ],
+      "flavor_text": "Woven with subtle wards, the cloak seems to shift just enough for blades and spells to miss their mark.",
+      "set_code": "MYR",
+      "collector": "902/999 U",
+      "author": "wschu",
+      "copyright": "© Myrdell Homebrew 2025",
+      "art_path": "art/cloak-of-protection.png",
+      "price": "350 GP",
+      "weight": "1 lb"
+    },
+    {
+      "name": "Cloak of Billowing",
+      "rarity": "Common",
+      "type_line": "Wondrous item (requires attunement)",
+      "rules_text": [
+        "While wearing this cloak, you can take a Bonus Action to make it billow dramatically for 1 minute."
+      ],
+      "flavor_text": "Heroes know: half of victory is looking impressive while doing absolutely nothing.",
+      "set_code": "MYR",
+      "collector": "902/999 U",
+      "author": "wschu",
+      "copyright": "© Myrdell Homebrew 2025",
+      "art_path": "art/cloak-of-billowing.png",
+      "price": "75 GP",
+      "weight": "1 lb"
+    },
+    {
+      "name": "Cloak of Displacement",
+      "rarity": "Rare",
+      "type_line": "Wondrous item (requires attunement)",
+      "rules_text": [
+        "While you wear this cloak, it magically projects an illusion that makes you appear to be standing in a place near your actual location, causing any creature to have Disadvantage on attack rolls against you. If you take damage, the property ceases to function until the start of your next turn. This property is suppressed while your Speed is 0."
+      ],
+      "flavor_text": "The eye sees you where you are not, and strikes only empty air.",
+      "set_code": "MYR",
+      "collector": "902/999 U",
+      "author": "wschu",
+      "copyright": "© Myrdell Homebrew 2025",
+      "art_path": "art/cloak-of-displacement.png",
+      "price": "5000 GP",
+      "weight": "1 lb"
+    },
+    {
+      "name": "Cloak of Elvenkind",
+      "rarity": "Uncommon",
+      "type_line": "Wondrous item (requires attunement)",
+      "rules_text": [
+        "While you wear this cloak, Wisdom (Perception) checks made to perceive you have Disadvantage, and you have Advantage on Dexterity (Stealth) checks."
+      ],
+      "flavor_text": "Elven weavers claim the cloak does not hide you — it simply convinces the world to look elsewhere.",
+      "set_code": "MYR",
+      "collector": "905/999 U",
+      "author": "wschu",
+      "copyright": "© Myrdell Homebrew 2025",
+      "art_path": "art/cloak-of-elvenkind.png",
+      "price": "450 GP",
+      "weight": "1 lb"
+    },
+    {
+      "name": "Cloak of Invisibility",
+      "rarity": "Legendary",
+      "type_line": "Wondrous item (requires attunement)",
+      "rules_text": [
+        "This cloak has 3 charges and regains 1d3 expended charges daily at dawn. While wearing the cloak, you can take a Magic action to pull its hood over your head and expend 1 charge to give yourself the Invisible condition for 1 hour. The effect ends early if you pull the hood down (no action required) or cease wearing the cloak."
+      ],
+      "flavor_text": "Where the cloak falls, even light forgets that you were ever there.",
+      "set_code": "MYR",
+      "collector": "906/999 U",
+      "author": "wschu",
+      "copyright": "© Myrdell Homebrew 2025",
+      "art_path": "art/cloak-of-invisibility.png",
+      "price": "30000 GP",
+      "weight": "1 lb"
+    },
+    {
+      "name": "Cloak of the Bat",
+      "rarity": "Rare",
+      "type_line": "Wondrous item (requires attunement)",
+      "rules_text": [
+        "While wearing this cloak, you have Advantage on Dexterity (Stealth) checks. In an area of Dim Light or Darkness, you can grip the edges of the cloak and use it to gain a Fly Speed of 40 feet. If you ever fail to grip the cloak’s edges while flying in this way, or if you are no longer in Dim Light or Darkness, you lose this Fly Speed.",
+        "While wearing the cloak in an area of Dim Light or Darkness, you can cast Polymorph on yourself, shape-shifting into a Bat. While in that form, you retain your Intelligence, Wisdom, and Charisma scores. The cloak can’t be used this way again until the next dawn."
+      ],
+      "flavor_text": "In darkness it is a garment; in shadow it becomes a pair of waiting wings.",
+      "set_code": "MYR",
+      "collector": "907/999 U",
+      "author": "wschu",
+      "copyright": "© Myrdell Homebrew 2025",
+      "art_path": "art/cloak-of-the-bat.png",
+      "price": "6000 GP",
+      "weight": "1 lb"
+    },
+    {
+      "name": "Cloak of the Manta Ray",
+      "rarity": "Uncommon",
+      "type_line": "Wondrous item (Requires Attunement)",
+      "rules_text": [
+        "While wearing this cloak, you can breathe underwater, and you have a Swim Speed of 60 feet."
+      ],
+      "flavor_text": "Beneath the waves, it does not merely protect its wearer — it teaches them to belong.",
+      "set_code": "MYR",
+      "collector": "908/999 U",
+      "author": "wschu",
+      "copyright": "© Myrdell Homebrew 2025",
+      "art_path": "art/cloak-of-the-manta-ray.png",
+      "price": "450 GP",
+      "weight": "1 lb"
+    },
+    {
+      "name": "Cloak of Arachnida",
+      "rarity": "Very Rare",
+      "type_line": "Wondrous item (requires attunement)",
+      "rules_text": [
+        "This fine garment is made of black silk interwoven with faint, silvery threads. While wearing it, you gain the following benefits.",
+        "Poison Resistance. You have Resistance to Poison damage.",
+        "Spider Climb. You have a Climb Speed equal to your Speed and can move up, down, and across vertical surfaces and along ceilings, while leaving your hands free.",
+        "Spider Walk. You can’t be caught in webs of any sort and can move through webs as if they were Difficult Terrain.",
+        "Web. You can cast Web (save DC 13). The web created by the spell fills twice its normal area. Once used, this property can’t be used again until the next dawn."
+      ],
+      "flavor_text": "Its threads cling to stone, shadow, and prey with equal devotion.",
+      "set_code": "MYR",
+      "collector": "909/999 V",
+      "author": "wschu",
+      "copyright": "© Myrdell Homebrew 2025",
+      "art_path": "art/cloak-of-arachnida.png",
+      "price": "12000 GP",
+      "weight": "1 lb"
+    },
+    {
+      "name": "Cloak of the Winter Wolf",
+      "rarity": "Very Rare",
+      "type_line": "Wondrous item (requires attunement)",
+      "rules_text": [
+        "While wearing this frost-rimed cloak, you have Resistance to Cold damage.",
+        "You have Advantage on Wisdom (Survival) checks made in snowy, icy, or freezing environments.",
+        "The cloak has 1 charge. While wearing it, you can use an action to expend its charge and exhale freezing wind in a 15-foot cone. Each creature in that area must make a DC 15 Constitution saving throw, taking 4d8 Cold damage on a failed save, or half as much damage on a successful one. The cloak regains the expended charge daily at dawn."
+      ],
+      "flavor_text": "The air grows still, the breath turns white, and the hunt begins.",
+      "set_code": "MYR",
+      "collector": "910/999 V",
+      "author": "wschu",
+      "copyright": "© Myrdell Homebrew 2025",
+      "art_path": "art/cloak-of-the-winter-wolf.png",
+      "price": "10000 GP",
+      "weight": "2 lb"
+    },
+    {
+      "name": "Cloak of Dramatic Entrance",
+      "rarity": "Common",
+      "type_line": "Wondrous item",
+      "rules_text": [
+        "When you enter a room while wearing this cloak, you can use a Bonus Action to cause a faint gust of wind and subtle magical lighting to follow you for 6 seconds."
+      ],
+      "flavor_text": "Some heroes arrive. Others make an entrance.",
+      "set_code": "MYR",
+      "collector": "911/999 C",
+      "author": "wschu",
+      "copyright": "© Myrdell Homebrew 2025",
+      "art_path": "art/cloak-of-dramatic-entrance.png",
+      "price": "60 GP",
+      "weight": "1 lb"
+    },
+    {
+      "name": "Cloak of Convenient Pockets",
+      "rarity": "Common",
+      "type_line": "Wondrous item",
+      "rules_text": [
+        "This cloak always seems to contain one small empty pocket you did not notice before.",
+        "The pocket can hold objects no larger than a coin pouch."
+      ],
+      "flavor_text": "Where did I put that? Ah. Of course.",
+      "set_code": "MYR",
+      "collector": "912/999 C",
+      "author": "wschu",
+      "copyright": "© Myrdell Homebrew 2025",
+      "art_path": "art/cloak-of-convenient-pockets.png",
+      "price": "40 GP",
+      "weight": "1 lb"
+    },
+    {
+      "name": "Cloak of Minor Applause",
+      "rarity": "Common",
+      "type_line": "Wondrous item",
+      "rules_text": [
+        "Once per short rest, you can cause faint magical clapping to be heard around you for 3 seconds."
+      ],
+      "flavor_text": "Not thunderous applause. But applause nonetheless.",
+      "set_code": "MYR",
+      "collector": "914/999 C",
+      "author": "wschu",
+      "copyright": "© Myrdell Homebrew 2025",
+      "art_path": "art/cloak-of-minor-applause.png",
+      "price": "50 GP",
+      "weight": "1 lb"
+    },
+    {
+      "name": "Cloak of Self-Cleaning",
+      "rarity": "Common",
+      "type_line": "Wondrous item",
+      "rules_text": [
+        "Dirt, mud, and dust vanish from this cloak after 1 minute."
+      ],
+      "flavor_text": "Because heroic laundry is tedious.",
+      "set_code": "MYR",
+      "collector": "915/999 C",
+      "author": "wschu",
+      "copyright": "© Myrdell Homebrew 2025",
+      "art_path": "art/cloak-of-self-cleaning.png",
+      "price": "25 GP",
+      "weight": "1 lb"
+    },
+    {
+      "name": "Cloak of Cat Attraction",
+      "rarity": "Common",
+      "type_line": "Wondrous item",
+      "rules_text": [
+        "Cats within 30 feet occasionally feel the urge to sit on this cloak."
+      ],
+      "flavor_text": "No one knows why. The cats certainly won't explain.",
+      "set_code": "MYR",
+      "collector": "916/999 C",
+      "author": "wschu",
+      "copyright": "© Myrdell Homebrew 2025",
+      "art_path": "art/cloak-of-cat-attraction.png",
+      "price": "20 GP",
+      "weight": "1 lb"
+    }
+  ]
+}
