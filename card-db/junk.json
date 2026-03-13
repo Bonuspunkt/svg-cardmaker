@@ -251,7 +251,7 @@
       "set_code": "MYR",
       "collector": "606/999 C",
       "author": "wschu",
-      "copyright": "© Myrdell Homebrew 2025",
+      "copyright": "© M yrdell Homebrew 2025",
       "art_path": "art/half-melted-candle.png",
       "price": "0 SP",
       "weight": "0.2 lb"
@@ -463,6 +463,22 @@
       "art_path": "art/tiny-bell.png",
       "price": "1 SP",
       "weight": "0.1 lb"
+    },
+    {
+      "name": "Cow Skull Salad Bowl",
+      "rarity": "Common",
+      "type_line": "Curiosity",
+      "rules_text": [
+        "A crude salad bowl made from a cleaned cow skull. The upper cranium has been hollowed out to hold food, while the horns are wrapped with frayed rope for grip."
+      ],
+      "flavor_text": "Rustic dining, if your definition of rustic includes staring into empty eye sockets.",
+      "set_code": "MYR",
+      "collector": "951/999 C",
+      "author": "wschu",
+      "copyright": "© Myrdell Homebrew 2025",
+      "art_path": "art/cow-skull-salad-bowl.png",
+      "price": "1 SP",
+      "weight": "3 lb"
     }
   ]
 }

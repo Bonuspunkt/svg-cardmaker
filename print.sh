@@ -156,4 +156,5 @@ python collect_and_print.py \
   --add "Cracked_Glass_Lens=3" \
   --add "Threadbare_Sock=3" \
   --add "Tiny_Bell=3" \
+  --add "Cow_Skull_Salad_Bowl=3" \
   --crop 
