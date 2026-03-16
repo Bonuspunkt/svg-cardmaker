@@ -127,34 +127,21 @@ python generate_cards.py --input ./card-db
 
 python collect_and_print.py \
   --cards "./out_cards" \
-  --add "Overripe_Goblin_Cheese=3" \
-  --add "Necklace_of_Animal_Teeth=3" \
-  --add "Pig_Talisman=3" \
-  --add "Single_Muddy_Boot=3" \
-  --add "Bent_Copper_Spoon=3" \
-  --add "Jar_of_Suspicious_Pickles=3" \
-  --add "Broken_Goblin_Arrow=3" \
-  --add "Lucky_River_Stone=3" \
-  --add "Bottle_of_Black_Sand=3" \
-  --add "Rusty_Nail_Bundle=3" \
-  --add "Mysterious_Bone_Fragment=3" \
-  --add "Tangled_Fishing_Line=3" \
-  --add "Goblin_Dice=3" \
-  --add "Bottle_of_Questionable_Perfume=3" \
-  --add "Bag_of_Beetle_Shells=3" \
-  --add "Half_Melted_Candle=3" \
-  --add "Cracked_Drinking_Horn=3" \
-  --add "Bundle_of_Old_Keys=3" \
-  --add "Jar_with_Two_Eyes=3" \
-  --add "Strange_Wooden_Idol=3" \
-  --add "Old_Map_Fragment=3" \
-  --add "Goblin_Cooking_Spoon=3" \
-  --add "Bundle_of_Feathers=3" \
-  --add "Crude_Bone_Whistle=3" \
-  --add "Small_Sack_of_Ash=3" \
-  --add "Bent_Tin_Mug=3" \
-  --add "Cracked_Glass_Lens=3" \
-  --add "Threadbare_Sock=3" \
-  --add "Tiny_Bell=3" \
-  --add "Cow_Skull_Salad_Bowl=3" \
+  --add "Potion_of_Healing=3" \
+  --add "Potion_of_Greater_Healing=3" \
+  --add "Potion_of_Superior_Healing=3" \
+  --add "Potion_of_Supreme_Healing=3" \
+  --add "Potion_of_Climbing=3" \
+  --add "Potion_of_Growth=3" \
+  --add "Potion_of_Invisibility=3" \
+  --add "Potion_of_Invulnerability=3" \
+  --add "Potion_of_Water_Breathing=3" \
+  --add "Potion_of_Vitality=3" \
+  --add "Potion_of_Speed=3" \
+  --add "Potion_of_Flying=3" \
+  --add "Potion_of_Heroism=3" \
+  --add "Potion_of_Fire_Breath=3" \
+  --add "Cloak_of_Cat_Attraction=1" \
+  --add "Cloak_of_Billowing=1" \
+  --add "Cloak_of_Dramatic_Entrance=1" \
   --crop 

@@ -4,7 +4,9 @@
       "name": "Potion of Healing",
       "rarity": "Common",
       "type_line": "Item \u2014 Consumable (potion)",
-      "rules_text": ["A character who drinks the magical red fluid in this vial regains 2d4 + 2 hit points. Drinking or administering a potion takes an action."],
+      "rules_text": [
+        "A character who drinks the magical red fluid in this vial regains 2d4 + 2 hit points. Drinking or administering a potion takes an action."
+      ],
       "flavor_text": "Destilliertes Leben, gebunden an Erinnerung und Gebet - wer trinkt, vergisst für einen Herzschlag den Tod.",
       "set_code": "MYR",
       "collector": "001/999 U",
@@ -19,7 +21,9 @@
       "name": "Potion of Greater Healing",
       "rarity": "Uncommon",
       "type_line": "Item \u2014 Consumable (potion)",
-      "rules_text": ["A character who drinks the magical red fluid in this vial regains 4d4 + 4 hit points. Drinking or administering a potion takes an action."],
+      "rules_text": [
+        "A character who drinks the magical red fluid in this vial regains 4d4 + 4 hit points. Drinking or administering a potion takes an action."
+      ],
       "flavor_text": "Aus den Tiefen der Schleieradern gewonnen, fließt in ihr nicht nur Leben - sondern der Wille, zu bestehen.",
       "set_code": "MYR",
       "collector": "002/999 U",
@@ -34,7 +38,9 @@
       "name": "Potion of Superior Healing",
       "rarity": "Rare",
       "type_line": "Item \u2014 Consumable (potion)",
-      "rules_text": ["A character who drinks the magical red fluid in this vial regains 8d4 + 8 hit points. Drinking or administering a potion takes an action."],
+      "rules_text": [
+        "A character who drinks the magical red fluid in this vial regains 8d4 + 8 hit points. Drinking or administering a potion takes an action."
+      ],
       "flavor_text": "Jeder Tropfen trägt das Echo uralter Zauber - vergossenes Blut, neu gewebt in Licht.",
       "set_code": "MYR",
       "collector": "003/999 U",
@@ -49,7 +55,9 @@
       "name": "Potion of Supreme Healing",
       "rarity": "Very Rare",
       "type_line": "Item \u2014 Consumable (potion)",
-      "rules_text": ["A character who drinks the magical red fluid in this vial regains 10d4 + 20 hit points. Drinking or administering a potion takes an action."],
+      "rules_text": [
+        "A character who drinks the magical red fluid in this vial regains 10d4 + 20 hit points. Drinking or administering a potion takes an action."
+      ],
       "flavor_text": "Nur einmal wagte ein Magier, sie zu brauen - und seitdem spricht niemand mehr von seinem Tod, nur von seinem Werk.",
       "set_code": "MYR",
       "collector": "004/999 U",
@@ -58,6 +66,168 @@
       "art_path": "art/potion-of-supreme-healing.png",
       "pt": "10d4+20",
       "price": "8500 GP",
+      "weight": "1/2 lb"
+    },
+    {
+      "name": "Potion of Climbing",
+      "rarity": "Common",
+      "type_line": "Item \u2014 Consumable (potion)",
+      "rules_text": [
+        "When you drink this potion, you gain a Climb Speed equal to your Speed for 1 hour. During this time, you have Advantage on Strength (Athletics) checks to climb.",
+        "This potion is separated into brown, silver, and gray layers resembling bands of stone. Shaking the bottle fails to mix the colors."
+      ],
+      "flavor_text": "Most climbers use rope. The clever ones use this.",
+      "set_code": "MYR",
+      "collector": "004/999 U",
+      "author": "wschu",
+      "copyright": "\u00a9 Myrdell Homebrew 2025",
+      "art_path": "art/potion-of-climbing.png",
+      "price": "75 GP",
+      "weight": "1/2 lb"
+    },
+    {
+      "name": "Potion of Growth",
+      "rarity": "Uncommon",
+      "type_line": "Item \u2014 Consumable (potion)",
+      "rules_text": [
+        "When you drink this potion, you gain the “enlarge” effect of the enlarge/reduce spell for 1d4 hours (no concentration required). The red in the potion’s liquid continuously expands from a tiny bead to color the clear liquid around it and then contracts. Shaking the bottle fails to interrupt this process."
+      ],
+      "flavor_text": "Some problems require subtlety. Others require becoming twice your size.",
+      "set_code": "MYR",
+      "collector": "004/999 U",
+      "author": "wschu",
+      "copyright": "\u00a9 Myrdell Homebrew 2025",
+      "art_path": "art/potion-of-growth.png",
+      "price": "250 GP",
+      "weight": "1/2 lb"
+    },
+    {
+      "name": "Potion of Invisibility",
+      "rarity": "Very Rare",
+      "type_line": "Item \u2014 Consumable (potion)",
+      "rules_text": [
+        "This potion’s container looks empty but feels as though it holds liquid. When you drink it, you become invisible for 1 hour. Anything you wear or carry is invisible with you. The effect ends early if you attack or cast a spell."
+      ],
+      "flavor_text": "It looks empty. That’s the point.",
+      "set_code": "MYR",
+      "collector": "004/999 U",
+      "author": "wschu",
+      "copyright": "\u00a9 Myrdell Homebrew 2025",
+      "art_path": "art/potion-of-invisibility.png",
+      "price": "6000 GP",
+      "weight": "1/2 lb"
+    },
+    {
+      "name": "Potion of Invulnerability",
+      "rarity": "Rare",
+      "type_line": "Item \u2014 Consumable (potion)",
+      "rules_text": [
+        "For 1 minute after you drink this potion, you have resistance to all damage. The potion’s syrupy liquid looks like liquified iron."
+      ],
+      "flavor_text": "For a moment, steel and flesh are the same.",
+      "set_code": "MYR",
+      "collector": "004/999 U",
+      "author": "wschu",
+      "copyright": "\u00a9 Myrdell Homebrew 2025",
+      "art_path": "art/potion-of-invulnerability.png",
+      "price": "1800 GP",
+      "weight": "1/2 lb"
+    },
+    {
+      "name": "Potion of Water Breathing",
+      "rarity": "Uncommon",
+      "type_line": "Item \u2014 Consumable (potion)",
+      "rules_text": [
+        "You can breathe underwater for 1 hour after drinking this potion. Its cloudy green fluid smells of the sea and has a jellyfish-like bubble floating in it."
+      ],
+      "flavor_text": "Drink deep. The ocean will welcome you.",
+      "set_code": "MYR",
+      "collector": "004/999 U",
+      "author": "wschu",
+      "copyright": "\u00a9 Myrdell Homebrew 2025",
+      "art_path": "art/potion-of-water-breathing.png",
+      "price": "180 GP",
+      "weight": "1/2 lb"
+    },
+    {
+      "name": "Potion of Vitality",
+      "rarity": "Very Rare",
+      "type_line": "Item \u2014 Consumable (potion)",
+      "rules_text": [
+        "When you drink this potion, it removes any exhaustion you are suffering and cures any disease or poison affecting you. For the next 24 hours, you regain the maximum number of hit points for any Hit Die you spend. The potion’s crimson liquid regularly pulses with dull light, calling to mind a heartbeat"
+      ],
+      "flavor_text": "Drink, and feel your heart remember its strength.",
+      "set_code": "MYR",
+      "collector": "004/999 U",
+      "author": "wschu",
+      "copyright": "\u00a9 Myrdell Homebrew 2025",
+      "art_path": "art/potion-of-vitality.png",
+      "price": "9000 GP",
+      "weight": "1/2 lb"
+    },
+    {
+      "name": "Potion of Speed",
+      "rarity": "Very Rare",
+      "type_line": "Item \u2014 Consumable (potion)",
+      "rules_text": [
+        "When you drink this potion, you gain the effect of the haste spell for 1 minute (no concentration required). The potion’s yellow fluid is streaked with black and swirls on its own."
+      ],
+      "flavor_text": "For a minute, the world moves far too slowly.",
+      "set_code": "MYR",
+      "collector": "004/999 U",
+      "author": "wschu",
+      "copyright": "\u00a9 Myrdell Homebrew 2025",
+      "art_path": "art/potion-of-speed.png",
+      "price": "9000 GP",
+      "weight": "1/2 lb"
+    },
+    {
+      "name": "Potion of Flying",
+      "rarity": "Very Rare",
+      "type_line": "Item \u2014 Consumable (potion)",
+      "rules_text": [
+        "When you drink this potion, you gain a flying speed equal to your walking speed for 1 hour and can hover. If you’re in the air when the potion wears off, you fall unless you have some other means of staying aloft. This potion’s clear liquid floats at the top of its container and has cloudy white impurities drifting in it."
+      ],
+      "flavor_text": "For a while, gravity forgets you.",
+      "set_code": "MYR",
+      "collector": "004/999 U",
+      "author": "wschu",
+      "copyright": "\u00a9 Myrdell Homebrew 2025",
+      "art_path": "art/potion-of-flying.png",
+      "price": "6000 GP",
+      "weight": "1/2 lb"
+    },
+    {
+      "name": "Potion of Heroism",
+      "rarity": "Rare",
+      "type_line": "Item \u2014 Consumable (potion)",
+      "rules_text": [
+        "For 1 hour after drinking it, you gain 10 temporary hit points that last for 1 hour. For the same duration, you are under the effect of the bless spell (no concentration required). This blue potion bubbles and steams as if boiling."
+      ],
+      "flavor_text": "Drink, and feel legends stirring in your blood.",
+      "set_code": "MYR",
+      "collector": "004/999 U",
+      "author": "wschu",
+      "copyright": "\u00a9 Myrdell Homebrew 2025",
+      "art_path": "art/potion-of-heroism.png",
+      "price": "1500 GP",
+      "weight": "1/2 lb"
+    },
+    {
+      "name": "Potion of Fire Breath",
+      "rarity": "Uncommon",
+      "type_line": "Item \u2014 Consumable (potion)",
+      "rules_text": [
+        "After drinking this potion, you can use a bonus action to exhale fire at a target within 30 feet of you. The target must make a DC 13 Dexterity saving throw, taking 4d6 fire damage on a failed save, or half as much damage on a successful one. The effect ends after you exhale the fire three times or when 1 hour has passed.",
+        "This potion’s orange liquid flickers, and smoke fills the top of the container and wafts out whenever it is opened."
+      ],
+      "flavor_text": "Careful. Dragons started this way.",
+      "set_code": "MYR",
+      "collector": "004/999 U",
+      "author": "wschu",
+      "copyright": "\u00a9 Myrdell Homebrew 2025",
+      "art_path": "art/potion-of-fire-breath.png",
+      "price": "350 GP",
       "weight": "1/2 lb"
     }
   ]
