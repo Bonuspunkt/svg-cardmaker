@@ -125,21 +125,31 @@ python generate_cards.py --input ./card-db
 #  --add "Potion_of_Healing=9" \
 #  --crop 
 
+# python collect_and_print.py \
+#   --cards "./out_cards" \
+#   --add "Potion_of_Healing=6" \
+#   --add "Potion_of_Greater_Healing=6" \
+#   --add "Potion_of_Climbing=3" \
+#   --add "Potion_of_Growth=3" \
+#   --add "Potion_of_Invisibility=3" \
+#   --add "Potion_of_Invulnerability=3" \
+#   --add "Potion_of_Water_Breathing=3" \
+#   --add "Potion_of_Vitality=3" \
+#   --add "Potion_of_Speed=3" \
+#   --add "Potion_of_Flying=3" \
+#   --add "Potion_of_Heroism=3" \
+#   --add "Potion_of_Fire_Breath=3" \
+#   --add "Cloak_of_Cat_Attraction=1" \
+#   --add "Cloak_of_Billowing=1" \
+#   --add "Cloak_of_Dramatic_Entrance=1" \
+#   --crop 
+
 python collect_and_print.py \
   --cards "./out_cards" \
+  --add "Longsword_1=3" \
   --add "Potion_of_Healing=6" \
-  --add "Potion_of_Greater_Healing=6" \
-  --add "Potion_of_Climbing=3" \
-  --add "Potion_of_Growth=3" \
-  --add "Potion_of_Invisibility=3" \
-  --add "Potion_of_Invulnerability=3" \
-  --add "Potion_of_Water_Breathing=3" \
-  --add "Potion_of_Vitality=3" \
-  --add "Potion_of_Speed=3" \
-  --add "Potion_of_Flying=3" \
-  --add "Potion_of_Heroism=3" \
-  --add "Potion_of_Fire_Breath=3" \
-  --add "Cloak_of_Cat_Attraction=1" \
-  --add "Cloak_of_Billowing=1" \
-  --add "Cloak_of_Dramatic_Entrance=1" \
+  --add "Potion_of_Greater_Healing=3" \
+  --add "Potion_of_Superior_Healing=3" \
+  --add "Potion_of_Supreme_Healing=3" \
   --crop 
+

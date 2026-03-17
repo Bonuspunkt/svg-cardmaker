@@ -1,0 +1,62 @@
+{
+  "cards": [
+    {
+      "name": "Staff of Defense",
+      "rarity": "Rare",
+      "type_line": "Item — Staff (requires attunement by B, S, WA or W)",
+      "rules_text": [
+        "This staff has 10 charges.",
+        "While holding it, you can use an action to expend 1 charge to cast Mage Armor on yourself.",
+        "When you are hit by an attack, you can use your reaction to expend 2 charges to cast Shield.",
+        "The staff regains 1d6 + 4 expended charges daily at dawn. If you expend the last charge, roll a d20. On a 1, the staff crumbles to dust."
+      ],
+      "flavor_text": "A quiet hum runs through the wood, as if invisible wards wait to awaken.",
+      "set_code": "MYR",
+      "collector": "005/999 R",
+      "author": "wschu",
+      "copyright": "© Myrdell Homebrew 2025",
+      "art_path": "art/staff-of-defense.png",
+      "price": "3500 GP",
+      "weight": "4 lb"
+    },
+    {
+      "name": "Staff of Charming",
+      "rarity": "Rare",
+      "type_line": "Item — Staff (requires attunement by B, C, D, S, WA or W)",
+      "rules_text": [
+        "This staff has 10 charges and can be used as a magic quarterstaff.",
+        "While holding it, you can use an action to expend 1 charge to cast charm person, command, or comprehend languages using your spell save DC.",
+        "If you fail a saving throw against an enchantment spell that targets only you, you can turn the failure into a success. Once used, this property can't be used again until the next dawn.",
+        "If you succeed on such a saving throw, you can use your reaction and expend 1 charge to reflect the spell back at its caster as if you had cast it.",
+        "The staff regains 1d8 + 2 expended charges daily at dawn. If the last charge is used, roll a d20. On a 1, the staff becomes a nonmagical quarterstaff."
+      ],
+      "flavor_text": "The staff does not force obedience — it simply reminds minds how pleasant agreement can be.",
+      "set_code": "MYR",
+      "collector": "006/999 R",
+      "author": "wschu",
+      "copyright": "© Myrdell Homebrew 2025",
+      "art_path": "art/staff-of-charming.png",
+      "price": "4000 GP",
+      "weight": "4 lb"
+    },
+    {
+      "name": "Staff of Fire",
+      "rarity": "Very Rare",
+      "type_line": "Item — Staff (requires attunement by D, S, WA or W)",
+      "rules_text": [
+        "While holding this staff, you have resistance to fire damage.",
+        "The staff has 10 charges. While holding it, you can use an action to expend charges to cast one of the following spells using your spell save DC: burning hands (1 charge), fireball (3 charges), or wall of fire (4 charges).",
+        "The staff regains 1d6 + 4 expended charges daily at dawn.",
+        "If you expend the last charge, roll a d20. On a 1, the staff blackens, crumbles into cinders, and is destroyed."
+      ],
+      "flavor_text": "Within the staff sleeps a patient inferno, waiting only for a will strong enough to awaken it.",
+      "set_code": "MYR",
+      "collector": "007/999 V",
+      "author": "wschu",
+      "copyright": "© Myrdell Homebrew 2025",
+      "art_path": "art/staff-of-fire.png",
+      "price": "12000 GP",
+      "weight": "4 lb"
+    }
+  ]
+}

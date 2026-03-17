@@ -128,7 +128,8 @@
       "name": "Mace",
       "rarity": "Common",
       "type_line": "Item \u2014 Simple Melee Weapon",
-      "rules_text": ["Proficiency with a Mace allows you to add your proficiency bonus to the attack roll for any attack you make with it.",
+      "rules_text": [
+        "Proficiency with a Mace allows you to add your proficiency bonus to the attack roll for any attack you make with it.",
         "",
         " • Damage: 1d6 Bludgeoning"
       ],
@@ -146,7 +147,8 @@
       "name": "Quarterstaff",
       "rarity": "Common",
       "type_line": "Item \u2014 Simple Melee Weapon",
-      "rules_text": ["Proficiency with a Quarterstaff allows you to add your proficiency bonus to the attack roll for any attack you make with it.",
+      "rules_text": [
+        "Proficiency with a Quarterstaff allows you to add your proficiency bonus to the attack roll for any attack you make with it.",
         "",
         " • Damage: 1d6 Bludgeoning",
         " • Versatile: 1d8 Bludgeoning"
@@ -190,7 +192,8 @@
         "Proficiency with a Spear allows you to add your proficiency bonus to the attack roll for any attack you make with it.",
         "",
         " • Damage: 1d6 Piercing",
-        " • Light"],
+        " • Light"
+      ],
       "flavor_text": "",
       "set_code": "MYR",
       "collector": "108/999 U",
@@ -276,7 +279,8 @@
         "",
         " • Damage: 1d4 Bludgeoning",
         " • Ammunition",
-        " • Range 30/120"],
+        " • Range 30/120"
+      ],
       "flavor_text": "",
       "set_code": "MYR",
       "collector": "111/999 U",
@@ -295,7 +299,8 @@
         "Proficiency with a Battleaxe allows you to add your proficiency bonus to the attack roll for any attack you make with it.",
         "",
         " • Damage: 1d8 Slashing",
-        " • Versatile: 1d10 Slashing"],
+        " • Versatile: 1d10 Slashing"
+      ],
       "flavor_text": "",
       "set_code": "MYR",
       "collector": "112/999 U",
@@ -313,7 +318,8 @@
       "rules_text": [
         "Proficiency with a Flail allows you to add your proficiency bonus to the attack roll for any attack you make with it.",
         "",
-        " • Damage: 1d8 Bludgeoning"],
+        " • Damage: 1d8 Bludgeoning"
+      ],
       "flavor_text": "",
       "set_code": "MYR",
       "collector": "113/999 U",
@@ -334,7 +340,8 @@
         " • Damage: 1d10 Slashing",
         " • Heavy",
         " • Reach",
-        " • Two-Handed"],
+        " • Two-Handed"
+      ],
       "flavor_text": "",
       "set_code": "MYR",
       "collector": "113/999 U",
@@ -354,7 +361,8 @@
         "",
         " • Damage: 1d12 Slashing",
         " • Heavy",
-        " • Two-Handed"],
+        " • Two-Handed"
+      ],
       "flavor_text": "",
       "set_code": "MYR",
       "collector": "113/999 U",
@@ -374,7 +382,8 @@
         "",
         " • Damage: 2d6 Slashing",
         " • Heavy",
-        " • Two-Handed"],
+        " • Two-Handed"
+      ],
       "flavor_text": "",
       "set_code": "MYR",
       "collector": "113/999 U",
@@ -395,7 +404,8 @@
         " • Damage: 1d10 Slashing",
         " • Heavy",
         " • Reach",
-        " • Two-Handed"],
+        " • Two-Handed"
+      ],
       "flavor_text": "",
       "set_code": "MYR",
       "collector": "113/999 U",
@@ -417,7 +427,8 @@
         " • Heavy",
         " • Reach",
         " • Topple",
-        " • Two-Handed"],
+        " • Two-Handed"
+      ],
       "flavor_text": "",
       "set_code": "MYR",
       "collector": "113/999 U",
@@ -436,7 +447,8 @@
         "Proficiency with a Longsword allows you to add your proficiency bonus to the attack roll for any attack you make with it.",
         "",
         " • Damage: 1d8 Slashing",
-        " • Versatile: 1d10 Slashing"],
+        " • Versatile: 1d10 Slashing"
+      ],
       "flavor_text": "",
       "set_code": "MYR",
       "collector": "113/999 U",
@@ -445,6 +457,27 @@
       "art_path": "art/longsword.png",
       "pt": "1d8",
       "price": "15 GP",
+      "weight": "3 lb"
+    },
+    {
+      "name": "Longsword +1",
+      "rarity": "Uncommon",
+      "type_line": "Item — Martial Melee Weapon",
+      "rules_text": [
+        "Proficiency with a Longsword allows you to add your proficiency bonus to the attack roll for any attack you make with it.",
+        "You have a +1 bonus to attack and damage rolls made with this magic weapon.",
+        "",
+        "• Damage: 1d8 Slashing",
+        "• Versatile: 1d10 Slashing"
+      ],
+      "flavor_text": "The magic within the steel sharpens both edge and intent.",
+      "set_code": "MYR",
+      "collector": "113/999 U",
+      "author": "wschu",
+      "copyright": "© Myrdell Homebrew 2025",
+      "art_path": "art/longsword-plus-1.png",
+      "pt": "1d8",
+      "price": "1000 GP",
       "weight": "3 lb"
     },
     {
@@ -457,7 +490,8 @@
         " • Damage: 2d6 Bludgeoning",
         " • Heavy",
         " • Topple",
-        " • Two-Handed"],
+        " • Two-Handed"
+      ],
       "flavor_text": "",
       "set_code": "MYR",
       "collector": "113/999 U",
@@ -475,7 +509,8 @@
       "rules_text": [
         "Proficiency with a Morningstar allows you to add your proficiency bonus to the attack roll for any attack you make with it.",
         "",
-        " • Damage: 1d8 Piercing"],
+        " • Damage: 1d8 Piercing"
+      ],
       "flavor_text": "",
       "set_code": "MYR",
       "collector": "113/999 U",
@@ -496,7 +531,8 @@
         " • Damage: 1d10 Piercing",
         " • Heavy",
         " • Reach",
-        " • Two-Handed"],
+        " • Two-Handed"
+      ],
       "flavor_text": "",
       "set_code": "MYR",
       "collector": "113/999 U",
@@ -515,7 +551,8 @@
         "Proficiency with a Rapier allows you to add your proficiency bonus to the attack roll for any attack you make with it.",
         "",
         " • Damage: 1d8 Piercing",
-        " • Finesse"],
+        " • Finesse"
+      ],
       "flavor_text": "",
       "set_code": "MYR",
       "collector": "113/999 U",
@@ -535,7 +572,8 @@
         "",
         " • Damage: 1d6 Slashing",
         " • Finesse",
-        " • Light"],
+        " • Light"
+      ],
       "flavor_text": "",
       "set_code": "MYR",
       "collector": "113/999 U",
@@ -555,7 +593,8 @@
         "",
         " • Damage: 1d6 Piercing",
         " • Finesse",
-        " • Light"],
+        " • Light"
+      ],
       "flavor_text": "",
       "set_code": "MYR",
       "collector": "113/999 U",
@@ -575,7 +614,8 @@
         "",
         " • Damage: 1d8 Piercing",
         " • Thrown(range 20/60)",
-        " • Versatile: 1d10 Piercing"],
+        " • Versatile: 1d10 Piercing"
+      ],
       "flavor_text": "",
       "set_code": "MYR",
       "collector": "113/999 U",
@@ -594,7 +634,8 @@
         "Proficiency with a War Pick allows you to add your proficiency bonus to the attack roll for any attack you make with it.",
         "",
         " • Damage: 1d8 Piercing",
-        " • Versatile: 1d10 Piercing"],
+        " • Versatile: 1d10 Piercing"
+      ],
       "flavor_text": "",
       "set_code": "MYR",
       "collector": "113/999 U",
@@ -613,7 +654,8 @@
         "Proficiency with a Warhammer allows you to add your proficiency bonus to the attack roll for any attack you make with it.",
         "",
         " • Damage: 1d8 Bludgeoning",
-        " • Versatile: 1d10 Bludgeoning"],
+        " • Versatile: 1d10 Bludgeoning"
+      ],
       "flavor_text": "",
       "set_code": "MYR",
       "collector": "113/999 U",
@@ -633,7 +675,8 @@
         "",
         " • Damage: 1d4 Slashing",
         " • Finesse",
-        " • Reach"],
+        " • Reach"
+      ],
       "flavor_text": "",
       "set_code": "MYR",
       "collector": "113/999 U",
@@ -654,7 +697,8 @@
         " • Damage: 1 Piercing",
         " • Ammunition",
         " • Loading",
-        " • Range 25/100"],
+        " • Range 25/100"
+      ],
       "flavor_text": "",
       "set_code": "MYR",
       "collector": "113/999 U",
@@ -676,7 +720,8 @@
         " • Light",
         " • Ammunition",
         " • Loading",
-        " • Range 20/120"],
+        " • Range 20/120"
+      ],
       "flavor_text": "",
       "set_code": "MYR",
       "collector": "113/999 U",
@@ -699,7 +744,8 @@
         " • Ammunition",
         " • Loading",
         " • Range 100/400",
-        " • Two-Handed"],
+        " • Two-Handed"
+      ],
       "flavor_text": "",
       "set_code": "MYR",
       "collector": "113/999 U",
@@ -721,7 +767,8 @@
         " • Heavy",
         " • Ammunition",
         " • Range 150/600",
-        " • Two-Handed"],
+        " • Two-Handed"
+      ],
       "flavor_text": "",
       "set_code": "MYR",
       "collector": "113/999 U",
@@ -741,7 +788,8 @@
         "",
         " • Damage: 0 Bludgeoning",
         " • Special",
-        " • Thrown(range 5/15)"],
+        " • Thrown(range 5/15)"
+      ],
       "flavor_text": "",
       "set_code": "MYR",
       "collector": "113/999 U",
@@ -762,7 +810,8 @@
         "Proficiency with a Warhammer allows you to add your proficiency bonus to the attack roll for any attack you make with it.",
         "",
         " • Damage: 1d8+1 Bludgeoning",
-        " • Versatile: 1d10+1 Bludgeoning"],
+        " • Versatile: 1d10+1 Bludgeoning"
+      ],
       "flavor_text": "",
       "set_code": "MYR",
       "collector": "113/999 U",
