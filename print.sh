@@ -127,10 +127,8 @@ python generate_cards.py --input ./card-db
 
 python collect_and_print.py \
   --cards "./out_cards" \
-  --add "Potion_of_Healing=3" \
-  --add "Potion_of_Greater_Healing=3" \
-  --add "Potion_of_Superior_Healing=3" \
-  --add "Potion_of_Supreme_Healing=3" \
+  --add "Potion_of_Healing=6" \
+  --add "Potion_of_Greater_Healing=6" \
   --add "Potion_of_Climbing=3" \
   --add "Potion_of_Growth=3" \
   --add "Potion_of_Invisibility=3" \
