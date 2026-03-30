@@ -128,19 +128,60 @@ def build_spell_type_str(theme, casting_time, range, components, durations, scho
     return type_str
 
 def build_monster_att_str(theme, ac, hp, ini, speed, str_, dex, con, int_, wis, cha) -> str:
+    def split_attr(name:str, attr:str) -> str:
+        (v, m, s) = attr.split(";")
+        v = float(v)
+        m = float(m)
+        s = float(s)
+        return f"{name:>3s}: {v:>+3g}| {m:>+3g}| {s:>+3g}"
+
     (x, y, w, h) = theme["type_rec"]
     type_str =  f'<rect x="{x}" y="{y}" width="{w}" height="{h}" rx="6" ry="6" fill="{theme["type_bg"]}" stroke="{theme["frame_border"]}" stroke-width="2"/>'
 
     (x, y, fs) = theme["type_txt_rec"]
     dx = 0
-    for idx, s in enumerate([f"AC:{ac}", f"INI:{ini}", f"HP:{hp}", f"SP:{speed}", f"STR:{str_}", f"INT:{int_}", f"DEX:{dex}", f"WIS:{wis}", f"CON:{con}", f"CHA:{cha}"]):
-        type_str += f'<text x="{x+dx}" y="{y}" font-family="{theme["font_sans"]}" font-size="{fs}" fill="{theme["type_fg"]}">{s}</text>'
+    for idx, s in enumerate([
+        f" AC: {ac}",
+        f"INI: {ini}",
+        f" HP: {hp}",
+        f" SP: {speed}",
+        split_attr("STR", str_),
+        split_attr("INT", int_),
+        split_attr("DEX", dex),
+        split_attr("WIS", wis),
+        split_attr("CON", con),
+        split_attr("CHA", cha)
+             ]):
+        type_str += f'<text x="{x+dx}" y="{y}" font-family="{theme["font_mono"]}" font-size="{fs}" fill="{theme["type_fg"]}" xml:space="preserve">{s}</text>\n'
         dx += 300
         if idx in [1, 3, 5, 7,]:
             y+= fs
             dx = 0
     return type_str
 
+def build_monster_rules_str(theme, rules, flavor) -> str:
+    w_in_chars = 60
+
+    (x, y, w, h) = theme["rules_rec"]
+    rules_str =  f'<rect x="{x}" y="{y}" width="{w}" height="{h}" rx="10" ry="10" fill="{theme["rules_bg"]}" stroke="{theme["frame_border"]}" stroke-width="2"/>'
+
+    (x, y, fs) = theme["rules_txt_rec"]
+
+    off = 0
+    for (title, text) in rules:
+        rules_str += f'<text x="{x}" y="{y+off}" font-family="{theme["font_serif"]}" font-size="{fs}" fill="{theme["rules_fg"]}">{title}</text>'
+        off += fs
+        rules_lines = wrap_svg_text(text, width_chars=w_in_chars, x=x+fs, line_height=fs)
+        rules_str += f'<text x="{x}" y="{y+off}" font-family="{theme["font_serif"]}" font-size="{fs}" fill="{theme["rules_fg"]}">{rules_lines}</text>'
+        off += fs * len(rules_lines.split("\n")) + fs
+
+
+    (x, y, fs) = theme["flavor_txt_rec"]
+    flavor_lines=""
+    if flavor:
+      flavor_lines = wrap_svg_text("“" + flavor + "”", width_chars=w_in_chars, x=x, line_height=fs)
+    rules_str += f'<text x="{x}" y="{y}" font-family="{theme["font_serif"]}" font-size="{fs}" font-style="italic" fill="{theme["flavor_fg"]}">{flavor_lines}</text>'
+    return rules_str
 
 def build_rules_str(theme, rules, flavor) -> str:
     w_in_chars = 60
@@ -236,7 +277,7 @@ def get_theme( name, rarity, type_str) -> dict:
         "font_serif": "Georgia, 'Times New Roman', serif",
         "font_sans": "Inter, Arial, sans-serif",
         #"font_serif": "Cascadia Code",
-        #"font_sans": "Cascadia Code",
+        "font_mono": "Cascadia Code",
 
         "card_sz": (card_width, card_height),
         "inner_rec": (outer_padding, outer_padding, card_width - 2*outer_padding, card_height - 2*outer_padding),
@@ -301,8 +342,6 @@ def build_monster_card(card: dict, out_dir: Path) -> Path:
     action_obj        = card.get(      "actions", {}) 
     bonus_actions_obj = card.get("bonus actions", {}) 
 
-    bla_obj          = card.get(         "bla", {}) 
-
 
     frame_str = build_frame_str(theme)
     title_str = build_title_str(theme, card.get("name","Unnamed Item"), "")
@@ -322,68 +361,55 @@ def build_monster_card(card: dict, out_dir: Path) -> Path:
 
     rules_str = []
     if len(skills_obj):
-        rules_str.append("Skills:")
         tmp_str = ""
         for idx, ent in enumerate(skills_obj):
             tmp_str +=f"{str(ent)}"
             if idx < len(skills_obj) - 1:
                 tmp_str += ", "
-        rules_str.append(tmp_str)
-        rules_str.append("")
+        rules_str.append(("Skills:", tmp_str))
 
     if len(gear_obj):
-        rules_str.append("Gear:")
         tmp_str = ""
         for idx, ent in enumerate(gear_obj):
             tmp_str += f"{str(ent)}"
             if idx < len(gear_obj) - 1:
                 tmp_str += ", "
-        rules_str.append(tmp_str)
-        rules_str.append("")
+        rules_str.append(("Gear:", tmp_str))
 
     if len(senses_obj):
-        rules_str.append("Senses:")
         tmp_str = ""
         for idx, ent in enumerate(senses_obj):
             tmp_str += f"{str(ent)}"
             if idx < len(senses_obj) - 1:
                 tmp_str += ", "
-        rules_str.append(tmp_str)
-        rules_str.append("")
+        rules_str.append(("Senses:", tmp_str))
 
     if len(languages_obj):
-        rules_str.append("Languages:")
         tmp_str = ""
         for idx, ent in enumerate(languages_obj):
             tmp_str += f"{str(ent)}"
             if idx < len(languages_obj) - 1:
                 tmp_str += ", "
-        rules_str.append(tmp_str)
-        rules_str.append("")
+        rules_str.append(("Languages:", tmp_str))
 
     if len(action_obj):
-        rules_str.append("Actions:")
         tmp_str = ""
         for idx, ent in enumerate(action_obj):
-            rules_str.append(f"{str(ent)}")
-            rules_str.append("")
+            tmp_str += (f"{str(ent)}")
+            if idx < len(action_obj)-1:
+                tmp_str += f"\n"
+        rules_str.append(("Actions:", tmp_str))
+
 
     if len(bonus_actions_obj):
-        rules_str.append("Bonus Actions:")
         tmp_str = ""
         for idx, ent in enumerate(bonus_actions_obj):
             tmp_str += f"{str(ent)}"
-            if idx < len(bonus_actions_obj) - 1:
-                tmp_str += ", "
-        rules_str.append(tmp_str)
-        rules_str.append("")
+            if idx < len(action_obj)-1:
+                tmp_str += f"\n"
+        rules_str.append(("Bonus Actions:", tmp_str))
 
-    if len(bla_obj):
-        rules_str.append("bla:")
-        for ent in bla_obj:
-            rules_str.append(f"  - {str(ent)}")
-
-    rules_str = build_rules_str(theme, rules_str, mon_type_str)
+    rules_str = build_monster_rules_str(theme, rules_str, mon_type_str)
     footer_str = build_footer_str(theme, card.get("set_code","DND"), card.get("collector","001/001"), card.get("author",""), card.get("copyright","© 2025"))
 
     (w,h) = theme["card_sz"]
