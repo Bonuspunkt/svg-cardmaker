@@ -127,6 +127,19 @@ def build_spell_type_str(theme, casting_time, range, components, durations, scho
             dx = 0
     return type_str
 
+def build_monster_att_str(theme, ac, hp, ini, speed, str_, dex, con, int_, wis, cha) -> str:
+    (x, y, w, h) = theme["type_rec"]
+    type_str =  f'<rect x="{x}" y="{y}" width="{w}" height="{h}" rx="6" ry="6" fill="{theme["type_bg"]}" stroke="{theme["frame_border"]}" stroke-width="2"/>'
+
+    (x, y, fs) = theme["type_txt_rec"]
+    dx = 0
+    for idx, s in enumerate([f"AC:{ac}", f"INI:{ini}", f"HP:{hp}", f"SP:{speed}", f"STR:{str_}", f"INT:{int_}", f"DEX:{dex}", f"WIS:{wis}", f"CON:{con}", f"CHA:{cha}"]):
+        type_str += f'<text x="{x+dx}" y="{y}" font-family="{theme["font_sans"]}" font-size="{fs}" fill="{theme["type_fg"]}">{s}</text>'
+        dx += 300
+        if idx in [1, 3, 5, 7,]:
+            y+= fs
+            dx = 0
+    return type_str
 
 
 def build_rules_str(theme, rules, flavor) -> str:
@@ -197,6 +210,11 @@ def get_theme( name, rarity, type_str) -> dict:
         type_h = 110
         rules_y = type_y + type_h + 6
         rules_h = 806
+    elif type_str == "monster":
+        type_y = inner_padding + title_h + 6
+        type_h = 110 + 24
+        rules_y = type_y + type_h + 6
+        rules_h = 806
 
 
 
@@ -241,6 +259,8 @@ def get_theme( name, rarity, type_str) -> dict:
 
     if type_str == "spell":
         theme["type_txt_rec"] = (inner_padding + 18,           type_y + 6 + 20, 24)
+    elif type_str == "monster":
+        theme["type_txt_rec"] = (inner_padding + 18,           type_y + 6 + 20, 24)
 
     rarity_colors = {
     "Common":     "#B0B0B0",
@@ -258,8 +278,132 @@ def build_svg(card: dict, out_dir: Path) -> Path:
     if "card_type" in card:
         if card["card_type"] == "spell":
             return build_spell_card(card, out_dir)
+        if card["card_type"] == "monster":
+            return build_monster_card(card, out_dir)
 
     return build_item_card(card, out_dir)
+
+def build_monster_card(card: dict, out_dir: Path) -> Path:
+    theme = get_theme(card.get("theme", {}), card.get("rarity","Common"), "monster")
+
+    mon_type_str      = card.get(         "type", {})
+    ini_str           = card.get(          "ini", {})
+    ac_str            = card.get(           "ac", {})
+    hp_str            = card.get(           "hp", {})
+    speed_str         = card.get(        "speed", {})
+    cr_str            = card.get(           "cr", {})
+        
+    att_obj           = card.get(          "att", {}) 
+    skills_obj        = card.get(       "skills", {}) 
+    gear_obj          = card.get(         "gear", {}) 
+    senses_obj        = card.get(       "senses", {}) 
+    languages_obj     = card.get(    "languages", {}) 
+    action_obj        = card.get(      "actions", {}) 
+    bonus_actions_obj = card.get("bonus actions", {}) 
+
+    bla_obj          = card.get(         "bla", {}) 
+
+
+    frame_str = build_frame_str(theme)
+    title_str = build_title_str(theme, card.get("name","Unnamed Item"), "")
+
+    type_str = build_monster_att_str(theme,
+     ac_str,
+     hp_str,
+     ini_str,
+     speed_str,
+     att_obj.get("STR", {"10; 0; 0"}),
+     att_obj.get("DEX", {"10; 0; 0"}),
+     att_obj.get("CON", {"10; 0; 0"}),
+     att_obj.get("INT", {"10; 0; 0"}),
+     att_obj.get("WIS", {"10; 0; 0"}),
+     att_obj.get("CHA", {"10; 0; 0"}))
+    
+
+    rules_str = []
+    if len(skills_obj):
+        rules_str.append("Skills:")
+        tmp_str = ""
+        for idx, ent in enumerate(skills_obj):
+            tmp_str +=f"{str(ent)}"
+            if idx < len(skills_obj) - 1:
+                tmp_str += ", "
+        rules_str.append(tmp_str)
+        rules_str.append("")
+
+    if len(gear_obj):
+        rules_str.append("Gear:")
+        tmp_str = ""
+        for idx, ent in enumerate(gear_obj):
+            tmp_str += f"{str(ent)}"
+            if idx < len(gear_obj) - 1:
+                tmp_str += ", "
+        rules_str.append(tmp_str)
+        rules_str.append("")
+
+    if len(senses_obj):
+        rules_str.append("Senses:")
+        tmp_str = ""
+        for idx, ent in enumerate(senses_obj):
+            tmp_str += f"{str(ent)}"
+            if idx < len(senses_obj) - 1:
+                tmp_str += ", "
+        rules_str.append(tmp_str)
+        rules_str.append("")
+
+    if len(languages_obj):
+        rules_str.append("Languages:")
+        tmp_str = ""
+        for idx, ent in enumerate(languages_obj):
+            tmp_str += f"{str(ent)}"
+            if idx < len(languages_obj) - 1:
+                tmp_str += ", "
+        rules_str.append(tmp_str)
+        rules_str.append("")
+
+    if len(action_obj):
+        rules_str.append("Actions:")
+        tmp_str = ""
+        for idx, ent in enumerate(action_obj):
+            rules_str.append(f"{str(ent)}")
+            rules_str.append("")
+
+    if len(bonus_actions_obj):
+        rules_str.append("Bonus Actions:")
+        tmp_str = ""
+        for idx, ent in enumerate(bonus_actions_obj):
+            tmp_str += f"{str(ent)}"
+            if idx < len(bonus_actions_obj) - 1:
+                tmp_str += ", "
+        rules_str.append(tmp_str)
+        rules_str.append("")
+
+    if len(bla_obj):
+        rules_str.append("bla:")
+        for ent in bla_obj:
+            rules_str.append(f"  - {str(ent)}")
+
+    rules_str = build_rules_str(theme, rules_str, mon_type_str)
+    footer_str = build_footer_str(theme, card.get("set_code","DND"), card.get("collector","001/001"), card.get("author",""), card.get("copyright","© 2025"))
+
+    (w,h) = theme["card_sz"]
+    svg = Template(SVG_TEMPLATE).substitute(
+        frame_str=frame_str,
+        title_str=title_str,
+        clipping_art="",
+        art_img="",
+        type_str=type_str,
+        rules_str=rules_str,
+        opt_str="",
+        footer_str=footer_str,
+        card_w=w,
+        card_h=h,
+        )
+
+    safe = re.sub(r"[^a-zA-Z0-9_-]+", "_", card.get("name","card")).strip("_")
+    out = out_dir / f"monster_{safe}.svg"
+    out.write_text(svg, encoding="utf-8")
+    return out
 
 def build_spell_card(card: dict, out_dir: Path) -> Path:
     theme = get_theme(card.get("theme", {}), card.get("rarity","Common"), "spell")

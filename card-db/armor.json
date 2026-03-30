@@ -231,6 +231,22 @@
       "art_path": "art/cloak-of-cat-attraction.png",
       "price": "20 GP",
       "weight": "1 lb"
+    },
+    {
+      "name": "Mollys Cloak of Protection",
+      "rarity": "Uncommon",
+      "type_line": "Wondrous item (requires attunement)",
+      "rules_text": [
+        "You gain a +1 bonus to Armor Class and saving throws while you wear this cloak."
+      ],
+      "flavor_text": "Woven with subtle wards, the cloak seems to shift just enough for blades and spells to miss their mark.",
+      "set_code": "MYR",
+      "collector": "902/999 U",
+      "author": "wschu",
+      "copyright": "© Myrdell Homebrew 2025",
+      "art_path": "art/cloak-of-protection-molly.png",
+      "price": "350 GP",
+      "weight": "1 lb"
     }
   ]
 }

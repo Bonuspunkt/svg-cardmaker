@@ -144,12 +144,18 @@ python generate_cards.py --input ./card-db
 #   --add "Cloak_of_Dramatic_Entrance=1" \
 #   --crop 
 
+#python collect_and_print.py \
+#  --cards "./out_cards" \
+#  --add "Mollys_Cloak_of_Protection=3" \
+#  --crop 
+
+
 python collect_and_print.py \
   --cards "./out_cards" \
-  --add "Longsword_1=3" \
-  --add "Potion_of_Healing=6" \
-  --add "Potion_of_Greater_Healing=3" \
-  --add "Potion_of_Superior_Healing=3" \
-  --add "Potion_of_Supreme_Healing=3" \
+  --add "spell_Minor_Illusion=1" \
+  --add "spell_Blindness_Deafness=1" \
+  --add "spell_Faerie_Fire=1" \
+  --add "spell_Grease=1" \
+  --add "spell_Entangle=1" \
   --crop 
 
