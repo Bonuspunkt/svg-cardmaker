@@ -410,6 +410,7 @@ def get_theme( name, rarity, type_str) -> dict:
         theme["type_txt_rec"] = (inner_padding + 18,           type_y + 6 + 20, 24)
     elif type_str == "monster":
         theme["type_txt_rec"] = (inner_padding + 18,           type_y + 6 + 20, 24)
+        theme["flavor_txt_rec"] = (inner_padding + 18, rules_y + rules_h - 24, font_size_rule)
 
     rarity_colors = {
     "Common":     "#B0B0B0",

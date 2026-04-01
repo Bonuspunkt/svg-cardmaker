@@ -280,6 +280,128 @@
       "collector": "S012/999 C",
       "author": "wschu",
       "copyright": "© Myrdell Homebrew 2025"
+    },
+    {
+      "card_type": "monster",
+      "name": "Greater Astral Wisp",
+      "type_line": "Tiny Aberration, Chaotic Neutral",
+      "ini": "1D20+6",
+      "ac": 17,
+      "hp": "10D4+20",
+      "speed": "0 ft., fly 50 ft. (H)",
+      "att": {
+        "STR": {
+          "score": 2,
+          "mod": -4,
+          "save": -4
+        },
+        "DEX": {
+          "score": 22,
+          "mod": 6,
+          "save": 6
+        },
+        "CON": {
+          "score": 14,
+          "mod": 2,
+          "save": 2
+        },
+        "INT": {
+          "score": 12,
+          "mod": 1,
+          "save": 1
+        },
+        "WIS": {
+          "score": 16,
+          "mod": 3,
+          "save": 3
+        },
+        "CHA": {
+          "score": 14,
+          "mod": 2,
+          "save": 2
+        }
+      },
+      "skills": [
+        {
+          "name": "Perception",
+          "bonus": 5
+        },
+        {
+          "name": "Stealth",
+          "bonus": 8
+        }
+      ],
+      "resistances": [
+        "Force",
+        "Psychic",
+        "Necrotic",
+        "Lightning"
+      ],
+      "immunities": [
+        "Poison",
+        "Grappled",
+        "Prone",
+        "Restrained",
+        "Charmed",
+        "Frightened"
+      ],
+      "gear": [],
+      "senses": [
+        "Darkvision 120 ft.",
+        "Passive Perception 15"
+      ],
+      "languages": [
+        "Understands Common, Deep Speech but can't speak"
+      ],
+      "cr": "3 (XP 700; PB +2)",
+      "traits": [
+        {
+          "name": "Astral Form",
+          "text": "Moves through creatures/objects as difficult terrain; 5 (1d10) force damage if ending turn inside an object."
+        },
+        {
+          "name": "Distorting Presence",
+          "text": "Creatures within 10 ft. have disadvantage on attack rolls against targets other than the wisp."
+        },
+        {
+          "name": "Flicker Shift",
+          "text": "Advantage on Dexterity saving throws."
+        }
+      ],
+      "actions": [
+        {
+          "name": "Multiattack",
+          "text": "Makes two Astral Pulse or Mind Rend attacks."
+        },
+        {
+          "name": "Astral Pulse",
+          "text": "Melee +6, 5 ft. Hit: 13 (3d6+3) force. STR DC 13 or pushed 15 ft. and knocked prone."
+        },
+        {
+          "name": "Mind Rend",
+          "text": "Ranged +6, 60 ft. Hit: 10 (3d4+3) psychic. Target has disadvantage on attacks and checks until end of its next turn."
+        },
+        {
+          "name": "Astral Collapse",
+          "text": "20-ft. radius, DC 13 DEX. 14 (4d6) force (half on success); failed save: pulled 10 ft. toward center."
+        }
+      ],
+      "bonus_actions": [
+        {
+          "name": "Phase Shift",
+          "text": "Teleports up to 30 ft."
+        }
+      ],
+      "reactions": [
+        {
+          "name": "Astral Distortion",
+          "text": "When hit: reduce damage by 7 (2d6)."
+        }
+      ],
+      "set_code": "MYR",
+      "collector": "S013/999 U",
+      "author": "wschu",
+      "copyright": "© Myrdell Homebrew 2025"
     }
   ]
 }
