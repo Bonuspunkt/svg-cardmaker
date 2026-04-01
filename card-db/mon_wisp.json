@@ -2,47 +2,282 @@
   "cards": [
     {
       "card_type": "monster",
-      "name": "Goblin Warrior",
-      "type": "Small Fey (Goblinoid), Chaotic Neutral",
-      "ini": "+2 (12)",
-      "ac": "15",
-      "hp": "10 (3D6)",
-      "speed": "30 ft.",
+      "name": "Will-o'-Wisp",
+      "type_line": "Tiny Undead, Chaotic Evil",
+      "ini": "1D20+9",
+      "ac": 19,
+      "hp": "11D4",
+      "speed": "5 ft., fly 50 ft. (H)",
       "att": {
-        "STR": " 8; -1; -1",
-        "DEX": "15; +2; +2",
-        "CON": "10; +0; +0",
-        "INT": "10; +0; +0",
-        "WIS": " 8; -1; -1",
-        "CHA": " 8; -1; -1"
+        "STR": {
+          "score": 1,
+          "mod": -5,
+          "save": -5
+        },
+        "DEX": {
+          "score": 28,
+          "mod": 9,
+          "save": 9
+        },
+        "CON": {
+          "score": 10,
+          "mod": 0,
+          "save": 0
+        },
+        "INT": {
+          "score": 13,
+          "mod": 1,
+          "save": 1
+        },
+        "WIS": {
+          "score": 14,
+          "mod": 2,
+          "save": 2
+        },
+        "CHA": {
+          "score": 11,
+          "mod": 0,
+          "save": 0
+        }
       },
-      "skills": [
-        "Stealth +6"
+      "skills": [],
+      "resistances": [
+        "Acid",
+        "Bludgeoning",
+        "Cold",
+        "Fire",
+        "Necrotic",
+        "Piercing",
+        "Slashing"
       ],
-      "gear": [
-        "Leather Armor",
-        "Scimitar",
-        "Shield",
-        "Shortbow"
+      "immunities": [
+        "Lightning",
+        "Poison",
+        "Exhaustion",
+        "Grappled",
+        "Paralyzed",
+        "Petrified",
+        "Poisoned",
+        "Prone",
+        "Restrained",
+        "Unconscious"
       ],
+      "gear": [],
       "senses": [
-        "Darkvision 60ft.",
-        "Passive Perception 9"
+        "Darkvision 120 ft.",
+        "Passive Perception 12"
       ],
       "languages": [
-        "Common",
-        "Goblin"
+        "Common plus one other language"
       ],
-      "cr": "1/4 (XP 50; PB +2)",
+      "cr": "2 (XP 450; PB +2)",
+      "traits": [
+        {
+          "name": "Ephemeral",
+          "tags": [
+            "incorporeal"
+          ],
+          "text": "The wisp can't wear or carry anything."
+        },
+        {
+          "name": "Illumination",
+          "tags": [
+            "light"
+          ],
+          "text": "The wisp sheds Bright Light in a 20-foot radius and Dim Light for an additional 20 feet."
+        },
+        {
+          "name": "Incorporeal Movement",
+          "tags": [
+            "movement",
+            "incorporeal"
+          ],
+          "text": "The wisp can move through other creatures and objects as if they were Difficult Terrain. It takes 5 (1d10) Force damage if it ends its turn inside an object."
+        }
+      ],
       "actions": [
-        "Scimitar: Melee Attack Roll: +4, reach 5 ft. Hit: 5 (1d6 + 2) Slashing damage, plus 2 (1d4) Slashing damage if the attack roll had Advantage.",
-        "Shortbow: Ranged Attack Roll: +4, range 80/320 ft. Hit: 5 (1d6 + 2) Piercing damage, plus 2 (1d4) Piercing damage if the attack roll had Advantage."
+        {
+          "name": "Shock",
+          "type": "Melee",
+          "range": "5 ft.",
+          "to_hit": 4,
+          "damage": [
+            {
+              "type": "Lightning",
+              "value": "2D8+2",
+              "condition": "none"
+            }
+          ],
+          "text": "Melee Attack Roll: +4, reach 5 ft. Hit: 11 (2d8 + 2) Lightning damage."
+        }
       ],
-      "bonus actions": [
-        "Nimble Escape: The goblin takes the Disengage or Hide action."
+      "bonus_actions": [
+        {
+          "name": "Consume Life",
+          "tags": [
+            "necrotic",
+            "finisher"
+          ],
+          "text": "Constitution Saving Throw: DC 10, one living creature the wisp can see within 5 feet that has 0 Hit Points. Failure: The target dies, and the wisp regains 10 (3d6) Hit Points."
+        },
+        {
+          "name": "Vanish",
+          "tags": [
+            "invisible",
+            "concentration"
+          ],
+          "text": "The wisp and its light have the Invisible condition until the wisp's Concentration ends on this effect, which ends early immediately after the wisp makes an attack roll or uses Consume Life."
+        }
+      ],
+      "reactions": [],
+      "set_code": "MYR",
+      "collector": "S011/999 U",
+      "author": "wschu",
+      "copyright": "© Myrdell Homebrew 2025"
+    },
+    {
+      "card_type": "monster",
+      "name": "Astral Wisp",
+      "type_line": "Tiny Aberration, Chaotic Neutral",
+      "ini": "1D20+5",
+      "ac": 15,
+      "hp": "6D4+6",
+      "speed": "0 ft., fly 40 ft. (H)",
+      "att": {
+        "STR": {
+          "score": 2,
+          "mod": -4,
+          "save": -4
+        },
+        "DEX": {
+          "score": 20,
+          "mod": 5,
+          "save": 5
+        },
+        "CON": {
+          "score": 12,
+          "mod": 1,
+          "save": 1
+        },
+        "INT": {
+          "score": 10,
+          "mod": 0,
+          "save": 0
+        },
+        "WIS": {
+          "score": 14,
+          "mod": 2,
+          "save": 2
+        },
+        "CHA": {
+          "score": 12,
+          "mod": 1,
+          "save": 1
+        }
+      },
+      "skills": [
+        {
+          "name": "Perception",
+          "bonus": 4
+        },
+        {
+          "name": "Stealth",
+          "bonus": 7
+        }
+      ],
+      "resistances": [
+        "Force",
+        "Psychic",
+        "Necrotic"
+      ],
+      "immunities": [
+        "Poison",
+        "Grappled",
+        "Prone",
+        "Restrained"
+      ],
+      "gear": [],
+      "senses": [
+        "Darkvision 120 ft.",
+        "Passive Perception 14"
+      ],
+      "languages": [
+        "Understands Common but can't speak"
+      ],
+      "cr": "1 (XP 200; PB +2)",
+      "traits": [
+        {
+          "name": "Astral Form",
+          "tags": [
+            "incorporeal",
+            "astral"
+          ],
+          "text": "The wisp can move through creatures and objects as if they were Difficult Terrain. It takes 3 (1d6) Force damage if it ends its turn inside an object."
+        },
+        {
+          "name": "Flickering Existence",
+          "tags": [
+            "defense",
+            "mobility"
+          ],
+          "text": "Opportunity attacks against the wisp are made with Disadvantage."
+        }
+      ],
+      "actions": [
+        {
+          "name": "Astral Pulse",
+          "type": "Melee",
+          "range": "5 ft.",
+          "to_hit": 5,
+          "damage": [
+            {
+              "type": "Force",
+              "value": "2D6+3",
+              "condition": "none"
+            }
+          ],
+          "effects": [
+            "The target must succeed on a Strength Saving Throw (DC 12) or be pushed 10 feet."
+          ],
+          "text": "Melee Attack Roll: +5, reach 5 ft. Hit: 10 (2d6 + 3) Force damage, and the target must succeed on a DC 12 Strength saving throw or be pushed 10 feet."
+        },
+        {
+          "name": "Mind Flicker",
+          "type": "Ranged",
+          "range": "30 ft.",
+          "to_hit": 5,
+          "damage": [
+            {
+              "type": "Psychic",
+              "value": "2D4+3",
+              "condition": "none"
+            }
+          ],
+          "effects": [
+            "The target has Disadvantage on the next attack roll it makes before the end of its next turn."
+          ],
+          "text": "Ranged Attack Roll: +5, range 30 ft. Hit: 8 (2d4 + 3) Psychic damage, and the target has Disadvantage on its next attack roll."
+        }
+      ],
+      "bonus_actions": [
+        {
+          "name": "Phase Drift",
+          "tags": [
+            "mobility",
+            "astral"
+          ],
+          "text": "The wisp teleports up to 20 feet to an unoccupied space it can see."
+        }
+      ],
+      "reactions": [
+        {
+          "name": "Distortion",
+          "trigger": "A creature the wisp can see targets it with an attack.",
+          "response": "The attacker has Disadvantage on the attack roll."
+        }
       ],
       "set_code": "MYR",
-      "collector": "S001/999 C",
+      "collector": "S012/999 C",
       "author": "wschu",
       "copyright": "© Myrdell Homebrew 2025"
     }

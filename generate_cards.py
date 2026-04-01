@@ -3,6 +3,7 @@
 import argparse
 import json
 import re
+import math
 import base64
 from glob import glob
 from pathlib import Path
@@ -45,14 +46,16 @@ def data_uri_for_image(path, mime="image/png"):
     b64 = base64.b64encode(data).decode("ascii")
     return f"data:{mime};base64,{b64}"
 
-def wrap_svg_text(text, width_chars=62, line_height=20, x=None):  
+def wrap_svg_text(text, width_chars=62, line_height=20, x=None, skip_replace=False):  
     if isinstance(text, list):
         tmp = ""
         for el in text:
             tmp += el + "\n"
         text = tmp
+    
+    if not skip_replace:
+        text = text.replace("&", "&amp;").replace("<", "&lt;").replace(">", "&gt;")
 
-    text = text.replace("&", "&amp;").replace("<", "&lt;").replace(">", "&gt;")
     lines = []
     for para in text.split("\n"):
         if para.strip() == "":
@@ -127,13 +130,28 @@ def build_spell_type_str(theme, casting_time, range, components, durations, scho
             dx = 0
     return type_str
 
+def dice_average(dice_str: str) -> float:
+    pattern = r'(\d+)[dD](\d+)\s*([+-]\d+)?'
+    match = re.fullmatch(pattern, dice_str.strip())
+    
+    if not match:
+        raise ValueError(f"Invalid dice string: {dice_str}")
+    
+    count = int(match.group(1))
+    sides = int(match.group(2))
+    modifier = int(match.group(3)) if match.group(3) else 0
+    
+    avg_die = (1 + sides) / 2
+    return count * avg_die + modifier
+
 def build_monster_att_str(theme, ac, hp, ini, speed, str_, dex, con, int_, wis, cha) -> str:
     def split_attr(name:str, attr:str) -> str:
-        (v, m, s) = attr.split(";")
-        v = float(v)
-        m = float(m)
-        s = float(s)
+        v = int(attr.get("score", 10))
+        m = int(attr.get("mod", 0))
+        s = int(attr.get("save", 0))
         return f"{name:>3s}: {v:>+3g}| {m:>+3g}| {s:>+3g}"
+
+    hp_avg  = int(math.floor(dice_average(hp)))
 
     (x, y, w, h) = theme["type_rec"]
     type_str =  f'<rect x="{x}" y="{y}" width="{w}" height="{h}" rx="6" ry="6" fill="{theme["type_bg"]}" stroke="{theme["frame_border"]}" stroke-width="2"/>'
@@ -141,9 +159,9 @@ def build_monster_att_str(theme, ac, hp, ini, speed, str_, dex, con, int_, wis, 
     (x, y, fs) = theme["type_txt_rec"]
     dx = 0
     for idx, s in enumerate([
-        f" AC: {ac}",
-        f"INI: {ini}",
-        f" HP: {hp}",
+        f" AC: {ac:> 3g}",
+        f"INI: {ini:s}",
+        f" HP: {hp_avg:>3g} ({hp:s})",
         f" SP: {speed}",
         split_attr("STR", str_),
         split_attr("INT", int_),
@@ -159,7 +177,7 @@ def build_monster_att_str(theme, ac, hp, ini, speed, str_, dex, con, int_, wis, 
             dx = 0
     return type_str
 
-def build_monster_rules_str(theme, rules, flavor) -> str:
+def build_monster_rules_str(theme, skills_obj, gear_obj, senses_obj, languages_obj, action_obj, bonus_actions_obj, mon_type_str, reaction_obj, traits_obj, resistances_obj, immunities_obj) -> str:
     w_in_chars = 60
 
     (x, y, w, h) = theme["rules_rec"]
@@ -168,18 +186,108 @@ def build_monster_rules_str(theme, rules, flavor) -> str:
     (x, y, fs) = theme["rules_txt_rec"]
 
     off = 0
-    for (title, text) in rules:
-        rules_str += f'<text x="{x}" y="{y+off}" font-family="{theme["font_serif"]}" font-size="{fs}" fill="{theme["rules_fg"]}">{title}</text>'
+    if len(skills_obj):
+        rules_str += f'<text x="{x}" y="{y+off}" font-family="{theme["font_serif"]}" font-size="{fs}" font-weight="bold" fill="{theme["rules_fg"]}">Skills:</text>'
         off += fs
-        rules_lines = wrap_svg_text(text, width_chars=w_in_chars, x=x+fs, line_height=fs)
+        tmp_str = ", ".join(f"{ent.get('name')}{ent.get('bonus'):+g}" for ent in skills_obj)
+        rules_lines = wrap_svg_text(tmp_str, width_chars=w_in_chars, x=x+fs, line_height=fs)
         rules_str += f'<text x="{x}" y="{y+off}" font-family="{theme["font_serif"]}" font-size="{fs}" fill="{theme["rules_fg"]}">{rules_lines}</text>'
-        off += fs * len(rules_lines.split("\n")) + fs
+        off += fs * len(rules_lines.split("\n"))
 
+    if len(resistances_obj):
+        rules_str += f'<text x="{x}" y="{y+off}" font-family="{theme["font_serif"]}" font-size="{fs}" font-weight="bold" fill="{theme["rules_fg"]}">Resistances:</text>'
+        off += fs
+        tmp_str = ", ".join(f"{ent}" for ent in resistances_obj)
+        rules_lines = wrap_svg_text(tmp_str, width_chars=w_in_chars, x=x+fs, line_height=fs)
+        rules_str += f'<text x="{x}" y="{y+off}" font-family="{theme["font_serif"]}" font-size="{fs}" fill="{theme["rules_fg"]}">{rules_lines}</text>'
+        off += fs * len(rules_lines.split("\n"))
+
+    if len(immunities_obj):
+        rules_str += f'<text x="{x}" y="{y+off}" font-family="{theme["font_serif"]}" font-size="{fs}" font-weight="bold" fill="{theme["rules_fg"]}">Immunities:</text>'
+        off += fs
+        tmp_str = ", ".join(f"{ent}" for ent in immunities_obj)
+        rules_lines = wrap_svg_text(tmp_str, width_chars=w_in_chars, x=x+fs, line_height=fs)
+        rules_str += f'<text x="{x}" y="{y+off}" font-family="{theme["font_serif"]}" font-size="{fs}" fill="{theme["rules_fg"]}">{rules_lines}</text>'
+        off += fs * len(rules_lines.split("\n"))
+
+    if len(gear_obj):
+        rules_str += f'<text x="{x}" y="{y+off}" font-family="{theme["font_serif"]}" font-size="{fs}" font-weight="bold" fill="{theme["rules_fg"]}">Gear:</text>'
+        off += fs
+        tmp_str = ", ".join(f"{ent}" for ent in gear_obj)
+        rules_lines = wrap_svg_text(tmp_str, width_chars=w_in_chars, x=x+fs, line_height=fs)
+        rules_str += f'<text x="{x}" y="{y+off}" font-family="{theme["font_serif"]}" font-size="{fs}" fill="{theme["rules_fg"]}">{rules_lines}</text>'
+        off += fs * len(rules_lines.split("\n"))
+
+    if len(senses_obj):
+        rules_str += f'<text x="{x}" y="{y+off}" font-family="{theme["font_serif"]}" font-size="{fs}" font-weight="bold" fill="{theme["rules_fg"]}">Senses:</text>'
+        off += fs
+        tmp_str = ", ".join(f"{ent}" for ent in senses_obj)
+        rules_lines = wrap_svg_text(tmp_str, width_chars=w_in_chars, x=x+fs, line_height=fs)
+        rules_str += f'<text x="{x}" y="{y+off}" font-family="{theme["font_serif"]}" font-size="{fs}" fill="{theme["rules_fg"]}">{rules_lines}</text>'
+        off += fs * len(rules_lines.split("\n"))
+
+    if len(languages_obj):
+        rules_str += f'<text x="{x}" y="{y+off}" font-family="{theme["font_serif"]}" font-size="{fs}" font-weight="bold" fill="{theme["rules_fg"]}">Languages:</text>'
+        off += fs
+        tmp_str = ", ".join(f"{ent}" for ent in languages_obj)
+        rules_lines = wrap_svg_text(tmp_str, width_chars=w_in_chars, x=x+fs, line_height=fs)
+        rules_str += f'<text x="{x}" y="{y+off}" font-family="{theme["font_serif"]}" font-size="{fs}" fill="{theme["rules_fg"]}">{rules_lines}</text>'
+        off += fs * len(rules_lines.split("\n"))
+
+    if len(traits_obj):
+        rules_str += f'<text x="{x}" y="{y+off}" font-family="{theme["font_serif"]}" font-size="{fs}" font-weight="bold" fill="{theme["rules_fg"]}">Traits:</text>'
+        off += fs
+        tmp_str = ""
+        for ent in traits_obj:
+            tmp_str += f"{ent.get('name')}: {ent.get('text')}\n"
+        tmp_str = tmp_str.rstrip("\n")
+        rules_lines = wrap_svg_text(tmp_str, width_chars=w_in_chars, x=x+fs, line_height=fs)
+        rules_str += f'<text x="{x}" y="{y+off}" font-family="{theme["font_serif"]}" font-size="{fs}" fill="{theme["rules_fg"]}">{rules_lines}</text>'
+        off += fs * len(rules_lines.split("\n"))
+
+    if len(action_obj):
+        rules_str += f'<text x="{x}" y="{y+off}" font-family="{theme["font_serif"]}" font-size="{fs}" font-weight="bold" fill="{theme["rules_fg"]}">Actions:</text>'
+        off += fs
+        tmp_str = ""
+        for ent in action_obj:
+            if ent.get('name') == "Spellcasting":
+                tmp_str += f"{ent.get('name')}: {ent.get('text')}\n"
+                for spell_list in ent.get("spell_list"):
+                    tmp_str += f"{spell_list.get('cooldown')}: "
+                    for sp in spell_list.get('spells'):
+                        tmp_str += f"{sp}, "
+                    tmp_str = tmp_str.strip(", ")
+                    tmp_str += f"\n"
+            else:
+                tmp_str += f"{ent.get('name')}: {ent.get('text')}\n"
+        tmp_str = tmp_str.rstrip("\n")
+        rules_lines = wrap_svg_text(tmp_str, width_chars=w_in_chars, x=x+fs, line_height=fs, skip_replace=True)
+        rules_str += f'<text x="{x+fs}" y="{y+off}" font-family="{theme["font_serif"]}" font-size="{fs}" fill="{theme["rules_fg"]}">{rules_lines}</text>'
+        off += fs * len(rules_lines.split("\n"))
+
+    if len(bonus_actions_obj):
+        rules_str += f'<text x="{x}" y="{y+off}" font-family="{theme["font_serif"]}" font-size="{fs}" font-weight="bold" fill="{theme["rules_fg"]}">Bonus Actions:</text>'
+        off += fs
+        tmp_str = ""
+        for ent in bonus_actions_obj:
+            tmp_str += f"{ent.get('name')}: {ent.get('text')}\n"
+        tmp_str = tmp_str.rstrip("\n")
+        rules_lines = wrap_svg_text(tmp_str, width_chars=w_in_chars, x=x+fs, line_height=fs, skip_replace=True)
+        rules_str += f'<text x="{x}" y="{y+off}" font-family="{theme["font_serif"]}" font-size="{fs}" fill="{theme["rules_fg"]}">{rules_lines}</text>'
+        off += fs * len(rules_lines.split("\n"))
+
+    if len(reaction_obj):
+        rules_str += f'<text x="{x}" y="{y+off}" font-family="{theme["font_serif"]}" font-size="{fs}" font-weight="bold" fill="{theme["rules_fg"]}">Reactions:</text>'
+        off += fs
+        tmp_str = "\n".join(f"{ent.get('name')}: Trigger: {ent.get('trigger')} Response: {ent.get('response')}" for ent in reaction_obj)
+        rules_lines = wrap_svg_text(tmp_str, width_chars=w_in_chars, x=x+fs, line_height=fs, skip_replace=True)
+        rules_str += f'<text x="{x}" y="{y+off}" font-family="{theme["font_serif"]}" font-size="{fs}" fill="{theme["rules_fg"]}">{rules_lines}</text>'
+        off += fs * len(rules_lines.split("\n"))
 
     (x, y, fs) = theme["flavor_txt_rec"]
     flavor_lines=""
-    if flavor:
-      flavor_lines = wrap_svg_text("“" + flavor + "”", width_chars=w_in_chars, x=x, line_height=fs)
+    if mon_type_str:
+      flavor_lines = wrap_svg_text("“" + mon_type_str + "”", width_chars=w_in_chars, x=x, line_height=fs)
     rules_str += f'<text x="{x}" y="{y}" font-family="{theme["font_serif"]}" font-size="{fs}" font-style="italic" fill="{theme["flavor_fg"]}">{flavor_lines}</text>'
     return rules_str
 
@@ -327,7 +435,7 @@ def build_svg(card: dict, out_dir: Path) -> Path:
 def build_monster_card(card: dict, out_dir: Path) -> Path:
     theme = get_theme(card.get("theme", {}), card.get("rarity","Common"), "monster")
 
-    mon_type_str      = card.get(         "type", {})
+    mon_type_str      = card.get(    "type_line", {})
     ini_str           = card.get(          "ini", {})
     ac_str            = card.get(           "ac", {})
     hp_str            = card.get(           "hp", {})
@@ -340,76 +448,29 @@ def build_monster_card(card: dict, out_dir: Path) -> Path:
     senses_obj        = card.get(       "senses", {}) 
     languages_obj     = card.get(    "languages", {}) 
     action_obj        = card.get(      "actions", {}) 
-    bonus_actions_obj = card.get("bonus actions", {}) 
-
+    bonus_actions_obj = card.get("bonus_actions", {}) 
+    reaction_obj      = card.get(    "reactions", {}) 
+    traits_obj        = card.get(       "traits", {}) 
+    resistances_obj   = card.get(  "resistances", {}) 
+    immunities_obj    = card.get(   "immunities", {}) 
+    
 
     frame_str = build_frame_str(theme)
-    title_str = build_title_str(theme, card.get("name","Unnamed Item"), "")
+    title_str = build_title_str(theme, card.get("name","Unnamed Item"), cr_str)
 
     type_str = build_monster_att_str(theme,
      ac_str,
      hp_str,
      ini_str,
      speed_str,
-     att_obj.get("STR", {"10; 0; 0"}),
-     att_obj.get("DEX", {"10; 0; 0"}),
-     att_obj.get("CON", {"10; 0; 0"}),
-     att_obj.get("INT", {"10; 0; 0"}),
-     att_obj.get("WIS", {"10; 0; 0"}),
-     att_obj.get("CHA", {"10; 0; 0"}))
-    
+     att_obj.get("STR", {'score': 10, 'mod': 0, 'save': 0}),
+     att_obj.get("DEX", {'score': 10, 'mod': 0, 'save': 0}),
+     att_obj.get("CON", {'score': 10, 'mod': 0, 'save': 0}),
+     att_obj.get("INT", {'score': 10, 'mod': 0, 'save': 0}),
+     att_obj.get("WIS", {'score': 10, 'mod': 0, 'save': 0}),
+     att_obj.get("CHA", {'score': 10, 'mod': 0, 'save': 0}))
 
-    rules_str = []
-    if len(skills_obj):
-        tmp_str = ""
-        for idx, ent in enumerate(skills_obj):
-            tmp_str +=f"{str(ent)}"
-            if idx < len(skills_obj) - 1:
-                tmp_str += ", "
-        rules_str.append(("Skills:", tmp_str))
-
-    if len(gear_obj):
-        tmp_str = ""
-        for idx, ent in enumerate(gear_obj):
-            tmp_str += f"{str(ent)}"
-            if idx < len(gear_obj) - 1:
-                tmp_str += ", "
-        rules_str.append(("Gear:", tmp_str))
-
-    if len(senses_obj):
-        tmp_str = ""
-        for idx, ent in enumerate(senses_obj):
-            tmp_str += f"{str(ent)}"
-            if idx < len(senses_obj) - 1:
-                tmp_str += ", "
-        rules_str.append(("Senses:", tmp_str))
-
-    if len(languages_obj):
-        tmp_str = ""
-        for idx, ent in enumerate(languages_obj):
-            tmp_str += f"{str(ent)}"
-            if idx < len(languages_obj) - 1:
-                tmp_str += ", "
-        rules_str.append(("Languages:", tmp_str))
-
-    if len(action_obj):
-        tmp_str = ""
-        for idx, ent in enumerate(action_obj):
-            tmp_str += (f"{str(ent)}")
-            if idx < len(action_obj)-1:
-                tmp_str += f"\n"
-        rules_str.append(("Actions:", tmp_str))
-
-
-    if len(bonus_actions_obj):
-        tmp_str = ""
-        for idx, ent in enumerate(bonus_actions_obj):
-            tmp_str += f"{str(ent)}"
-            if idx < len(action_obj)-1:
-                tmp_str += f"\n"
-        rules_str.append(("Bonus Actions:", tmp_str))
-
-    rules_str = build_monster_rules_str(theme, rules_str, mon_type_str)
+    rules_str = build_monster_rules_str(theme, skills_obj, gear_obj, senses_obj, languages_obj, action_obj, bonus_actions_obj, mon_type_str, reaction_obj, traits_obj, resistances_obj, immunities_obj)
     footer_str = build_footer_str(theme, card.get("set_code","DND"), card.get("collector","001/001"), card.get("author",""), card.get("copyright","© 2025"))
 
     (w,h) = theme["card_sz"]
