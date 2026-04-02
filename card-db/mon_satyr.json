@@ -1,0 +1,225 @@
+{
+  "cards": [
+    {
+      "card_type": "monster",
+      "name": "Satyr",
+      "type_line": "Medium Fey, Chaotic Neutral",
+      "ini": "1D20+3",
+      "ac": 13,
+      "hp": "7D8",
+      "speed": "40 ft.",
+      "att": {
+        "STR": {
+          "score": 12,
+          "mod": 1,
+          "save": 1
+        },
+        "DEX": {
+          "score": 16,
+          "mod": 3,
+          "save": 3
+        },
+        "CON": {
+          "score": 11,
+          "mod": 0,
+          "save": 0
+        },
+        "INT": {
+          "score": 12,
+          "mod": 1,
+          "save": 1
+        },
+        "WIS": {
+          "score": 10,
+          "mod": 0,
+          "save": 0
+        },
+        "CHA": {
+          "score": 14,
+          "mod": 2,
+          "save": 2
+        }
+      },
+      "skills": [
+        {
+          "name": "Perception",
+          "bonus": 2
+        },
+        {
+          "name": "Performance",
+          "bonus": 6
+        },
+        {
+          "name": "Stealth",
+          "bonus": 5
+        }
+      ],
+      "senses": [
+        "Passive Perception 12"
+      ],
+      "languages": [
+        "Common",
+        "Elvish",
+        "Sylvan"
+      ],
+      "cr": "1/2 (XP 100; PB +2)",
+      "traits": [
+        {
+          "name": "Magic Resistance",
+          "text": "Advantage on saving throws against spells and magical effects."
+        }
+      ],
+      "actions": [
+        {
+          "name": "Hooves",
+          "type": "Melee",
+          "range": "5 ft.",
+          "to_hit": 5,
+          "damage": [
+            {
+              "type": "Bludgeoning",
+              "value": "1D4+3",
+              "condition": "none"
+            }
+          ],
+          "effects": [
+            "Medium or smaller target: pushed 10 ft."
+          ],
+          "text": "Melee +5, 5 ft. Hit: 5 (1d4+3) bludgeoning; Medium or smaller: push 10 ft."
+        },
+        {
+          "name": "Mockery",
+          "type": "Ranged",
+          "range": "90 ft.",
+          "save_dc": 12,
+          "damage": [
+            {
+              "type": "Psychic",
+              "value": "1D6+2",
+              "condition": "none"
+            }
+          ],
+          "text": "WIS DC 12. Fail: 5 (1d6+2) psychic."
+        }
+      ]
+    },
+    {
+      "card_type": "monster",
+      "name": "Satyr Revelmaster",
+      "type_line": "Medium Fey, Chaotic Neutral",
+      "ini": "1D20+7",
+      "ac": 17,
+      "hp": "15D8+15",
+      "speed": "40 ft.",
+      "att": {
+        "STR": {
+          "score": 12,
+          "mod": 1,
+          "save": 1
+        },
+        "DEX": {
+          "score": 18,
+          "mod": 4,
+          "save": 7
+        },
+        "CON": {
+          "score": 12,
+          "mod": 1,
+          "save": 1
+        },
+        "INT": {
+          "score": 12,
+          "mod": 1,
+          "save": 1
+        },
+        "WIS": {
+          "score": 14,
+          "mod": 2,
+          "save": 5
+        },
+        "CHA": {
+          "score": 17,
+          "mod": 3,
+          "save": 3
+        }
+      },
+      "skills": [
+        {
+          "name": "Acrobatics",
+          "bonus": 7
+        },
+        {
+          "name": "Perception",
+          "bonus": 5
+        },
+        {
+          "name": "Performance",
+          "bonus": 9
+        }
+      ],
+      "senses": [
+        "Passive Perception 15"
+      ],
+      "languages": [
+        "Common",
+        "Elvish",
+        "Sylvan"
+      ],
+      "cr": "6 (XP 2300; PB +3)",
+      "traits": [
+        {
+          "name": "Magic Resistance",
+          "text": "Advantage on saving throws against spells and magical effects."
+        }
+      ],
+      "actions": [
+        {
+          "name": "Multiattack",
+          "text": "Makes three Prance attacks."
+        },
+        {
+          "name": "Prance",
+          "type": "Melee",
+          "range": "5 ft.",
+          "to_hit": 7,
+          "damage": [
+            {
+              "type": "Bludgeoning",
+              "value": "2D8+4",
+              "condition": "none"
+            }
+          ],
+          "effects": [
+            "Target: Charmed until start of satyr's next turn."
+          ],
+          "text": "Melee +7, 5 ft. Hit: 13 (2d8+4) bludgeoning; target charmed (1 turn)."
+        },
+        {
+          "name": "Fey Melody",
+          "type": "Area",
+          "range": "60 ft.",
+          "save_dc": 14,
+          "recharge": "4-6",
+          "text": "60-ft. aura, WIS DC 14. Fail: affected by song (charm effect)."
+        },
+        {
+          "name": "Charming",
+          "type": "Ranged",
+          "range": "60 ft.",
+          "save_dc": 14,
+          "damage": [
+            {
+              "type": "Psychic",
+              "value": "2D6+3",
+              "condition": "none"
+            }
+          ],
+          "effects": [
+            "Charmed 1 min; Incapacitated; ends on damage. Frightened if damaged."
+          ],
+          "text": "WIS DC 14. Fail: 10 (2d6+3) psychic; charmed 1 min (incapacitated)."
+        }
+      ]
+    }
+  ]
+}

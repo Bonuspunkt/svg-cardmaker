@@ -1,0 +1,348 @@
+{
+  "cards": [
+    {
+      "card_type": "monster",
+      "name": "Twig Blight",
+      "type_line": "Small Plant, Neutral Evil",
+      "ini": "1D20+2",
+      "ac": 14,
+      "hp": "2D6",
+      "speed": "20 ft.",
+      "att": {
+        "STR": {
+          "score": 6,
+          "mod": -2,
+          "save": -2
+        },
+        "DEX": {
+          "score": 14,
+          "mod": 2,
+          "save": 2
+        },
+        "CON": {
+          "score": 11,
+          "mod": 0,
+          "save": 0
+        },
+        "INT": {
+          "score": 4,
+          "mod": -3,
+          "save": -3
+        },
+        "WIS": {
+          "score": 8,
+          "mod": -1,
+          "save": -1
+        },
+        "CHA": {
+          "score": 3,
+          "mod": -4,
+          "save": -4
+        }
+      },
+      "skills": [
+        {
+          "name": "Stealth",
+          "bonus": 4
+        }
+      ],
+      "vulnerabilities": [
+        "Fire"
+      ],
+      "immunities": [
+        "Deafened"
+      ],
+      "senses": [
+        "Blindsight 60 ft.",
+        "Passive Perception 9"
+      ],
+      "languages": [
+        "Understands Common but can't speak"
+      ],
+      "cr": "1/8 (XP 25; PB +2)",
+      "traits": [
+        {
+          "name": "Pack Tactics",
+          "text": "Advantage on attacks if an ally is within 5 ft. of target."
+        }
+      ],
+      "actions": [
+        {
+          "name": "Claw",
+          "type": "Melee",
+          "range": "5 ft.",
+          "to_hit": 4,
+          "damage": [
+            {
+              "type": "Slashing",
+              "value": "1D4+2",
+              "condition": "none"
+            }
+          ],
+          "text": "Melee +4, 5 ft. Hit: 4 (1d4+2) slashing."
+        }
+      ]
+    },
+    {
+      "card_type": "monster",
+      "name": "Needle Blight",
+      "type_line": "Medium Plant, Neutral Evil",
+      "ini": "1D20+1",
+      "ac": 12,
+      "hp": "3D8+3",
+      "speed": "30 ft.",
+      "att": {
+        "STR": {
+          "score": 12,
+          "mod": 1,
+          "save": 1
+        },
+        "DEX": {
+          "score": 12,
+          "mod": 1,
+          "save": 1
+        },
+        "CON": {
+          "score": 13,
+          "mod": 1,
+          "save": 1
+        },
+        "INT": {
+          "score": 4,
+          "mod": -3,
+          "save": -3
+        },
+        "WIS": {
+          "score": 8,
+          "mod": -1,
+          "save": -1
+        },
+        "CHA": {
+          "score": 3,
+          "mod": -4,
+          "save": -4
+        }
+      },
+      "immunities": [
+        "Deafened"
+      ],
+      "senses": [
+        "Blindsight 60 ft.",
+        "Passive Perception 9"
+      ],
+      "languages": [
+        "Understands Common but can't speak"
+      ],
+      "cr": "1/4 (XP 50; PB +2)",
+      "actions": [
+        {
+          "name": "Claw",
+          "type": "Melee",
+          "range": "5 ft.",
+          "to_hit": 3,
+          "damage": [
+            {
+              "type": "Slashing",
+              "value": "2D4+1",
+              "condition": "none"
+            }
+          ],
+          "text": "Melee +3, 5 ft. Hit: 6 (2d4+1) slashing."
+        },
+        {
+          "name": "Needles",
+          "type": "Ranged",
+          "range": "30/60 ft.",
+          "to_hit": 3,
+          "damage": [
+            {
+              "type": "Piercing",
+              "value": "2D4+1",
+              "condition": "none"
+            }
+          ],
+          "text": "Ranged +3, 30/60 ft. Hit: 6 (2d4+1) piercing."
+        }
+      ]
+    },
+    {
+      "card_type": "monster",
+      "name": "Vine Blight",
+      "type_line": "Medium Plant, Neutral Evil",
+      "ini": "1D20-1",
+      "ac": 12,
+      "hp": "3D8+6",
+      "speed": "20 ft.",
+      "att": {
+        "STR": {
+          "score": 15,
+          "mod": 2,
+          "save": 2
+        },
+        "DEX": {
+          "score": 8,
+          "mod": -1,
+          "save": -1
+        },
+        "CON": {
+          "score": 14,
+          "mod": 2,
+          "save": 2
+        },
+        "INT": {
+          "score": 5,
+          "mod": -3,
+          "save": -3
+        },
+        "WIS": {
+          "score": 10,
+          "mod": 0,
+          "save": 0
+        },
+        "CHA": {
+          "score": 3,
+          "mod": -4,
+          "save": -4
+        }
+      },
+      "skills": [
+        {
+          "name": "Stealth",
+          "bonus": 1
+        }
+      ],
+      "immunities": [
+        "Deafened"
+      ],
+      "senses": [
+        "Blindsight 60 ft.",
+        "Passive Perception 10"
+      ],
+      "languages": [
+        "Common"
+      ],
+      "cr": "1/2 (XP 100; PB +2)",
+      "actions": [
+        {
+          "name": "Constricting Vine",
+          "type": "Melee",
+          "range": "10 ft.",
+          "to_hit": 4,
+          "damage": [
+            {
+              "type": "Bludgeoning",
+              "value": "1D8+2",
+              "condition": "none"
+            },
+            {
+              "type": "Bludgeoning",
+              "value": "1D8",
+              "condition": "grappled"
+            }
+          ],
+          "effects": [
+            "Large or smaller target: Grappled (escape DC 12)."
+          ],
+          "text": "Melee +4, 10 ft. Hit: 6 (1d8+2) bludgeoning; grappled (DC 12), takes 4 (1d8) each turn."
+        },
+        {
+          "name": "Entangling Plants",
+          "type": "Area",
+          "recharge": "5-6",
+          "save_dc": 12,
+          "text": "Casts Entangle (CON, DC 12)."
+        }
+      ]
+    },
+    {
+      "card_type": "monster",
+      "name": "Tree Blight",
+      "type_line": "Huge Plant, Neutral Evil",
+      "ini": "1D20+3",
+      "ac": 15,
+      "hp": "10D12+50",
+      "speed": "30 ft.",
+      "att": {
+        "STR": {
+          "score": 23,
+          "mod": 6,
+          "save": 6
+        },
+        "DEX": {
+          "score": 10,
+          "mod": 0,
+          "save": 0
+        },
+        "CON": {
+          "score": 20,
+          "mod": 5,
+          "save": 5
+        },
+        "INT": {
+          "score": 6,
+          "mod": -2,
+          "save": -2
+        },
+        "WIS": {
+          "score": 10,
+          "mod": 0,
+          "save": 0
+        },
+        "CHA": {
+          "score": 3,
+          "mod": -4,
+          "save": -4
+        }
+      },
+      "immunities": [
+        "Deafened"
+      ],
+      "senses": [
+        "Blindsight 60 ft.",
+        "Passive Perception 10"
+      ],
+      "languages": [
+        "Understands Common and Druidic but can't speak"
+      ],
+      "cr": "7 (XP 2900; PB +3)",
+      "actions": [
+        {
+          "name": "Multiattack",
+          "text": "Makes two Branch attacks and uses Grasping Root."
+        },
+        {
+          "name": "Branch",
+          "type": "Melee",
+          "range": "15 ft.",
+          "to_hit": 9,
+          "damage": [
+            {
+              "type": "Bludgeoning",
+              "value": "3D6+6",
+              "condition": "none"
+            }
+          ],
+          "text": "Melee +9, 15 ft. Hit: 16 (3d6+6) bludgeoning."
+        },
+        {
+          "name": "Grasping Root",
+          "type": "Ranged",
+          "range": "15 ft.",
+          "save_dc": 17,
+          "effects": [
+            "Pulled 10 ft. and Grappled (escape DC 16); takes 13 (2d6+6) each turn."
+          ],
+          "text": "STR DC 17. Fail: pull + grapple (DC 16); 13 (2d6+6) per turn."
+        }
+      ],
+      "bonus_actions": [
+        {
+          "name": "Gnash",
+          "type": "Melee",
+          "save_dc": 17,
+          "text": "DEX DC 17. Fail: 19 (3d8+6) piercing; half on success."
+        }
+      ]
+    }
+  ]
+}

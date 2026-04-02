@@ -74,6 +74,32 @@
       "collector": "S001/999 C",
       "author": "wschu",
       "copyright": "© Myrdell Homebrew 2025"
+    },
+    {
+      "card_type": "spell",
+      "name": "Lightning Bolt",
+      "spell": {
+        "level": "3rd level",
+        "casting_time": "1 Action",
+        "range_area": "Self (100f t. Line)",
+        "components": [
+          "V",
+          "S",
+          "M*"
+        ],
+        "duration": "Instantaneous",
+        "school": "Evocation",
+        "attack_save": "DEX Save",
+        "damage_effect": "Lightning"
+      },
+      "rules_text": [
+        "A stroke of lightning forming a 100-foot-long, 5-foot-wide Line blasts out from you in a direction you choose. Each creature in the Line makes a Dexterity saving throw, taking 8d6 Lightning damage on a failed save or half as much damage on a successful one.",
+        "Using a Higher-Level Spell Slot. The damage increases by 1d6 for each spell slot level above 3."
+      ],
+      "set_code": "MYR",
+      "collector": "S001/999 C",
+      "author": "wschu",
+      "copyright": "© Myrdell Homebrew 2025"
     }
   ]
 }

@@ -152,10 +152,56 @@ python generate_cards.py --input ./card-db
 
 python collect_and_print.py \
   --cards "./out_cards" \
+  --add "monster_Astral_Corrupted_Hobgoblin=1" \
+  --add "monster_Astral_Wisp=1" \
+  --add "monster_Black_Bear=1" \
+  --add "monster_Blink_Dog=1" \
+  --add "monster_Brown_Bear=1" \
+  --add "monster_Deer=1" \
+  --add "monster_Dire_Wolf=1" \
+  --add "monster_Dire_Worg=1" \
+  --add "monster_Displacer_Beast=1" \
+  --add "monster_Elk=1" \
+  --add "monster_Giant_Elk=1" \
+  --add "monster_Giant_Spider=1" \
+  --add "monster_Giant_Wolf_Spider=1" \
+  --add "monster_Goblin_Boss=1" \
+  --add "monster_Goblin_Hexer=1" \
+  --add "monster_Goblin_Minion=1" \
+  --add "monster_Goblin_Warrior=1" \
+  --add "monster_Greater_Astral_Wisp=1" \
+  --add "monster_Hobgoblin_Captain=1" \
+  --add "monster_Hobgoblin_Devastator=1" \
+  --add "monster_Hobgoblin_Iron_Shadow=1" \
+  --add "monster_Hobgoblin_Warlord=1" \
+  --add "monster_Hobgoblin_Warrior=1" \
+  --add "monster_Needle_Blight=1" \
+  --add "monster_Owlbear=1" \
+  --add "monster_Phase_Spider=1" \
+  --add "monster_Satyr=1" \
+  --add "monster_Satyr_Revelmaster=1" \
+  --add "monster_Spider=1" \
+  --add "monster_Tree_Blight=1" \
+  --add "monster_Twig_Blight=1" \
+  --add "monster_Vine_Blight=1" \
+  --add "monster_Will-o_-Wisp=1" \
+  --add "monster_Winter_Wolf=1" \
+  --add "monster_Wolf=1" \
+  --add "monster_Worg=1" \
   --add "spell_Minor_Illusion=1" \
   --add "spell_Blindness_Deafness=1" \
   --add "spell_Faerie_Fire=1" \
   --add "spell_Grease=1" \
+  --add "spell_Prestidigitation=1" \
+  --add "spell_Charm_Person=1" \
+  --add "spell_Disguise_Self=1" \
+  --add "spell_Silent_Image=1" \
+  --add "spell_Mage_Hand=1" \
+  --add "spell_Fireball=1" \
+  --add "spell_Fly=1" \
+  --add "spell_Fog_Cloud=1" \
+  --add "spell_Gust_of_Wind=1" \
+  --add "spell_Lightning_Bolt=1" \
   --add "spell_Entangle=1" \
   --crop 
 

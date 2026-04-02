@@ -227,6 +227,59 @@
       "collector": "S001/999 C",
       "author": "wschu",
       "copyright": "© Myrdell Homebrew 2025"
+    },
+    {
+      "card_type": "spell",
+      "name": "Fireball",
+      "spell": {
+        "level": "3rd level",
+        "casting_time": "1 Action",
+        "range_area": "150 ft. (20 ft. Sphere)",
+        "components": [
+          "V",
+          "S",
+          "M*"
+        ],
+        "duration": "Instantaneous",
+        "school": "Evocation",
+        "attack_save": "DEX Save",
+        "damage_effect": "Fire"
+      },
+      "rules_text": [
+        "A bright streak flashes from you to a point you choose within range and then blossoms with a low roar into a fiery explosion. Each creature in a 20-foot-radius Sphere centered on that point makes a Dexterity saving throw, taking 8d6 Fire damage on a failed save or half as much damage on a successful one.",
+        "Flammable objects in the area that aren’t being worn or carried start burning.",
+        "Using a Higher-Level Spell Slot. The damage increases by 1d6 for each spell slot level above 3."
+      ],
+      "set_code": "MYR",
+      "collector": "S001/999 C",
+      "author": "wschu",
+      "copyright": "© Myrdell Homebrew 2025"
+    },
+    {
+      "card_type": "spell",
+      "name": "Fly",
+      "spell": {
+        "level": "3rd level",
+        "casting_time": "1 Action",
+        "range_area": "Touch",
+        "components": [
+          "V",
+          "S",
+          "M*"
+        ],
+        "duration": "10 Minutes (Concentration)",
+        "school": "Transmutation",
+        "attack_save": "None",
+        "damage_effect": "Movement"
+      },
+      "rules_text": [
+        "You touch a willing creature. For the duration, the target gains a Fly Speed of 60 feet and can hover. When the spell ends, the target falls if it is still aloft unless it can stop the fall.",
+        "Using a Higher-Level Spell Slot. You can target one additional creature for each spell slot level above 3."
+      ],
+      "set_code": "MYR",
+      "collector": "S001/999 C",
+      "author": "wschu",
+      "copyright": "© Myrdell Homebrew 2025"
     }
   ]
 }

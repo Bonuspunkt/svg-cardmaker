@@ -177,7 +177,7 @@ def build_monster_att_str(theme, ac, hp, ini, speed, str_, dex, con, int_, wis, 
             dx = 0
     return type_str
 
-def build_monster_rules_str(theme, skills_obj, gear_obj, senses_obj, languages_obj, action_obj, bonus_actions_obj, mon_type_str, reaction_obj, traits_obj, resistances_obj, immunities_obj) -> str:
+def build_monster_rules_str(theme, skills_obj, gear_obj, senses_obj, languages_obj, action_obj, bonus_actions_obj, mon_type_str, reaction_obj, traits_obj, resistances_obj, immunities_obj, vulnerabilities_obj) -> str:
     w_in_chars = 60
 
     (x, y, w, h) = theme["rules_rec"]
@@ -206,6 +206,14 @@ def build_monster_rules_str(theme, skills_obj, gear_obj, senses_obj, languages_o
         rules_str += f'<text x="{x}" y="{y+off}" font-family="{theme["font_serif"]}" font-size="{fs}" font-weight="bold" fill="{theme["rules_fg"]}">Immunities:</text>'
         off += fs
         tmp_str = ", ".join(f"{ent}" for ent in immunities_obj)
+        rules_lines = wrap_svg_text(tmp_str, width_chars=w_in_chars, x=x+fs, line_height=fs)
+        rules_str += f'<text x="{x}" y="{y+off}" font-family="{theme["font_serif"]}" font-size="{fs}" fill="{theme["rules_fg"]}">{rules_lines}</text>'
+        off += fs * len(rules_lines.split("\n"))
+
+    if len(vulnerabilities_obj):
+        rules_str += f'<text x="{x}" y="{y+off}" font-family="{theme["font_serif"]}" font-size="{fs}" font-weight="bold" fill="{theme["rules_fg"]}">Vulnerabilities:</text>'
+        off += fs
+        tmp_str = ", ".join(f"{ent}" for ent in vulnerabilities_obj)
         rules_lines = wrap_svg_text(tmp_str, width_chars=w_in_chars, x=x+fs, line_height=fs)
         rules_str += f'<text x="{x}" y="{y+off}" font-family="{theme["font_serif"]}" font-size="{fs}" fill="{theme["rules_fg"]}">{rules_lines}</text>'
         off += fs * len(rules_lines.split("\n"))
@@ -436,25 +444,25 @@ def build_svg(card: dict, out_dir: Path) -> Path:
 def build_monster_card(card: dict, out_dir: Path) -> Path:
     theme = get_theme(card.get("theme", {}), card.get("rarity","Common"), "monster")
 
-    mon_type_str      = card.get(    "type_line", {})
-    ini_str           = card.get(          "ini", {})
-    ac_str            = card.get(           "ac", {})
-    hp_str            = card.get(           "hp", {})
-    speed_str         = card.get(        "speed", {})
-    cr_str            = card.get(           "cr", {})
-        
-    att_obj           = card.get(          "att", {}) 
-    skills_obj        = card.get(       "skills", {}) 
-    gear_obj          = card.get(         "gear", {}) 
-    senses_obj        = card.get(       "senses", {}) 
-    languages_obj     = card.get(    "languages", {}) 
-    action_obj        = card.get(      "actions", {}) 
-    bonus_actions_obj = card.get("bonus_actions", {}) 
-    reaction_obj      = card.get(    "reactions", {}) 
-    traits_obj        = card.get(       "traits", {}) 
-    resistances_obj   = card.get(  "resistances", {}) 
-    immunities_obj    = card.get(   "immunities", {}) 
-    
+    mon_type_str        = card.get(      "type_line", {})
+    ini_str             = card.get(            "ini", {})
+    ac_str              = card.get(             "ac", {})
+    hp_str              = card.get(             "hp", {})
+    speed_str           = card.get(          "speed", {})
+    cr_str              = card.get(             "cr", {})
+            
+    att_obj             = card.get(            "att", {}) 
+    skills_obj          = card.get(         "skills", {}) 
+    gear_obj            = card.get(           "gear", {}) 
+    senses_obj          = card.get(         "senses", {}) 
+    languages_obj       = card.get(      "languages", {}) 
+    action_obj          = card.get(        "actions", {}) 
+    bonus_actions_obj   = card.get(  "bonus_actions", {}) 
+    reaction_obj        = card.get(      "reactions", {}) 
+    traits_obj          = card.get(         "traits", {}) 
+    resistances_obj     = card.get(    "resistances", {}) 
+    immunities_obj      = card.get(     "immunities", {}) 
+    vulnerabilities_obj = card.get("vulnerabilities", {}) 
 
     frame_str = build_frame_str(theme)
     title_str = build_title_str(theme, card.get("name","Unnamed Item"), cr_str)
@@ -471,7 +479,7 @@ def build_monster_card(card: dict, out_dir: Path) -> Path:
      att_obj.get("WIS", {'score': 10, 'mod': 0, 'save': 0}),
      att_obj.get("CHA", {'score': 10, 'mod': 0, 'save': 0}))
 
-    rules_str = build_monster_rules_str(theme, skills_obj, gear_obj, senses_obj, languages_obj, action_obj, bonus_actions_obj, mon_type_str, reaction_obj, traits_obj, resistances_obj, immunities_obj)
+    rules_str = build_monster_rules_str(theme, skills_obj, gear_obj, senses_obj, languages_obj, action_obj, bonus_actions_obj, mon_type_str, reaction_obj, traits_obj, resistances_obj, immunities_obj, vulnerabilities_obj)
     footer_str = build_footer_str(theme, card.get("set_code","DND"), card.get("collector","001/001"), card.get("author",""), card.get("copyright","© 2025"))
 
     (w,h) = theme["card_sz"]
