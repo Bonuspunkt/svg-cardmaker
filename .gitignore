@@ -2,4 +2,5 @@
 /out_cards/**
 *.pdf
 /tmp
+node_modules/
 
