@@ -1,0 +1,37 @@
+{
+  "name": "SVG Cardmaker",
+  "image": "mcr.microsoft.com/devcontainers/base:ubuntu",
+  "features": {
+    "ghcr.io/devcontainers/features/python:1": {
+      "version": "3.12"
+    },
+    "ghcr.io/devcontainers/features/node:1": {
+      "version": "lts"
+    }
+  },
+  "mounts": [
+    {
+      "source": "${localEnv:HOME}/.claude",
+      "target": "/home/vscode/.claude",
+      "type": "bind"
+    },
+    {
+      "source": "${localWorkspaceFolderBasename}-claude",
+      "target": "/workspaces/${localWorkspaceFolderBasename}/.claude",
+      "type": "volume"
+    }
+  ],
+  "workspaceMount": "source=${localWorkspaceFolder},target=/workspaces/${localWorkspaceFolderBasename},type=bind",
+  "workspaceFolder": "/workspaces/${localWorkspaceFolderBasename}",
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "anthropic.claude-code",
+        "ms-python.python",
+        "ms-python.vscode-pylance",
+        "jock.svg"
+      ]
+    }
+  },
+  "postCreateCommand": ".devcontainer/post-create.sh ${localWorkspaceFolderBasename}"
+}

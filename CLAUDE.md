@@ -33,3 +33,9 @@ D&D card generator that renders RPG cards (items, spells, monsters) from JSON de
 **Component hierarchy:** `Card` → dispatches to `ItemCard`/`SpellCard`/`MonsterCard` → each assembles `CardFrame`, `TitleBar`, type-specific sections (`ArtSection`/`SpellTypeGrid`/`MonsterStatBlock`), `RulesBox`/`MonsterRulesBox`, `OptionalBoxes`, `Footer`. Styling is in `src/styles/card.css` using CSS custom properties from the theme.
 
 **Print pipeline** (`src/collect-and-print.tsx`): Assembles card HTML files into `PrintLayout` component (A4 grid with crop marks), renders to PDF via Puppeteer.
+
+## Development Environment
+
+**Dev container** (`.devcontainer/`): Ubuntu-based container with Node LTS and Python 3.12. `post-create.sh` installs system deps for pycairo/Pillow/lxml, sets up a Python venv from `requirements.txt`, and bootstraps Claude Code permissions.
+
+**CI** (`.github/workflows/ci.yml`): Runs on push/PR to `main`. Steps: `npm ci` → typecheck → Playwright tests (Chromium). Test results uploaded as artifacts (7-day retention).
