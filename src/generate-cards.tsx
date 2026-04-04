@@ -3,6 +3,7 @@ import { resolve, join } from "node:path";
 import { renderToStaticMarkup } from "react-dom/server";
 import { program } from "commander";
 import { Card } from "./components/Card.js";
+import { PrintLayout } from "./components/print/PrintLayout.js";
 import { safeFilename } from "./utils/filename.js";
 import type { Card as CardType } from "./types/card.js";
 import { isSpellCard, isMonsterCard } from "./types/card.js";
@@ -73,7 +74,36 @@ function main() {
     made.push(filename);
   }
 
+  // Generate an HTML index using the same PrintLayout as collect-and-print
+  const groups = new Map<string, string[]>();
+  for (const filename of made) {
+    let cat = "Items";
+    if (filename.startsWith("spell_")) cat = "Spells";
+    else if (filename.startsWith("monster_")) cat = "Monsters";
+    if (!groups.has(cat)) groups.set(cat, []);
+    groups.get(cat)!.push(`<img src="${filename}" style="width:100%;height:100%" />`);
+  }
+
+  const markup = renderToStaticMarkup(
+    <PrintLayout
+      groups={Array.from(groups.entries()).map(([category, svgContents]) => ({
+        category,
+        svgContents,
+      }))}
+      showCropMarks={false}
+    />,
+  );
+
+  const html = `<!DOCTYPE html>\n${markup}`.replace(
+    "<head>",
+    '<head><meta charset="utf-8">',
+  );
+
+  const htmlPath = join(outDir, "index.html");
+  writeFileSync(htmlPath, html, "utf-8");
+
   console.log(`\nGenerated ${made.length} cards into: ${outDir}`);
+  console.log(`HTML index: ${htmlPath}`);
   for (const name of made) {
     console.log(` - ${name}`);
   }

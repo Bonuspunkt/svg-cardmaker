@@ -10,13 +10,12 @@ interface Props {
 
 export function Footer({ theme, setCode, collector, author, copyrightStr }: Props) {
   const [lx, ly, lfs] = theme.footer_txt_rec_l;
-  const [rx, ry, rfs] = theme.footer_txt_rec_r;
 
   return (
     <g>
       <text
         x={lx}
-        y={ly}
+        y={ly - lfs - 2}
         fontFamily={theme.font_sans}
         fontSize={lfs}
         fill={theme.footer_fg}
@@ -24,11 +23,10 @@ export function Footer({ theme, setCode, collector, author, copyrightStr }: Prop
         {setCode} • {collector} • {author}
       </text>
       <text
-        x={rx}
-        y={ry}
+        x={lx}
+        y={ly}
         fontFamily={theme.font_sans}
-        fontSize={rfs}
-        textAnchor="end"
+        fontSize={lfs}
         fill={theme.footer_fg}
       >
         {copyrightStr}

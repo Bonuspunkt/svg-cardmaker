@@ -1,13 +1,9 @@
-import { readdirSync, readFileSync, writeFileSync } from "node:fs";
+import { readdirSync, readFileSync } from "node:fs";
 import { resolve, join } from "node:path";
 import { renderToStaticMarkup } from "react-dom/server";
 import { program } from "commander";
 import puppeteer from "puppeteer";
 import { PrintLayout } from "./components/print/PrintLayout.js";
-
-function pxToPt(px: number, dpi: number): number {
-  return (px * 72.0) / dpi;
-}
 
 function a4SizePt(orientation: string): [number, number] {
   const wPt = 595.2755906;
@@ -82,19 +78,9 @@ function parseAdds(addList: string[]): Array<[string, number]> {
 async function makeSheets(
   svgGroups: Map<string, string[]>,
   outPdf: string,
-  dpi: number = 300,
-  orientation: string = "a4portrait",
-  cols: number = 3,
-  rows: number = 3,
-  gutterPx: number = 18,
-  cardW: number = 744,
-  cardH: number = 1039,
   addCrop: boolean = false,
 ) {
-  const gutterPt = pxToPt(gutterPx, dpi);
-  const cardWPt = pxToPt(cardW, dpi);
-  const cardHPt = pxToPt(cardH, dpi);
-  const [sheetWPt, sheetHPt] = a4SizePt(orientation);
+  const [sheetWPt, sheetHPt] = a4SizePt("a4portrait");
 
   const groups = Array.from(svgGroups.entries()).map(([category, paths]) => ({
     category,
@@ -102,28 +88,13 @@ async function makeSheets(
   }));
 
   const markup = renderToStaticMarkup(
-    <PrintLayout
-      groups={groups}
-      sheetWidthPt={sheetWPt}
-      sheetHeightPt={sheetHPt}
-      cardWidthPt={cardWPt}
-      cardHeightPt={cardHPt}
-      cols={cols}
-      rows={rows}
-      gutterPt={gutterPt}
-      showCropMarks={addCrop}
-      dpi={dpi}
-    />,
+    <PrintLayout groups={groups} showCropMarks={addCrop} />,
   );
 
   const html = `<!DOCTYPE html>\n${markup}`.replace(
     "<head>",
     '<head><meta charset="utf-8">',
   );
-
-  const htmlPath = outPdf.replace(/\.pdf$/, ".html");
-  writeFileSync(resolve(htmlPath), html, "utf-8");
-  console.log(`Created: ${htmlPath}`);
 
   const browser = await puppeteer.launch({
     headless: true,
@@ -151,14 +122,6 @@ async function main() {
       "Add 'Name=count' (use base filename without .svg). Can repeat.",
     )
     .option("--out <path>", "Output PDF path", "cards_print.pdf")
-    .option("--dpi <n>", "Interpretation DPI for px-based inputs", "300")
-    .option("--orientation <type>", "Sheet orientation", "a4portrait")
-    .option("--cols <n>", "Columns per page", "3")
-    .option("--rows <n>", "Rows per page", "3")
-    .option("--margin <n>", "Outer margin in px (at sheet DPI)", "60")
-    .option("--gutter <n>", "Gap between cards in px (at sheet DPI)", "18")
-    .option("--card-w <n>", "Card width in px", "744")
-    .option("--card-h <n>", "Card height in px", "1039")
     .option("--crop", "Add crop marks around each card")
     .option("--all", "Include one of every SVG card in the cards directory")
     .parse();
@@ -187,18 +150,7 @@ async function main() {
     }
   }
 
-  await makeSheets(
-    svgGroups,
-    opts.out,
-    parseInt(opts.dpi),
-    opts.orientation,
-    parseInt(opts.cols),
-    parseInt(opts.rows),
-    parseInt(opts.gutter),
-    parseInt(opts.cardW),
-    parseInt(opts.cardH),
-    opts.crop ?? false,
-  );
+  await makeSheets(svgGroups, opts.out, opts.crop ?? false);
 }
 
 main().catch((err) => {

@@ -1,77 +1,58 @@
 import React from "react";
 import { CropMarks } from "./CropMarks.js";
 
-interface Position {
-  x: number;
-  y: number;
-}
-
 interface PrintPageProps {
-  sheetWidthPt: number;
-  sheetHeightPt: number;
-  cardWidthPt: number;
-  cardHeightPt: number;
-  positions: Position[];
   svgContents: string[];
   showCropMarks: boolean;
-  cropLengthPt: number;
-  cropOffsetPt: number;
+  pageBreak: boolean;
 }
 
+const CARD_WIDTH = "62mm";
+const CARD_HEIGHT = "86mm";
+
 export function PrintPage({
-  sheetWidthPt,
-  sheetHeightPt,
-  cardWidthPt,
-  cardHeightPt,
-  positions,
   svgContents,
   showCropMarks,
-  cropLengthPt,
-  cropOffsetPt,
+  pageBreak,
 }: PrintPageProps) {
   return (
     <div
-      className="page"
       style={{
         position: "relative",
-        width: `${sheetWidthPt}pt`,
-        height: `${sheetHeightPt}pt`,
-        breakAfter: "page",
+        width: "210mm",
+        height: "297mm",
+        breakBefore: pageBreak ? "page" : undefined,
       }}
     >
-      {svgContents.map((svgContent, j) => {
-        const { x, y } = positions[j];
-        const cleaned = svgContent
-          .replace(/<\?xml[^?]*\?>\s*/, "")
-          .replace(/width="[^"]*"/, `width="${cardWidthPt}pt"`)
-          .replace(/height="[^"]*"/, `height="${cardHeightPt}pt"`);
+      <div
+        style={{
+          width: "100%",
+          height: "100%",
+          display: "flex",
+          flexWrap: "wrap",
+          alignContent: "center",
+          justifyContent: "center",
+          gap: "5mm",
+        }}
+      >
+        {svgContents.map((svgContent, j) => {
+          const cleaned = svgContent
+            .replace(/<\?xml[^?]*\?>\s*/, "")
+            .replace(/width="[^"]*"/, `width="${CARD_WIDTH}"`)
+            .replace(/height="[^"]*"/, `height="${CARD_HEIGHT}"`);
 
-        return (
-          <React.Fragment key={j}>
-            <div
-              style={{
-                position: "absolute",
-                left: `${x}pt`,
-                top: `${y}pt`,
-                width: `${cardWidthPt}pt`,
-                height: `${cardHeightPt}pt`,
-                overflow: "hidden",
-              }}
-              dangerouslySetInnerHTML={{ __html: cleaned }}
+          const dataUri = `data:image/svg+xml;base64,${Buffer.from(cleaned).toString("base64")}`;
+
+          return (
+            <img
+              key={j}
+              src={dataUri}
+              style={{ width: CARD_WIDTH, height: CARD_HEIGHT }}
             />
-            {showCropMarks && (
-              <CropMarks
-                x={x}
-                y={y}
-                width={cardWidthPt}
-                height={cardHeightPt}
-                lengthPt={cropLengthPt}
-                offsetPt={cropOffsetPt}
-              />
-            )}
-          </React.Fragment>
-        );
-      })}
+          );
+        })}
+      </div>
+      {showCropMarks && <CropMarks />}
     </div>
   );
 }
