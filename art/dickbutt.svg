@@ -1,0 +1,65 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 280" width="200" height="280">
+  <defs>
+    <linearGradient id="rainbow" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#FF0000"/>
+      <stop offset="12%" stop-color="#FF0000"/>
+      <stop offset="22%" stop-color="#FF8800"/>
+      <stop offset="32%" stop-color="#FF8800"/>
+      <stop offset="40%" stop-color="#FFFF00"/>
+      <stop offset="50%" stop-color="#FFFF00"/>
+      <stop offset="58%" stop-color="#00CC00"/>
+      <stop offset="68%" stop-color="#00CC00"/>
+      <stop offset="76%" stop-color="#0066FF"/>
+      <stop offset="84%" stop-color="#0066FF"/>
+      <stop offset="90%" stop-color="#4400CC"/>
+      <stop offset="96%" stop-color="#4400CC"/>
+      <stop offset="100%" stop-color="#8800AA"/>
+    </linearGradient>
+  </defs>
+  <style>
+    .stroke { fill: none; stroke: #222; stroke-width: 3; stroke-linecap: round; stroke-linejoin: round; }
+    .dick   { fill: url(#rainbow); stroke: #222; stroke-width: 3; stroke-linecap: round; stroke-linejoin: round; }
+    .skin   { fill: #fff; stroke: #222; stroke-width: 3; stroke-linecap: round; stroke-linejoin: round; }
+    .filled { fill: #222; stroke: none; }
+  </style>
+
+  <!-- Body (phallic torso) -->
+  <ellipse cx="100" cy="140" rx="38" ry="70" class="dick"/>
+  <!-- Head (glans shape) -->
+  <ellipse cx="100" cy="62" rx="42" ry="30" class="dick"/>
+  <!-- Urethral slit on head -->
+  <line x1="100" y1="36" x2="100" y2="44" class="stroke" stroke-width="2.5"/>
+
+  <!-- Eyes -->
+  <circle cx="88" cy="56" r="5" class="filled"/>
+  <circle cx="112" cy="56" r="5" class="filled"/>
+  <!-- Mouth (smirk) -->
+  <path d="M90 72 Q100 82 110 72" class="stroke" stroke-width="2.5"/>
+
+  <!-- Arms -->
+  <path d="M62 130 Q45 115 38 125" class="stroke" stroke-width="3"/>
+  <path d="M138 130 Q155 115 162 125" class="stroke" stroke-width="3"/>
+  <!-- Hands -->
+  <circle cx="36" cy="126" r="5" class="skin"/>
+  <circle cx="164" cy="126" r="5" class="skin"/>
+
+  <!-- Legs -->
+  <path d="M80 205 L70 252" class="stroke" stroke-width="4"/>
+  <path d="M120 205 L130 252" class="stroke" stroke-width="4"/>
+  <!-- Feet -->
+  <ellipse cx="65" cy="256" rx="14" ry="6" class="skin"/>
+  <ellipse cx="135" cy="256" rx="14" ry="6" class="skin"/>
+
+  <!-- Butt cheeks -->
+  <ellipse cx="84" cy="212" rx="22" ry="18" class="skin"/>
+  <ellipse cx="116" cy="212" rx="22" ry="18" class="skin"/>
+  <!-- Butt crack -->
+  <path d="M100 198 Q100 216 100 228" class="stroke" stroke-width="2"/>
+
+  <!-- Butt-dick (smaller, pointing right-ish from rear) -->
+  <g transform="translate(138,208) rotate(-20)">
+    <ellipse cx="0" cy="0" rx="10" ry="22" class="dick"/>
+    <ellipse cx="0" cy="-26" rx="13" ry="10" class="dick"/>
+    <line x1="0" y1="-34" x2="0" y2="-30" class="stroke" stroke-width="2"/>
+  </g>
+</svg>

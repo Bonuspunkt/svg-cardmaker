@@ -1,9 +1,14 @@
-import { readdirSync, readFileSync } from "node:fs";
-import { resolve, join } from "node:path";
+import { readFileSync, readdirSync, writeFileSync, unlinkSync } from "node:fs";
+import { tmpdir } from "node:os";
+import { resolve, join, dirname } from "node:path";
+import { fileURLToPath } from "node:url";
 import { renderToStaticMarkup } from "react-dom/server";
 import { program } from "commander";
 import puppeteer from "puppeteer";
 import { PrintLayout } from "./components/print/PrintLayout.js";
+
+const __dirname = dirname(fileURLToPath(import.meta.url));
+const cardCss = readFileSync(join(__dirname, "styles/card.css"), "utf-8");
 
 function a4SizePt(orientation: string): [number, number] {
   const wPt = 595.2755906;
@@ -22,7 +27,7 @@ function collectAllFiles(cardsDir: string): Map<string, string[]> {
   const dir = resolve(cardsDir);
   const groups = new Map<string, string[]>();
   const files = readdirSync(dir)
-    .filter((f) => f.endsWith(".svg"))
+    .filter((f) => f.endsWith(".html") && f !== "index.html")
     .sort();
 
   for (const f of files) {
@@ -41,8 +46,8 @@ function collectFiles(
   const index = new Map<string, string>();
   const dir = resolve(cardsDir);
   for (const f of readdirSync(dir)) {
-    if (f.endsWith(".svg")) {
-      const stem = f.replace(/\.svg$/, "").toLowerCase();
+    if (f.endsWith(".html") && f !== "index.html") {
+      const stem = f.replace(/\.html$/, "").toLowerCase();
       index.set(stem, join(dir, f));
     }
   }
@@ -52,7 +57,7 @@ function collectFiles(
     const key = base.toLowerCase();
     const path = index.get(key);
     if (!path) {
-      throw new Error(`Card SVG '${base}.svg' not found in ${cardsDir}`);
+      throw new Error(`Card '${base}.html' not found in ${cardsDir}`);
     }
     for (let i = 0; i < count; i++) {
       out.push(path);
@@ -76,19 +81,18 @@ function parseAdds(addList: string[]): Array<[string, number]> {
 }
 
 async function makeSheets(
-  svgGroups: Map<string, string[]>,
+  cardGroups: Map<string, string[]>,
   outPdf: string,
-  addCrop: boolean = false,
 ) {
   const [sheetWPt, sheetHPt] = a4SizePt("a4portrait");
 
-  const groups = Array.from(svgGroups.entries()).map(([category, paths]) => ({
+  const groups = Array.from(cardGroups.entries()).map(([category, paths]) => ({
     category,
-    svgContents: paths.map((p) => readFileSync(p, "utf-8")),
+    cardPaths: paths.map((p) => `file://${resolve(p)}`),
   }));
 
   const markup = renderToStaticMarkup(
-    <PrintLayout groups={groups} showCropMarks={addCrop} />,
+    <PrintLayout groups={groups} cardCss={cardCss} />,
   );
 
   const html = `<!DOCTYPE html>\n${markup}`.replace(
@@ -96,12 +100,15 @@ async function makeSheets(
     '<head><meta charset="utf-8">',
   );
 
+  const tmpHtml = join(tmpdir(), `cards_print_${Date.now()}.html`);
+  writeFileSync(tmpHtml, html, "utf-8");
+
   const browser = await puppeteer.launch({
     headless: true,
     args: ["--no-sandbox", "--disable-setuid-sandbox"],
   });
   const page = await browser.newPage();
-  await page.setContent(html, { waitUntil: "networkidle0" });
+  await page.goto(`file://${tmpHtml}`, { waitUntil: "networkidle0" });
   await page.pdf({
     path: resolve(outPdf),
     width: `${sheetWPt}pt`,
@@ -110,20 +117,20 @@ async function makeSheets(
     margin: { top: 0, right: 0, bottom: 0, left: 0 },
   });
   await browser.close();
+  unlinkSync(tmpHtml);
 
   console.log(`Created: ${outPdf}`);
 }
 
 async function main() {
   program
-    .option("--cards <dir>", "Directory with SVG cards", "cards")
+    .option("--cards <dir>", "Directory with HTML cards", "cards")
     .option(
       "--add <items...>",
-      "Add 'Name=count' (use base filename without .svg). Can repeat.",
+      "Add 'Name=count' (use base filename without .html). Can repeat.",
     )
     .option("--out <path>", "Output PDF path", "cards_print.pdf")
-    .option("--crop", "Add crop marks around each card")
-    .option("--all", "Include one of every SVG card in the cards directory")
+    .option("--all", "Include one of every card in the cards directory")
     .parse();
 
   const opts = program.opts();
@@ -134,23 +141,23 @@ async function main() {
     process.exit(1);
   }
 
-  let svgGroups: Map<string, string[]>;
+  let cardGroups: Map<string, string[]>;
   if (opts.all) {
-    svgGroups = collectAllFiles(opts.cards);
+    cardGroups = collectAllFiles(opts.cards);
   } else {
-    svgGroups = new Map<string, string[]>();
+    cardGroups = new Map<string, string[]>();
   }
   if (addList.length > 0) {
     const requests = parseAdds(addList);
     const extra = collectFiles(opts.cards, requests);
     for (const path of extra) {
       const cat = categorizeFile(path.split("/").pop()!);
-      if (!svgGroups.has(cat)) svgGroups.set(cat, []);
-      svgGroups.get(cat)!.push(path);
+      if (!cardGroups.has(cat)) cardGroups.set(cat, []);
+      cardGroups.get(cat)!.push(path);
     }
   }
 
-  await makeSheets(svgGroups, opts.out, opts.crop ?? false);
+  await makeSheets(cardGroups, opts.out);
 }
 
 main().catch((err) => {

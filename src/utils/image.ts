@@ -10,6 +10,7 @@ export function dataUriForImage(path: string): string | null {
 
   const ext = extname(path).toLowerCase();
   const mime =
+    ext === ".svg" ? "image/svg+xml" :
     ext === ".jpg" || ext === ".jpeg" ? "image/jpeg" : "image/png";
 
   const data = readFileSync(path);

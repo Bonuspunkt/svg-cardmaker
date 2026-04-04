@@ -1,12 +1,18 @@
 import { readFileSync, writeFileSync, mkdirSync, readdirSync, statSync } from "node:fs";
-import { resolve, join } from "node:path";
+import { resolve, join, dirname } from "node:path";
+import { fileURLToPath } from "node:url";
 import { renderToStaticMarkup } from "react-dom/server";
 import { program } from "commander";
 import { Card } from "./components/Card.js";
 import { PrintLayout } from "./components/print/PrintLayout.js";
 import { safeFilename } from "./utils/filename.js";
 import type { Card as CardType } from "./types/card.js";
-import { isSpellCard, isMonsterCard } from "./types/card.js";
+import { isSpellCard, isMonsterCard, isItemCard } from "./types/card.js";
+import { dataUriForImage } from "./utils/image.js";
+import { expandCard } from "./utils/expand-card.js";
+
+const __dirname = dirname(fileURLToPath(import.meta.url));
+const cardCss = readFileSync(join(__dirname, "styles/card.css"), "utf-8");
 
 function loadCards(inputPath: string): CardType[] {
   const cards: CardType[] = [];
@@ -37,9 +43,24 @@ function loadCards(inputPath: string): CardType[] {
   return cards;
 }
 
-function generateSvg(card: CardType): string {
-  const markup = renderToStaticMarkup(<Card card={card} />);
-  return `<?xml version="1.0" encoding="UTF-8" standalone="no"?>\n${markup}\n`;
+function resolveArt(card: CardType): CardType {
+  if (isItemCard(card) && card.art_path && !card.art_src) {
+    return { ...card, art_src: dataUriForImage(card.art_path) };
+  }
+  if (isMonsterCard(card) && !card.art_src) {
+    const artPath = card.art_path ?? "art/dickbutt.svg";
+    return { ...card, art_src: dataUriForImage(artPath) };
+  }
+  return card;
+}
+
+function generateHtml(card: CardType): string {
+  const markup = renderToStaticMarkup(<Card card={resolveArt(card)} />);
+  return `<!DOCTYPE html>
+<html>
+<head><meta charset="utf-8"><style>${cardCss}</style></head>
+<body style="margin:0">${markup}</body>
+</html>`;
 }
 
 function main() {
@@ -57,21 +78,29 @@ function main() {
   const made: string[] = [];
 
   for (const card of cards) {
-    const safe = safeFilename(card.name ?? "card");
-    let filename: string;
+    const expanded = expandCard(card);
+    for (const [idx, c] of expanded.entries()) {
+      const safe = safeFilename(c.name ?? "card");
+      let filename: string;
 
-    if (isSpellCard(card)) {
-      filename = `spell_${safe}.svg`;
-    } else if (isMonsterCard(card)) {
-      filename = `monster_${safe}.svg`;
-    } else {
-      filename = `${safe}.svg`;
+      if (isSpellCard(c)) {
+        filename = `spell_${safe}.html`;
+      } else if (isMonsterCard(c)) {
+        filename = `monster_${safe}.html`;
+      } else {
+        filename = `${safe}.html`;
+      }
+
+      // Avoid filename collisions for continuation cards
+      if (idx > 0) {
+        filename = filename.replace(/\.html$/, `_p${idx + 1}.html`);
+      }
+
+      const html = generateHtml(c);
+      const outPath = join(outDir, filename);
+      writeFileSync(outPath, html, "utf-8");
+      made.push(filename);
     }
-
-    const svg = generateSvg(card);
-    const outPath = join(outDir, filename);
-    writeFileSync(outPath, svg, "utf-8");
-    made.push(filename);
   }
 
   // Generate an HTML index using the same PrintLayout as collect-and-print
@@ -81,26 +110,26 @@ function main() {
     if (filename.startsWith("spell_")) cat = "Spells";
     else if (filename.startsWith("monster_")) cat = "Monsters";
     if (!groups.has(cat)) groups.set(cat, []);
-    groups.get(cat)!.push(`<img src="${filename}" style="width:100%;height:100%" />`);
+    groups.get(cat)!.push(filename);
   }
 
   const markup = renderToStaticMarkup(
     <PrintLayout
-      groups={Array.from(groups.entries()).map(([category, svgContents]) => ({
+      groups={Array.from(groups.entries()).map(([category, cardPaths]) => ({
         category,
-        svgContents,
+        cardPaths,
       }))}
-      showCropMarks={false}
+      cardCss={cardCss}
     />,
   );
 
-  const html = `<!DOCTYPE html>\n${markup}`.replace(
+  const indexHtml = `<!DOCTYPE html>\n${markup}`.replace(
     "<head>",
     '<head><meta charset="utf-8">',
   );
 
   const htmlPath = join(outDir, "index.html");
-  writeFileSync(htmlPath, html, "utf-8");
+  writeFileSync(htmlPath, indexHtml, "utf-8");
 
   console.log(`\nGenerated ${made.length} cards into: ${outDir}`);
   console.log(`HTML index: ${htmlPath}`);

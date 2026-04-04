@@ -3,4 +3,6 @@
 *.pdf
 /tmp
 node_modules/
+src/dist/
+test-results/
 

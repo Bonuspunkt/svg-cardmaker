@@ -100,7 +100,7 @@
     {
       "name": "Cloak of the Manta Ray",
       "rarity": "Uncommon",
-      "type_line": "Wondrous item (Requires Attunement)",
+      "type_line": "Wondrous item (requires attunement)",
       "rules_text": [
         "While wearing this cloak, you can breathe underwater, and you have a Swim Speed of 60 feet."
       ],

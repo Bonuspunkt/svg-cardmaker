@@ -1,0 +1,447 @@
+/* Card stylesheet — all layout via CSS custom properties set on .card root */
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+@media print {
+  .no-print { display: none !important; }
+}
+
+/* ── Card container ─────────────────────────────────────── */
+
+.card {
+  position: relative;
+  width: var(--card-w);
+  height: var(--card-h);
+  overflow: hidden;
+  border-radius: 0.1524cm;
+}
+
+/* ── Frame ───────────────────────────────────────────────── */
+
+.card-frame {
+  position: absolute;
+  inset: 0;
+  border-radius: 0.1524cm;
+  background: var(--frame-bg);
+}
+
+.card-inner {
+  position: absolute;
+  left: var(--inner-x);
+  top: var(--inner-y);
+  width: var(--inner-w);
+  height: var(--inner-h);
+  border-radius: 0.1186cm;
+  background: var(--frame-inner);
+  border: 0.017cm solid var(--frame-border);
+}
+
+/* ── Title bar ───────────────────────────────────────────── */
+
+.title-bar {
+  position: absolute;
+  left: var(--title-x);
+  top: var(--title-y);
+  width: var(--title-w);
+  height: var(--title-h);
+  border-radius: 0.0677cm;
+  background: var(--title-bg);
+  border: 0.017cm solid var(--frame-border);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 0.152cm;
+  overflow: hidden;
+}
+
+.title-name {
+  font-family: var(--font-serif);
+  font-size: var(--title-fs);
+  font-weight: 700;
+  color: var(--title-fg);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.title-rarity {
+  font-family: var(--font-serif);
+  font-size: var(--title-rarity-fs);
+  color: var(--title-fg);
+  white-space: nowrap;
+  flex-shrink: 0;
+  margin-left: 0.08cm;
+}
+
+/* ── Art section ─────────────────────────────────────────── */
+
+.art-section {
+  position: absolute;
+  left: var(--art-x);
+  top: var(--art-y);
+  width: var(--art-w);
+  height: var(--art-h);
+  border-radius: 0.0847cm;
+  overflow: hidden;
+  border: 0.017cm solid var(--frame-border);
+  background: var(--art-bg);
+}
+
+.art-image {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+/* ── Type line ───────────────────────────────────────────── */
+
+.type-line {
+  position: absolute;
+  left: var(--type-x);
+  top: var(--type-y);
+  width: var(--type-w);
+  height: var(--type-h);
+  border-radius: 0.0508cm;
+  background: var(--type-bg);
+  border: 0.017cm solid var(--frame-border);
+  display: flex;
+  align-items: center;
+  padding: 0 0.152cm;
+  font-family: var(--font-sans);
+  font-size: var(--type-fs);
+  font-weight: 600;
+  color: var(--type-fg);
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+/* ── Spell type grid ─────────────────────────────────────── */
+
+.spell-grid {
+  position: absolute;
+  left: var(--type-x);
+  top: var(--type-y);
+  width: var(--type-w);
+  height: var(--type-h);
+  border-radius: 0.0508cm;
+  background: var(--type-bg);
+  border: 0.017cm solid var(--frame-border);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 0.0508cm 0.152cm;
+  font-family: var(--font-sans);
+  font-size: var(--type-fs);
+  color: var(--type-fg);
+  overflow: hidden;
+}
+
+.spell-grid-row {
+  display: flex;
+}
+
+.spell-grid-cell {
+  flex: 0 0 50%;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.spell-grid-cell--full {
+  flex: 1 1 100%;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* ── Monster stat block ──────────────────────────────────── */
+
+.monster-stats {
+  position: absolute;
+  left: var(--type-x);
+  top: var(--type-y);
+  width: var(--type-w);
+  height: var(--type-h);
+  border-radius: 0.0508cm;
+  background: var(--type-bg);
+  border: 0.017cm solid var(--frame-border);
+  display: flex;
+  flex-direction: column;
+  padding: 0.034cm 0.152cm;
+  font-family: var(--font-sans);
+  font-size: var(--type-fs);
+  color: var(--type-fg);
+  overflow: hidden;
+}
+
+.monster-stats-kv-row {
+  display: flex;
+}
+
+.monster-stats-kv-cell {
+  flex: 0 0 50%;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.monster-stats-divider {
+  border-top: 0.013cm solid var(--frame-border);
+  margin: 0.017cm 0;
+  opacity: 0.3;
+}
+
+.monster-stats-ability-row {
+  display: flex;
+  text-align: center;
+  flex: 1 1 auto;
+}
+
+.monster-stats-ability-cell {
+  flex: 1 1 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+/* ── Rules box ───────────────────────────────────────────── */
+
+.rules-box {
+  position: absolute;
+  left: var(--rules-x);
+  top: var(--rules-y);
+  width: var(--rules-w);
+  height: var(--rules-h);
+  border-radius: 0.0847cm;
+  background: var(--rules-bg);
+  border: 0.017cm solid var(--frame-border);
+  display: flex;
+  flex-direction: column;
+  padding: 0.0508cm 0.152cm;
+  overflow: hidden;
+}
+
+.rules-text {
+  font-family: var(--font-serif);
+  font-size: var(--rules-fs);
+  color: var(--rules-fg);
+  line-height: 1.25;
+  white-space: pre-wrap;
+  overflow-wrap: break-word;
+}
+
+.rules-flavor {
+  font-family: var(--font-serif);
+  font-size: var(--flavor-fs);
+  color: var(--flavor-fg);
+  line-height: 1.25;
+  font-style: italic;
+  text-align: right;
+  margin-top: auto;
+  padding-bottom: 0.0508cm;
+  overflow-wrap: break-word;
+}
+
+/* ── Monster rules box ───────────────────────────────────── */
+
+.monster-rules {
+  position: absolute;
+  left: var(--rules-x);
+  top: var(--rules-y);
+  width: var(--rules-w);
+  height: var(--rules-h);
+  border-radius: 0.0847cm;
+  background: var(--rules-bg);
+  border: 0.017cm solid var(--frame-border);
+  display: flex;
+  flex-direction: column;
+  padding: 0.0508cm 0.152cm;
+  overflow: hidden;
+}
+
+
+/* ── Monster rules sections ─────────────────────────────── */
+
+.monster-rules-label {
+  font-weight: bold;
+  font-size: var(--rules-fs);
+  font-family: var(--font-serif);
+  color: var(--rules-fg);
+  line-height: 1.25;
+}
+
+.monster-rules-content {
+  font-size: var(--rules-fs);
+  font-family: var(--font-serif);
+  color: var(--rules-fg);
+  line-height: 1.25;
+  padding-left: var(--rules-fs);
+  white-space: pre-wrap;
+  overflow-wrap: break-word;
+}
+
+/* ── Spell grid label ───────────────────────────────────── */
+
+.spell-grid-label {
+  font-weight: bold;
+}
+
+/* ── Monster stat helpers ───────────────────────────────── */
+
+.monster-stats-label {
+  font-weight: bold;
+}
+
+.monster-stats-save {
+  font-size: 65%;
+  opacity: 0.7;
+}
+
+/* ── Optional boxes (price, weight, P/T) ─────────────────── */
+
+.optional-boxes {
+  position: absolute;
+  right: var(--rules-x);
+  bottom: 0.15cm;
+  display: flex;
+  flex-direction: row-reverse;
+  gap: 0.0508cm;
+}
+
+.optional-box {
+  width: var(--opt-box-w);
+  height: var(--opt-box-h);
+  border-radius: 0.0677cm;
+  background: var(--pt-bg);
+  border: 0.017cm solid var(--frame-border);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-serif);
+  font-size: var(--opt-fs);
+  font-weight: 700;
+  color: var(--pt-fg);
+}
+
+/* ── Footer ──────────────────────────────────────────────── */
+
+/* ── Portrait card (monster page 1) ─────────────────────── */
+
+.portrait-art {
+  position: absolute;
+  left: var(--title-x);
+  top: var(--title-y);
+  right: var(--title-x);
+  bottom: calc(var(--title-y) + var(--title-h) + 0.05cm);
+  border-radius: 0.0677cm;
+  overflow: hidden;
+  background: #fff;
+  border: 0.017cm solid var(--frame-border);
+}
+
+.portrait-title {
+  position: absolute;
+  left: var(--title-x);
+  bottom: var(--title-y);
+  width: var(--title-w);
+  height: var(--title-h);
+  border-radius: 0.0677cm;
+  background: var(--title-bg);
+  border: 0.017cm solid var(--frame-border);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.portrait-title-text {
+  font-family: var(--font-serif);
+  font-size: var(--title-fs);
+  font-weight: 700;
+  color: var(--title-fg);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.portrait-img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  object-position: center;
+}
+
+/* ── Footer ──────────────────────────────────────────────── */
+
+.card-footer {
+  position: absolute;
+  bottom: var(--inner-x);
+  font-family: var(--font-sans);
+  font-size: var(--footer-fs);
+  color: var(--footer-fg);
+  line-height: 1.4;
+  padding: 0.034cm 0.152cm;
+}
+
+/* ── Tent card (alternative monster layout) ──────────────── */
+
+.tent-top {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 8.8cm;
+  transform: rotate(180deg);
+  overflow: hidden;
+}
+
+.tent-art {
+  position: absolute;
+  left: var(--title-x);
+  top: var(--title-y);
+  right: var(--title-x);
+  bottom: calc(var(--title-y) + var(--title-h) + 0.05cm);
+  border-radius: 0.0677cm;
+  overflow: hidden;
+  background: #fff;
+  border: 0.017cm solid var(--frame-border);
+}
+
+.tent-art-name {
+  position: absolute;
+  left: var(--title-x);
+  bottom: var(--title-y);
+  width: var(--title-w);
+  height: var(--title-h);
+  border-radius: 0.0677cm;
+  background: var(--title-bg);
+  border: 0.017cm solid var(--frame-border);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.tent-divider {
+  position: absolute;
+  top: 8.8cm;
+  left: 6%;
+  width: 88%;
+  border-top: 0.02cm dashed rgba(0, 0, 0, 0.3);
+  z-index: 1;
+}
+
+/* Inside tent positioning wrappers, child components should fill the wrapper
+   instead of using their own absolute positioning from the full-card theme. */
+.tent-stats .monster-stats,
+.tent-rules .monster-rules {
+  position: static;
+  left: auto;
+  top: auto;
+  width: 100%;
+  height: 100%;
+}

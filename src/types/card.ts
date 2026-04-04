@@ -6,6 +6,8 @@ export interface BaseCard {
   copyright?: string;
   theme?: Record<string, string | number>;
   rarity?: string;
+  /** True for continuation cards produced by overflow splitting. */
+  continuation?: boolean;
 }
 
 export interface ItemCard extends BaseCard {
@@ -14,9 +16,13 @@ export interface ItemCard extends BaseCard {
   rules_text: string[] | string;
   flavor_text?: string;
   art_path?: string;
+  /** Pre-resolved image source (data URI or URL) for browser use. */
+  art_src?: string | null;
   pt?: string | null;
   price?: string | null;
   weight?: string | null;
+  /** When true, renders as a full-bleed portrait card (art fills card, name at bottom). */
+  portrait?: boolean;
 }
 
 export interface SpellInfo {
@@ -58,8 +64,9 @@ export interface MonsterAction {
 
 export interface MonsterReaction {
   name: string;
-  trigger: string;
-  response: string;
+  trigger?: string;
+  response?: string;
+  text?: string;
 }
 
 export interface MonsterTrait {
@@ -88,6 +95,8 @@ export interface MonsterCard extends BaseCard {
   resistances: string[];
   immunities: string[];
   vulnerabilities: string[];
+  art_path?: string;
+  art_src?: string | null;
 }
 
 export type Card = ItemCard | SpellCard | MonsterCard;

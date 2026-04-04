@@ -1,0 +1,59 @@
+.nav {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: #222;
+  padding: 0.5rem 1rem;
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.navLink {
+  color: #eee;
+  text-decoration: none;
+  font-family: sans-serif;
+  font-size: 0.9rem;
+}
+
+.content {
+  padding: 1cm;
+}
+
+.section {
+  margin-bottom: 2cm;
+}
+
+.sectionHeading {
+  font-family: sans-serif;
+  border-bottom: 2px solid #666;
+  padding-bottom: 0.3rem;
+  margin-bottom: 0.5cm;
+}
+
+.cardGrid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5cm;
+}
+
+.cardGroup {
+  display: flex;
+  gap: 0.5cm;
+}
+
+.toggleBtn {
+  color: #eee;
+  background: none;
+  border: 1px solid #666;
+  cursor: pointer;
+  border-radius: 4px;
+  font-family: sans-serif;
+  font-size: 0.9rem;
+  padding: 0.15rem 0.5rem;
+  margin-left: auto;
+}
+
+.toggleBtn:hover {
+  background: #444;
+}

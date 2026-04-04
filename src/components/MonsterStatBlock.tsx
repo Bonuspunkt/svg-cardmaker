@@ -1,9 +1,7 @@
-import type { Theme } from "../types/theme.js";
 import type { AbilityScore } from "../types/card.js";
 import { diceAverage } from "../utils/dice.js";
 
 interface Props {
-  theme: Theme;
   ac: number;
   hp: string;
   ini: string;
@@ -17,19 +15,27 @@ interface Props {
 }
 
 function formatMod(n: number): string {
-  const sign = n >= 0 ? "+" : "";
-  return (sign + n).padStart(3, " ");
+  return n >= 0 ? `+${n}` : `${n}`;
 }
 
-function splitAttr(name: string, attr: AbilityScore): string {
-  const v = attr.score;
-  const m = attr.mod;
-  const s = attr.save;
-  return `${name.padStart(3, " ")}: ${formatMod(v)}| ${formatMod(m)}| ${formatMod(s)}`;
+function AbilityCell({ label, attr }: { label: string; attr: AbilityScore }) {
+  const hasProfSave = attr.save !== attr.mod;
+  return (
+    <div className="monster-stats-ability-cell">
+      <div className="monster-stats-label">{label}</div>
+      <div>
+        {attr.score} ({formatMod(attr.mod)})
+      </div>
+      {hasProfSave && (
+        <div className="monster-stats-save">
+          Save {formatMod(attr.save)}
+        </div>
+      )}
+    </div>
+  );
 }
 
 export function MonsterStatBlock({
-  theme,
   ac,
   hp,
   ini,
@@ -41,64 +47,41 @@ export function MonsterStatBlock({
   wis,
   cha,
 }: Props) {
-  const [rx, ry, rw, rh] = theme.type_rec;
-  const [baseX, baseY, fs] = theme.type_txt_rec;
-
   const hpAvg = Math.floor(diceAverage(hp));
 
-  // Grid: 2 columns, rows advance after indices 1, 3, 5, 7
-  const items = [
-    ` AC: ${String(ac).padStart(3, " ")}`,
-    `INI: ${ini}`,
-    ` HP: ${String(hpAvg).padStart(3, " ")} (${hp})`,
-    ` SP: ${speed}`,
-    splitAttr("STR", str),
-    splitAttr("INT", int_),
-    splitAttr("DEX", dex),
-    splitAttr("WIS", wis),
-    splitAttr("CON", con),
-    splitAttr("CHA", cha),
+  const abilities: Array<{ label: string; attr: AbilityScore }> = [
+    { label: "STR", attr: str },
+    { label: "DEX", attr: dex },
+    { label: "CON", attr: con },
+    { label: "INT", attr: int_ },
+    { label: "WIS", attr: wis },
+    { label: "CHA", attr: cha },
   ];
 
-  const textElements: Array<{ x: number; y: number; text: string }> = [];
-  let dx = 0;
-  let y = baseY;
-
-  for (let idx = 0; idx < items.length; idx++) {
-    textElements.push({ x: baseX + dx, y, text: items[idx] });
-    dx += 300;
-    if (idx === 1 || idx === 3 || idx === 5 || idx === 7) {
-      y += fs;
-      dx = 0;
-    }
-  }
-
   return (
-    <>
-      <rect
-        x={rx}
-        y={ry}
-        width={rw}
-        height={rh}
-        rx={6}
-        ry={6}
-        fill={theme.type_bg}
-        stroke={theme.frame_border}
-        strokeWidth={2}
-      />
-      {textElements.map((el, i) => (
-        <text
-          key={i}
-          x={el.x}
-          y={el.y}
-          fontFamily={theme.font_mono}
-          fontSize={fs}
-          fill={theme.type_fg}
-          xmlSpace="preserve"
-        >
-          {el.text}
-        </text>
-      ))}
-    </>
+    <div className="monster-stats">
+      <div className="monster-stats-kv-row">
+        <div className="monster-stats-kv-cell">
+          <span className="monster-stats-label">AC:</span> {ac}
+        </div>
+        <div className="monster-stats-kv-cell">
+          <span className="monster-stats-label">Initiative:</span> {ini}
+        </div>
+      </div>
+      <div className="monster-stats-kv-row">
+        <div className="monster-stats-kv-cell">
+          <span className="monster-stats-label">HP:</span> {hpAvg} ({hp})
+        </div>
+        <div className="monster-stats-kv-cell">
+          <span className="monster-stats-label">Speed:</span> {speed}
+        </div>
+      </div>
+      <div className="monster-stats-divider" />
+      <div className="monster-stats-ability-row">
+        {abilities.map(({ label, attr }) => (
+          <AbilityCell key={label} label={label} attr={attr} />
+        ))}
+      </div>
+    </div>
   );
 }

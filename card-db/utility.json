@@ -43,7 +43,7 @@
     {
       "name": "Harvestwarden Orb",
       "rarity": "Very Rare",
-      "type_line": "Wondrous Item (requires attunement)",
+      "type_line": "Wondrous item (requires attunement)",
       "rules_text": [
         "At dusk, you may perform a 10-minute ritual while holding this elven orb to influence the next day’s natural weather within a 6-mile radius.",
         "Choose one: cause light to moderate rainfall, prevent rainfall, calm or moderately strengthen winds, thin or thicken cloud cover, or create or disperse natural fog.",
