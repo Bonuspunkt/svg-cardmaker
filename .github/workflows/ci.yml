@@ -23,6 +23,9 @@ jobs:
       - name: Typecheck
         run: npm run typecheck
 
+      - name: Generate card HTML
+        run: npm run generate
+
       - name: Install Playwright browsers
         run: npx playwright install --with-deps chromium
 
