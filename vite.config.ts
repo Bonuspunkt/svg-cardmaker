@@ -2,6 +2,7 @@ import { defineConfig } from "vite";
 import { resolve } from "node:path";
 import { readFileSync, existsSync } from "node:fs";
 import { extname } from "node:path";
+import { cardGeneratorPlugin } from "./src/vite-plugin-cards.js";
 
 export default defineConfig({
   root: "src",
@@ -29,5 +30,6 @@ export default defineConfig({
         });
       },
     },
+    cardGeneratorPlugin(),
   ],
 });

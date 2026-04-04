@@ -5,6 +5,7 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
+    "build": "vite build",
     "generate": "vite-node src/generate-cards.tsx",
     "print": "vite-node src/collect-and-print.tsx",
     "typecheck": "tsc --noEmit"
