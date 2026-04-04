@@ -5,7 +5,7 @@
   "type": "module",
   "scripts": {
     "generate": "tsx src/generate-cards.tsx",
-    "print": "tsx src/collect-and-print.ts",
+    "print": "tsx src/collect-and-print.tsx",
     "typecheck": "tsc --noEmit"
   },
   "dependencies": {

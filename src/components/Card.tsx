@@ -91,16 +91,8 @@ function SpellCardSvg({
   );
   const [w, h] = theme.card_sz;
 
-  const spell = card.spell ?? {};
+  const spell = card.spell ?? {} as import("../types/card.js").SpellInfo;
   const level = spell.level ?? "Cantrip";
-  const school = "School: " + (spell.school ?? "");
-  const castingTime = "Casting time: " + (spell.casting_time ?? "");
-  const rangeArea = "Range/Area: " + (spell.range_area ?? "");
-  const componentsList = spell.components ?? [];
-  const components = "Components: " + componentsList.join(", ");
-  const duration = "Duration: " + (spell.duration ?? "");
-  const attackSave = "Attack/Save: " + (spell.attack_save ?? "");
-  const damageEffect = "Damage/Effect: " + (spell.damage_effect ?? "");
 
   return (
     <svg
@@ -116,16 +108,7 @@ function SpellCardSvg({
         name={card.name ?? "Unnamed Spell"}
         rarity={level}
       />
-      <SpellTypeGrid
-        theme={theme}
-        school={school}
-        castingTime={castingTime}
-        rangeArea={rangeArea}
-        components={components}
-        duration={duration}
-        attackSave={attackSave}
-        damageEffect={damageEffect}
-      />
+      <SpellTypeGrid theme={theme} spell={spell} />
       <RulesBox theme={theme} rules={card.rules_text ?? "\u2014"} flavor="" />
       <Footer
         theme={theme}

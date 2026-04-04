@@ -1,52 +1,64 @@
+import type { CSSProperties } from "react";
 import type { Theme } from "../types/theme.js";
+import type { SpellInfo } from "../types/card.js";
+
+const XHTML_NS = { xmlns: "http://www.w3.org/1999/xhtml" } as Record<
+  string,
+  string
+>;
 
 interface Props {
   theme: Theme;
-  school: string;
-  castingTime: string;
-  rangeArea: string;
-  components: string;
-  duration: string;
-  attackSave: string;
-  damageEffect: string;
+  spell: SpellInfo;
 }
 
-export function SpellTypeGrid({
-  theme,
-  school,
-  castingTime,
-  rangeArea,
-  components,
-  duration,
-  attackSave,
-  damageEffect,
-}: Props) {
-  const [rx, ry, rw, rh] = theme.type_rec;
-  const [baseX, baseY, fs] = theme.type_txt_rec;
+function Label({ children }: { children: string }) {
+  return <span style={{ fontWeight: "bold" }}>{children}</span>;
+}
 
-  // Grid layout: 2 columns, items advance row after indices 1, 2, 4, 6
-  const items = [
-    school,
-    castingTime,
-    rangeArea,
-    components,
-    duration,
-    attackSave,
-    damageEffect,
+export function SpellTypeGrid({ theme, spell }: Props) {
+  const [rx, ry, rw, rh] = theme.type_rec;
+  const [, , fs] = theme.type_txt_rec;
+
+  const rows = [
+    [<><span style={{fontWeight:'bold'}}>School:</span> {spell.school}</>, <><span style={{fontWeight:'bold'}}>Casting time:</span> {spell.casting_time}</>],
+    [<><span style={{fontWeight:'bold'}}>Range/Area:</span> {spell.range_area}</>],
+    [<><span style={{fontWeight:'bold'}}>Components:</span> {spell.components.join(", ")}</>, <><span style={{fontWeight:'bold'}}>Duration:</span> {spell.duration}</>],
+    [<><span style={{fontWeight:'bold'}}>Attack/Save:</span> {spell.attack_save}</>, <><span style={{fontWeight:'bold'}}>Damage/Effect:</span> {spell.damage_effect}</>],
   ];
 
-  const textElements: Array<{ x: number; y: number; text: string }> = [];
-  let dx = 0;
-  let y = baseY;
+  const containerStyle: CSSProperties = {
+    display: "flex",
+    flexDirection: "column",
+    justifyContent: "center",
+    width: "100%",
+    height: "100%",
+    padding: "6px 18px",
+    boxSizing: "border-box",
+    overflow: "hidden",
+    fontFamily: theme.font_sans,
+    fontSize: `${fs}px`,
+    color: theme.type_fg,
+    lineHeight: `${fs * 1.25}px`,
+  };
 
-  for (let idx = 0; idx < items.length; idx++) {
-    textElements.push({ x: baseX + dx, y, text: items[idx] });
-    dx += 300;
-    if (idx === 1 || idx === 2 || idx === 4 || idx === 6) {
-      y += fs;
-      dx = 0;
-    }
-  }
+  const rowStyle: CSSProperties = {
+    display: "flex",
+  };
+
+  const cellStyle: CSSProperties = {
+    flex: "0 0 50%",
+    whiteSpace: "nowrap",
+    overflow: "hidden",
+    textOverflow: "ellipsis",
+  };
+
+  const fullWidthCellStyle: CSSProperties = {
+    flex: "1 1 100%",
+    whiteSpace: "nowrap",
+    overflow: "hidden",
+    textOverflow: "ellipsis",
+  };
 
   return (
     <>
@@ -61,18 +73,22 @@ export function SpellTypeGrid({
         stroke={theme.frame_border}
         strokeWidth={2}
       />
-      {textElements.map((el, i) => (
-        <text
-          key={i}
-          x={el.x}
-          y={el.y}
-          fontFamily={theme.font_sans}
-          fontSize={fs}
-          fill={theme.type_fg}
-        >
-          {el.text}
-        </text>
-      ))}
+      <foreignObject x={rx} y={ry} width={rw} height={rh}>
+        <div {...XHTML_NS} style={containerStyle}>
+          {rows.map((row, i) => (
+            <div key={i} style={rowStyle}>
+              {row.map((cell, j) => (
+                <div
+                  key={j}
+                  style={row.length === 1 ? fullWidthCellStyle : cellStyle}
+                >
+                  {cell}
+                </div>
+              ))}
+            </div>
+          ))}
+        </div>
+      </foreignObject>
     </>
   );
 }

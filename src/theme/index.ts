@@ -12,7 +12,8 @@ import {
   TYPE_H_SPELL,
   TYPE_H_MONSTER,
   RULES_H_ITEM,
-  RULES_H_SPELL_MONSTER,
+  RULES_H_SPELL,
+  RULES_H_MONSTER,
   OPT_H,
   FONT_SIZE_TITLE,
   FONT_SIZE_RULE,
@@ -38,12 +39,12 @@ export function getTheme(
     typeY = INNER_PADDING + TITLE_H + 6;
     typeH = TYPE_H_SPELL;
     rulesY = typeY + typeH + 6;
-    rulesH = RULES_H_SPELL_MONSTER;
+    rulesH = RULES_H_SPELL;
   } else if (cardType === "monster") {
     typeY = INNER_PADDING + TITLE_H + 6;
     typeH = TYPE_H_MONSTER;
     rulesY = typeY + typeH + 6;
-    rulesH = RULES_H_SPELL_MONSTER;
+    rulesH = RULES_H_MONSTER;
   } else {
     typeY = artY + ART_H + 6;
     typeH = TYPE_H_ITEM;

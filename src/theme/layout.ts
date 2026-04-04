@@ -9,10 +9,11 @@ export const INNER_WIDTH = CARD_WIDTH - 2 * INNER_PADDING; // 708
 export const TITLE_H = 52;
 export const ART_H = 430;
 export const TYPE_H_ITEM = 52;
-export const TYPE_H_SPELL = 110;
-export const TYPE_H_MONSTER = 134; // 110 + 24
+export const TYPE_H_SPELL = 134;
+export const TYPE_H_MONSTER = 134;
 export const RULES_H_ITEM = 360;
-export const RULES_H_SPELL_MONSTER = 806;
+export const RULES_H_SPELL = 782;
+export const RULES_H_MONSTER = 806;
 export const OPT_H = 52;
 
 // Font sizes
