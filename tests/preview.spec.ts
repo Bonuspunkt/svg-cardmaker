@@ -29,21 +29,27 @@ test("preview page renders all cards without errors", async ({ page }) => {
 test("Greater Astral Wisp expands to portrait + stats + actions cards", async ({ page }) => {
   await page.goto("/", { waitUntil: "networkidle" });
 
+  // Switch to multi-page mode (tent mode doesn't expand monsters)
+  await page.getByRole("button", { name: "Multi-Page" }).click();
+
+  // Scope to preview area (exclude print layout which duplicates cards)
+  const preview = page.locator(".no-print");
+
   // Page 1: portrait card with full-bleed art and name at the bottom
-  const portrait = page.locator(".card", { has: page.locator(".portrait-art") })
+  const portrait = preview.locator(".card", { has: page.locator(".portrait-art") })
     .filter({ has: page.locator(".portrait-title-text", { hasText: "Greater Astral Wisp" }) });
   await expect(portrait).toHaveCount(1);
   await portrait.screenshot({ path: "test-results/wisp-card-1.png" });
 
   // Page 2: stats card with the stat block
-  const statsCard = page.locator(".card", {
+  const statsCard = preview.locator(".card", {
     has: page.locator(".monster-stats"),
   }).filter({ has: page.locator(".title-name", { hasText: "Greater Astral Wisp" }) });
   await expect(statsCard).toHaveCount(1);
   await statsCard.screenshot({ path: "test-results/wisp-card-2.png" });
 
   // Page 3: actions card with type_line as title, containing "Multiattack" (unique to Greater)
-  const actionsCard = page.locator(".card", {
+  const actionsCard = preview.locator(".card", {
     has: page.locator(".title-name", { hasText: "Tiny Aberration, Chaotic Neutral" }),
   }).filter({
     has: page.locator(":text('Multiattack')"),
