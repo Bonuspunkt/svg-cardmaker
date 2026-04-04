@@ -1,92 +1,106 @@
 # svg-cardmaker
 
-A flexible, scriptable card generator for RPGs, board games, and collectible card systems — written in Python and based on SVG templates.  
-Originally built for D&D-style magic items, but works for any kind of custom card design.
+A flexible, scriptable card generator for RPGs, board games, and collectible card systems — built with React, TypeScript, and Vite.
+Originally built for D&D-style magic items, spells, and monsters, but works for any kind of custom card design.
 
 ## Features
 
-- **Modular JSON card database** — split your cards into multiple files (e.g. `weapons.json`, `potions.json`)
-- **SVG-based layout** — crisp vector output, perfect for printing or digital use
-- **Automatic theming** — background color adapts to rarity (Common → Legendary)
-- **Dynamic text sizing** — title font scales to fit available space
-- **Batch rendering** — generate all cards in one go
-- **Collect & Print tool** — combine multiple cards into printable A4 sheets (PDF)
-- **Open format** — everything is plain JSON, SVG, and Python
+- **Modular JSON card database** — split your cards into multiple files (e.g. `weapons.json`, `spells_a.json`, `mon_goblins.json`)
+- **Three card types** — items (with art), spells (info grid), and monsters (stat blocks with auto-splitting for long entries)
+- **Live preview** — Vite dev server with hot reload for instant card previews
+- **Automatic theming** — frame color adapts to rarity (Common → Legendary)
+- **Batch rendering** — generate standalone HTML files for all cards
+- **Print-ready PDFs** — combine cards into A4 sheets with crop marks via Puppeteer
+- **Open format** — everything is plain JSON, HTML/CSS, and TypeScript
 
 ---
 
 ## Example Card Definition
 
-Each card is a simple JSON object stored in a file inside the `cards/` folder:
+Each card is a JSON object stored in a file inside the `card-db/` folder:
 
 ```json
 {
   "cards": [
     {
-      "name": "Potion of Supreme Healing",
-      "rarity": "Very Rare",
-      "type_line": "Item \u2014 Consumable (potion)",
+      "name": "Club",
+      "rarity": "Common",
+      "type_line": "Item — Simple Melee Weapon",
       "rules_text": [
-        "A character who drinks the magical red fluid in this vial regains 10d4 + 20 hit points. Drinking or administering a potion takes an action."
-        ],
-      "flavor_text": "Nur einmal wagte ein Magier, sie zu brauen - und seitdem spricht niemand mehr von seinem Tod, nur von seinem Werk.",
+        "Proficiency with a Club allows you to add your proficiency bonus to the attack roll for any attack you make with it.",
+        "",
+        " • Damage: 1d4 Bludgeoning",
+        " • Light"
+      ],
+      "flavor_text": "",
       "set_code": "MYR",
-      "collector": "004/999 U",
+      "collector": "101/999 U",
       "author": "wschu",
-      "copyright": "\u00a9 Myrdell Homebrew 2025",
-      "art_path": "art/potion-of-supreme-healing.png",
-      "pt": "10d4+20",
-      "price": "8500 GP",
-      "weight": "1/2 lb"
+      "copyright": "© Myrdell Homebrew 2025",
+      "art_path": "art/club.png",
+      "pt": "1d4",
+      "price": "1 SP",
+      "weight": "2 lb"
     }
   ]
 }
 ```
 
-![Potion of Supreme Healing](out_cards/Potion_of_Supreme_Healing.svg)
-
 ---
 
 ## Usage
 
-### Generate SVG cards
+### Live preview
 
 ```bash
-python generate_cards.py cards/
+npm run dev
 ```
 
-This command:
+Starts a Vite dev server at `localhost:5173` showing all cards with hot reload.
 
-- loads all .json files in cards/
-
-- creates .svg files for each entry in out/cards/
-
-- applies rarity-based color themes
-
-- inserts art, text, and metadata
-
-### Collect and print
+### Generate HTML cards
 
 ```bash
-python collect_and_print.py `
-  --cards ".\out_cards" `
-  --add "Potion_of_Healing=3" `
-  --add "Potion_of_Greater_Healing=3" `
-  --add "Potion_of_Superior_Healing=2" `
-  --add "Potion_of_Supreme_Healing=1" `
-  --out "out/print_sheets/cards_print.pdf" `
-  --crop
+npm run generate
 ```
 
-Creates printable A4 sheets (3×3 cards per page) with optional crop marks.
+Loads all `.json` files from `card-db/`, renders each card as a standalone HTML file into `out_cards/`.
+
+You can also specify custom input/output paths:
+
+```bash
+npm run generate -- -i card-db -o out_cards
+```
+
+### Print to PDF
+
+```bash
+npm run print -- --cards out_cards --all --out print.pdf
+```
+
+Generates a printable A4 PDF with all cards arranged in a grid with crop marks.
+
+To print specific cards with quantities:
+
+```bash
+npm run print -- --cards out_cards --add "Potion_of_Healing=3" --add "Potion_of_Greater_Healing=2" --out print.pdf
+```
+
+### Type checking
+
+```bash
+npm run typecheck
+```
+
+### Tests
+
+```bash
+npx playwright test
+```
 
 ---
 
 ## Requirements
 
-- Python 3.9+
-
-- Pillow for image processing
-
-- Inkscape (for SVG → PNG rasterization)
-
+- Node.js 18+
+- npm

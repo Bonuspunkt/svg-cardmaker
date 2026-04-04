@@ -6,7 +6,7 @@ import React from "react";
  * intersection — the cut target.
  */
 
-const GAP_CENTER = "0.25cm"; // half of 0.5cm flex gap
+const GAP_CENTER = "0.125cm"; // half of 0.25cm flex gap
 
 function XMark({ x, y }: { x: string; y: string }) {
   return (

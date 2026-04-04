@@ -12,6 +12,7 @@ export interface PrintLayoutProps {
 }
 
 const CATEGORY_ORDER = ["Items", "Monsters", "Spells"];
+const CARDS_PER_PAGE = 9; // 3 columns × 3 rows
 
 function interleaveCards(groups: CardGroup[]): { category: string; cardPath: string }[] {
   const byCategory = new Map<string, string[]>();
@@ -35,8 +36,17 @@ function interleaveCards(groups: CardGroup[]): { category: string; cardPath: str
   return result;
 }
 
+function chunk<T>(arr: T[], size: number): T[][] {
+  const pages: T[][] = [];
+  for (let i = 0; i < arr.length; i += size) {
+    pages.push(arr.slice(i, i + size));
+  }
+  return pages;
+}
+
 export function PrintLayout({ groups, cardCss }: PrintLayoutProps) {
   const cards = interleaveCards(groups);
+  const pages = chunk(cards, CARDS_PER_PAGE);
 
   return (
     <html>
@@ -44,11 +54,12 @@ export function PrintLayout({ groups, cardCss }: PrintLayoutProps) {
         <style
           dangerouslySetInnerHTML={{
             __html: `
-              @page { size: A4; margin: 0; }
+              @page { size: A4; margin: 1.15cm 0; }
               * { margin: 0; padding: 0; box-sizing: border-box; }
               @media screen { .crop-mark { display: none; } }
               iframe.card-frame { border: none; }
-              .print-body { display: flex; flex-wrap: wrap; align-content: center; justify-content: center; gap: 0.5cm; }
+              .print-page { width: 21cm; height: 29.7cm; display: flex; flex-wrap: wrap; align-content: center; justify-content: center; gap: 0.25cm; break-after: page; }
+              .print-page:last-child { break-after: auto; }
               .print-card { position: relative; width: 6.3cm; height: 8.8cm; break-inside: avoid; }
               .print-card img { width: 6.3cm; height: 8.8cm; }
               .crop-x { position: absolute; width: 0.3cm; height: 0.3cm; transform: translate(-50%, -50%); }
@@ -60,11 +71,15 @@ export function PrintLayout({ groups, cardCss }: PrintLayoutProps) {
           }}
         />
       </head>
-      <body className="print-body">
-        {cards.map((card, i) => (
-          <div key={`${card.category}-${i}`} className="print-card">
-            <img className="card-frame" src={card.cardPath} />
-            <CropMarks />
+      <body>
+        {pages.map((page, pi) => (
+          <div key={pi} className="print-page">
+            {page.map((card, ci) => (
+              <div key={`${card.category}-${ci}`} className="print-card">
+                <img className="card-frame" src={card.cardPath} />
+                <CropMarks />
+              </div>
+            ))}
           </div>
         ))}
       </body>

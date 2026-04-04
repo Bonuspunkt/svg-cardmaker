@@ -10,6 +10,8 @@ import {
   TYPE_H_MONSTER,
   SECTION_GAP,
   OUTER_PADDING,
+  FOLD_MARGIN,
+  PADDING_V,
 } from "../theme/layout.js";
 import {
   estimateMonsterContentLines,
@@ -66,7 +68,7 @@ function ItemCard({ card }: { card: import("../types/card.js").ItemCard }) {
             name={card.name ?? "Unnamed Item"}
             rarity={card.rarity ?? "Common"}
           />
-          <ArtSection artPath={card.art_path} artSrc={card.art_src} />
+          <ArtSection artPath={card.art_path} artSrc={card.art_src} bgSrc={(card.type_line ?? "").includes("Weapon") ? "art/ngage.svg" : undefined} />
           <TypeLine typeLine={card.type_line ?? "Item \u2014 Wondrous"} />
         </>
       )}
@@ -187,8 +189,8 @@ function MonsterCard({
 const TENT_TOP_H = CARD_HEIGHT;
 
 /** Positioning within the bottom section (relative to section top) */
-const TENT_TITLE_Y = INNER_PADDING;
-const TENT_STATS_Y = INNER_PADDING + TITLE_H + SECTION_GAP;
+const TENT_TITLE_Y = FOLD_MARGIN;
+const TENT_STATS_Y = FOLD_MARGIN + TITLE_H + SECTION_GAP;
 const TENT_RULES_Y = TENT_STATS_Y + TYPE_H_MONSTER + SECTION_GAP;
 
 function MonsterTentCard({
@@ -228,7 +230,7 @@ function MonsterTentCard({
       <CardFrame />
       {/* Top section: portrait + name, rotated 180° */}
       <div className="tent-top">
-        <div className="tent-art">
+        <div className="tent-art" style={{ top: `${FOLD_MARGIN}cm` }}>
           {artSrc && <img className="portrait-img" src={artSrc} />}
         </div>
         <div className="tent-art-name">
@@ -237,8 +239,11 @@ function MonsterTentCard({
           </span>
         </div>
       </div>
-      {/* Fold guide line */}
+      {/* Fold guide lines */}
       <div className="tent-divider" />
+      {bottomCards > 1 && (
+        <div className="tent-divider" style={{ top: `${CARD_HEIGHT * 2}cm` }} />
+      )}
       {/* Bottom section: stats + rules */}
       <div style={bottomStyle}>
         <div
@@ -300,6 +305,7 @@ function MonsterTentCard({
             immunities={card.immunities ?? []}
             vulnerabilities={card.vulnerabilities ?? []}
             monTypeLine={card.type_line ?? ""}
+            foldGaps={bottomCards > 1 ? [CARD_HEIGHT - TENT_RULES_Y - PADDING_V] : undefined}
           />
         </div>
         <Footer
@@ -349,7 +355,7 @@ function ItemTentCard({
         name={card.name ?? "Unnamed Item"}
         rarity={card.rarity ?? "Common"}
       />
-      <ArtSection artPath={card.art_path} artSrc={card.art_src} />
+      <ArtSection artPath={card.art_path} artSrc={card.art_src} bgSrc={(card.type_line ?? "").includes("Weapon") ? "art/ngage.svg" : undefined} />
       <TypeLine typeLine={card.type_line ?? "Item \u2014 Wondrous"} />
       {cardCount > 1 && (
         <div className="tent-divider" style={{ top: `${CARD_HEIGHT}cm` }} />
@@ -360,6 +366,9 @@ function ItemTentCard({
       <RulesBox
         rules={card.rules_text ?? "\u2014"}
         flavor={(card.flavor_text ?? "").trim()}
+        foldGaps={Array.from({ length: cardCount - 1 }, (_, i) =>
+          CARD_HEIGHT * (i + 1) - theme.rules_rec[1] - PADDING_V
+        )}
       />
       <OptionalBoxes pt={card.pt} price={card.price} weight={card.weight} />
       <Footer

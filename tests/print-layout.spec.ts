@@ -4,11 +4,11 @@ import { writeFileSync, unlinkSync } from "node:fs";
 import { resolve, join } from "node:path";
 import { tmpdir } from "node:os";
 
-const TSX = resolve(import.meta.dirname, "../node_modules/.bin/tsx");
+const VITE_NODE = resolve(import.meta.dirname, "../node_modules/.bin/vite-node");
 const RENDER_SCRIPT = resolve(import.meta.dirname, "render-html.tsx");
 
 function renderHtml(count: number): string {
-  return execFileSync(TSX, [RENDER_SCRIPT, String(count)], {
+  return execFileSync(VITE_NODE, [RENDER_SCRIPT, String(count)], {
     encoding: "utf-8",
   });
 }
@@ -25,18 +25,36 @@ async function loadHtml(
 }
 
 test.describe("PrintLayout", () => {
-  test("renders cards as a flat flexbox list on the body", async ({
+  test("renders cards in page containers with flexbox layout", async ({
     page,
   }) => {
     await loadHtml(page, 9);
 
-    const display = await page
-      .locator("body")
+    const pages = page.locator(".print-page");
+    await expect(pages).toHaveCount(1);
+
+    const display = await pages
+      .first()
       .evaluate((el) => getComputedStyle(el).display);
     expect(display).toBe("flex");
 
     const cards = page.locator("body img");
     await expect(cards).toHaveCount(9);
+  });
+
+  test("splits cards across multiple pages at 9 per page", async ({
+    page,
+  }) => {
+    await loadHtml(page, 12);
+
+    const pages = page.locator(".print-page");
+    await expect(pages).toHaveCount(2);
+
+    const cardsPage1 = pages.first().locator(".print-card");
+    await expect(cardsPage1).toHaveCount(9);
+
+    const cardsPage2 = pages.nth(1).locator(".print-card");
+    await expect(cardsPage2).toHaveCount(3);
   });
 
   test("each card has 8 crop marks (4 corners × 2 lines)", async ({
@@ -92,17 +110,17 @@ test.describe("PrintLayout", () => {
     });
   });
 
-  test("cards layout forms a proper grid with gaps", async ({ page }) => {
+  test("cards layout forms a 3x3 grid with gaps", async ({ page }) => {
     await page.setViewportSize({ width: 794, height: 1123 });
     await loadHtml(page, 9);
 
-    const cards = page.locator("body > div");
+    const cards = page.locator(".print-page > .print-card");
     const boxes = [];
     for (let i = 0; i < 9; i++) {
       boxes.push(await cards.nth(i).boundingBox());
     }
 
-    // Row alignment
+    // 3 columns: row alignment
     expect(boxes[0]!.y).toBeCloseTo(boxes[1]!.y, 0);
     expect(boxes[1]!.y).toBeCloseTo(boxes[2]!.y, 0);
     expect(boxes[3]!.y).toBeCloseTo(boxes[4]!.y, 0);
@@ -110,13 +128,16 @@ test.describe("PrintLayout", () => {
     // Column alignment
     expect(boxes[0]!.x).toBeCloseTo(boxes[3]!.x, 0);
 
-    // Gap ~5mm (≈18.9px at 96dpi)
+    // 3 rows
+    expect(boxes[6]!.x).toBeCloseTo(boxes[0]!.x, 0);
+
+    // Gap ~2.5mm (≈9.4px at 96dpi)
     const gapV = boxes[3]!.y - (boxes[0]!.y + boxes[0]!.height);
-    expect(gapV).toBeGreaterThan(14);
-    expect(gapV).toBeLessThan(24);
+    expect(gapV).toBeGreaterThan(6);
+    expect(gapV).toBeLessThan(14);
 
     const gapH = boxes[1]!.x - (boxes[0]!.x + boxes[0]!.width);
-    expect(gapH).toBeGreaterThan(14);
-    expect(gapH).toBeLessThan(24);
+    expect(gapH).toBeGreaterThan(6);
+    expect(gapH).toBeLessThan(14);
   });
 });

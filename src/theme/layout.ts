@@ -40,6 +40,8 @@ export const RADIUS_OPT = cm(8);
 
 // Common spacing
 export const SECTION_GAP = cm(6);
+/** Clear space above and below each fold line in tent mode (cm). */
+export const FOLD_MARGIN = 0.25;
 export const BORDER_WIDTH = cm(2);
 export const PADDING_H = cm(18);
 export const PADDING_V = cm(6);

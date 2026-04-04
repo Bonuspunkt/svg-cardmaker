@@ -294,12 +294,14 @@ export function estimateItemContentLines(card: ItemCard): number {
   return estimateLines(rulesText);
 }
 
-/** Max lines that fit in a single-card-height tent bottom (with stat block). */
-export { MAX_LINES_STATS as TENT_SINGLE_CARD_LINES };
+/** Max lines that fit in a single-card-height tent bottom (with stat block).
+ *  Reduced by 1 vs normal because fold margin shifts content start down. */
+export const TENT_SINGLE_CARD_LINES = MAX_LINES_STATS - 1;
 /** Max lines that fit in a normal item card rules box. */
 export { MAX_LINES_ITEM as TENT_ITEM_SINGLE_CARD_LINES };
-/** Max lines that fit in a 1:1 item tent card (normal + one extra card height of rules). */
-export const TENT_ITEM_DOUBLE_CARD_LINES = MAX_LINES_ITEM + MAX_LINES_ITEM_CONT;
+/** Max lines that fit in a 1:1 item tent card (normal + one extra card height of rules).
+ *  Reduced by 3 to account for ~0.6cm fold overlay hiding content. */
+export const TENT_ITEM_DOUBLE_CARD_LINES = MAX_LINES_ITEM + MAX_LINES_ITEM_CONT - 3;
 
 export function expandCard(card: Card, tentMode?: boolean): Card[] {
   if (isMonsterCard(card)) return tentMode ? [card] : expandMonsterCard(card);

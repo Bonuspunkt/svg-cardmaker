@@ -34,9 +34,12 @@ test("no rules-box overflow in normal mode", async ({ page }) => {
 test("tent mode: no rules-box or monster-rules overflow", async ({ page }) => {
   await page.goto("/", { waitUntil: "networkidle" });
 
-  // Switch to tent mode
-  await page.click("button:has-text('Tent Card')");
-  await page.waitForTimeout(300);
+  // Ensure tent mode is active (default is tent, button shows "Multi-Page")
+  const btn = page.locator("button:has-text('Tent Card')");
+  if ((await btn.count()) > 0) {
+    await btn.click();
+    await page.waitForTimeout(300);
+  }
 
   // Check .rules-box (items/spells)
   const rulesBoxes = page.locator(".rules-box");
@@ -91,10 +94,30 @@ test("tent mode: no rules-box or monster-rules overflow", async ({ page }) => {
   }
 });
 
+test("tent mode: fold dividers are present at fold lines", async ({ page }) => {
+  await page.goto("/", { waitUntil: "networkidle" });
+
+  // Ensure tent mode is active (default is tent)
+  const btn = page.locator("button:has-text('Multi-Page')");
+  if ((await btn.count()) === 0) {
+    await page.click("button:has-text('Tent Card')");
+    await page.waitForTimeout(300);
+  }
+
+  const dividers = page.locator(".tent-divider");
+  const count = await dividers.count();
+  expect(count).toBeGreaterThan(0);
+});
+
 test("tent mode: screenshot items for visual review", async ({ page }) => {
   await page.goto("/", { waitUntil: "networkidle" });
-  await page.click("button:has-text('Tent Card')");
-  await page.waitForTimeout(300);
+
+  // Ensure tent mode is active (default is tent, button shows "Multi-Page")
+  const btn = page.locator("button:has-text('Tent Card')");
+  if ((await btn.count()) > 0) {
+    await btn.click();
+    await page.waitForTimeout(300);
+  }
 
   await page.screenshot({
     path: "test-results/tent-mode-full.png",

@@ -4,7 +4,7 @@ test("Personal Space card overflows to continuation", async ({ page }) => {
   await page.goto("/", { waitUntil: "networkidle" });
 
   // Find the main card
-  const mainCard = page.locator(".card", {
+  const mainCard = page.locator(".card:visible", {
     has: page.locator(".title-name", { hasText: "Personal Space" }),
   });
   await expect(mainCard).toHaveCount(1);
