@@ -19,7 +19,8 @@ export default defineConfig({
       configureServer(server) {
         server.middlewares.use((req, res, next) => {
           if (!req.url?.startsWith("/art/")) return next();
-          const filePath = resolve(import.meta.dirname, req.url.slice(1));
+          const url = req.url.split("?")[0];
+          const filePath = resolve(process.cwd(), url.slice(1));
           if (!existsSync(filePath)) return next();
           const ext = extname(filePath).toLowerCase();
           const mime =

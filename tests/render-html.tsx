@@ -1,25 +1,27 @@
 /**
- * Helper script invoked via `tsx` to generate test HTML.
- * Usage: tsx tests/render-html.tsx <count>
+ * Helper script invoked via `vite-node` to generate test HTML.
+ * Usage: vite-node tests/render-html.tsx <count>
+ *
+ * Uses buildCardMap to generate card filenames directly from card-db,
+ * avoiding a dependency on the out_cards/ directory.
  */
 import React from "react";
 import { renderToStaticMarkup } from "react-dom/server";
-import { resolve, join, dirname } from "node:path";
-import { readdirSync, readFileSync } from "node:fs";
-import { fileURLToPath } from "node:url";
+import { resolve, join } from "node:path";
+import { readFileSync } from "node:fs";
 import { PrintLayout } from "../src/components/print/PrintLayout.js";
+import { buildCardMap } from "../src/utils/load-cards.js";
 
 const count = parseInt(process.argv[2] ?? "9", 10);
 
-const cardsDir = resolve(import.meta.dirname, "../out_cards");
-const cardPaths = readdirSync(cardsDir)
-  .filter((f) => f.endsWith(".html") && f !== "index.html")
+const projectRoot = resolve(import.meta.dirname, "..");
+const cardCss = readFileSync(join(projectRoot, "src/styles/card.css"), "utf-8");
+
+const cardMap = buildCardMap(join(projectRoot, "card-db"));
+const cardPaths = Array.from(cardMap.keys())
   .sort()
   .slice(0, count)
-  .map((f) => `file://${resolve(cardsDir, f)}`);
-
-const srcDir = resolve(import.meta.dirname, "../src");
-const cardCss = readFileSync(join(srcDir, "styles/card.css"), "utf-8");
+  .map((f) => `cards/${f}`);
 
 const markup = renderToStaticMarkup(
   <PrintLayout

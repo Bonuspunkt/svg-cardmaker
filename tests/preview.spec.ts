@@ -80,7 +80,14 @@ test("cards with existing art files display loaded images", async ({ page }) => 
   const count = await images.count();
   expect(count).toBeGreaterThan(0);
 
-  // Verify images with valid src actually loaded
+  // Wait for potion images to actually load (networkidle can fire early
+  // when many large images are queued in batches of 6 concurrent connections)
+  await page.waitForFunction(() => {
+    const imgs = document.querySelectorAll<HTMLImageElement>(".art-image");
+    const potions = Array.from(imgs).filter((el) => el.src.includes("potion"));
+    return potions.length > 0 && potions.every((el) => el.complete);
+  }, { timeout: 15_000 });
+
   const results = await images.evaluateAll((els) =>
     (els as HTMLImageElement[]).map((el) => ({
       src: el.src,
@@ -98,6 +105,6 @@ test("cards with existing art files display loaded images", async ({ page }) => 
   const potionImages = results.filter((r) => r.src.includes("potion"));
   expect(potionImages.length).toBeGreaterThan(0);
   for (const img of potionImages) {
-    expect(img.loaded).toBe(true);
+    expect(img.loaded, `image not loaded: ${img.src}`).toBe(true);
   }
 });
